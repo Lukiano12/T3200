@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  30 JUN 2025 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  30 JUN 2025 12:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1019,35 +1019,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
- (main.aux
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-
-LaTeX Warning: Label `ABBILDUNG 76' multiply defined.
-
-)
+ (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
@@ -1147,7 +1119,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 135.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 135.
-<images/DHBW_d_R_FN_46mm_4c.jpg, id=95, 133.33815pt x 73.7154pt>
+<images/DHBW_d_R_FN_46mm_4c.jpg, id=83, 133.33815pt x 73.7154pt>
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
 Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 140.
@@ -1164,17 +1136,12 @@ Overfull \hbox (20.2359pt too wide) in paragraph at lines 135--141
 {C:/Users/lnztadil/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/DHBW_d_R_FN_46mm_4c.jpg>]
 Package hyperref Info: Option `pageanchor' set `true' on input line 180.
 
-Underfull \hbox (badness 1953) in paragraph at lines 195--196
-\OT1/cmr/m/it/14.4 mie-rung von Ab-bie-geunf[]allen zwi-schen LKW und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--204
+Underfull \hbox (badness 10000) in paragraph at lines 199--202
 
  []
 
@@ -1182,7 +1149,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 201--204
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 209.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 206.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1198,50 +1165,20 @@ Package scrlayer-scrpage Warning: \footheight to low.
 (scrlayer-scrpage)                e.g., using
 (scrlayer-scrpage)                  \setlength{\footheight}{48.12502pt}
 (scrlayer-scrpage)                in your preamble.
-(scrlayer-scrpage)                I'll also increase \footskip on input line 209.
+(scrlayer-scrpage)                I'll also increase \footskip on input line 206.
 
 [1
 
 ]
-Underfull \hbox (badness 1210) in paragraph at lines 212--219
-\OT1/cmr/m/n/12 Die vor-lie-gen-de Stu-di-en-ar-beit un-ter-sucht die Ent-wick-lung ei-nes mo-bi-
- []
-
-
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 252.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 214.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Package scrlayer-scrpage Warning: \headheight to low.
-(scrlayer-scrpage)                At least 35.62097pt needed,
-(scrlayer-scrpage)                but only 14.5pt found.
-(scrlayer-scrpage)                I'll enlarge \headheight, for further
-(scrlayer-scrpage)                processing, but you should do this yourself,
-(scrlayer-scrpage)                e.g., using
-(scrlayer-scrpage)                  \setlength{\headheight}{35.62097pt}
-(scrlayer-scrpage)                in your preamble.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 252.
-
-
-Overfull \vbox (21.12097pt too high) has occurred while \output is active []
-
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
-
-
-Package scrlayer-scrpage Warning: \footheight to low.
-(scrlayer-scrpage)                At least 85.045pt needed,
-(scrlayer-scrpage)                but only 48.12502pt found.
-(scrlayer-scrpage)                I'll enlarge \footheight, for further
-(scrlayer-scrpage)                processing, but you should do this yourself,
-(scrlayer-scrpage)                e.g., using
-(scrlayer-scrpage)                  \setlength{\footheight}{85.045pt}
-(scrlayer-scrpage)                in your preamble.
-(scrlayer-scrpage)                I'll also increase \footskip on input line 252.
 
 [2
 
@@ -1249,18 +1186,26 @@ Package scrlayer-scrpage Warning: \footheight to low.
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 260.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 218.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[3]
+[3
+
+]
+Package hyperref Info: bookmark level for unknown toc defaults to 0 on input line 220.
+ (main.lof)
+\tf@lof=\write5
+\openout5 = `main.lof'.
+
+
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 277.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 223.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1270,21 +1215,92 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 [4
 
 ]
-Package hyperref Info: bookmark level for unknown toc defaults to 0 on input line 279.
- (main.lof
-Underfull \hbox (badness 3872) in paragraph at lines 4--4
- [][] [][]\OT1/cmr/m/n/12 Modelldarstellung Blue-tooth Da-ten[]ubertragung(Frequency 
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 251.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
  []
 
-)
-\tf@lof=\write5
-\openout5 = `main.lof'.
+[5
+
+] (main.toc)
+\tf@toc=\write6
+\openout6 = `main.toc'.
 
 
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 282.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 259.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[6
+
+]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 272.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[1
+
+]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 276.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[2
+
+]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 281.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[3
+
+]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 286.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[4
+
+]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 310.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1297,7 +1313,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 313.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 321.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1306,15 +1322,11 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 [6
 
-] (main.toc)
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
-
+]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 321.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 334.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1327,112 +1339,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 359.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[1
-
-]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 389.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[2
-
-]
-<images/XPLR-AOA-with-C209-and-C211-02_0.png, id=217, 640.3925pt x 530.98375pt>
-File: images/XPLR-AOA-with-C209-and-C211-02_0.png Graphic file (type png)
-<use images/XPLR-AOA-with-C209-and-C211-02_0.png>
-Package pdftex.def Info: images/XPLR-AOA-with-C209-and-C211-02_0.png  used on input line 391.
-(pdftex.def)             Requested size: 312.00119pt x 258.70161pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 401.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[3 <./images/XPLR-AOA-with-C209-and-C211-02_0.png>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 402.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
-[]\OT1/cmr/m/n/14.4 Ziel ist es, dass so-wohl LKW-Fahrende als auch
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 423.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[5
-
-]
-Underfull \hbox (badness 1014) in paragraph at lines 432--433
-[]\OT1/cmr/bx/n/14.4 Skalierbarkeit: \OT1/cmr/m/n/14.4 So-wohl tech-ni-sche Kom-po-nen-ten (z. B.
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 433.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[6]
-<images/abbiegeassistent-scaled-7b2478b8.jpeg, id=241, 1927.2pt x 745.28438pt>
-File: images/abbiegeassistent-scaled-7b2478b8.jpeg Graphic file (type jpg)
-<use images/abbiegeassistent-scaled-7b2478b8.jpeg>
-Package pdftex.def Info: images/abbiegeassistent-scaled-7b2478b8.jpeg  used on input line 437.
-(pdftex.def)             Requested size: 390.0pt x 150.81691pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 445.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[7 <./images/abbiegeassistent-scaled-7b2478b8.jpeg>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 468.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 338.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1443,701 +1350,40 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 ]
 
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 476.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+LaTeX Warning: Empty bibliography on input line 346.
 
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[9]
-Underfull \hbox (badness 1112) in paragraph at lines 494--496
-\OT1/cmr/m/n/14.4 in ers-ter Li-nie zur draht-lo-sen Kom-mu-ni-ka-ti-on []uber kur-ze
- []
-
-
-Underfull \hbox (badness 1048) in paragraph at lines 503--505
-\OT1/cmr/m/n/14.4 Fre-quenz-sprung-ver-fah-ren (Fre-quen-cy Hop-ping Spread Spec-
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 505.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[10
-
-]
-<images/2025-01-13_15h05_23.png, id=260, 1048.66782pt x 590.205pt>
-File: images/2025-01-13_15h05_23.png Graphic file (type png)
-<use images/2025-01-13_15h05_23.png>
-Package pdftex.def Info: images/2025-01-13_15h05_23.png  used on input line 507.
-(pdftex.def)             Requested size: 390.0pt x 219.49815pt.
-
-Underfull \hbox (badness 1028) in paragraph at lines 509--509
-[]\OT1/cmr/m/n/12 Abbildung 3: |Mo-dell-dar-stel-lung Blue-tooth Da-ten[]ubertragung(Frequency
- []
-
-
-Underfull \hbox (badness 3179) in paragraph at lines 513--516
-[]\OT1/cmr/m/n/14.4 Bluetooth-Ger[]ate wer-den zu so-ge-nann-ten Pi-co-nets zu-
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 516.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[11 <./images/2025-01-13_15h05_23.png>]
-<images/Piconet.png, id=269, 471.56175pt x 325.81725pt>
-File: images/Piconet.png Graphic file (type png)
-<use images/Piconet.png>
-Package pdftex.def Info: images/Piconet.png  used on input line 518.
-(pdftex.def)             Requested size: 390.0pt x 269.47867pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 533.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[12 <./images/Piconet.png>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 557.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 562--564
-[]\OT1/cmr/bx/n/14.4 Bluetooth 5.1: \OT1/cmr/m/n/14.4 Einf[]uhrung der Angle-of-Arrival-
- []
-
-
-Underfull \hbox (badness 4467) in paragraph at lines 574--575
-\OT1/cmr/m/n/14.4 Zu den Vor-tei-len von Blue-tooth z[]ahlen die uni-ver-sel-le
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 575.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[14]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 580.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[15]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 583.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[16]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 601.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[17
-
-]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 618.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[18]
-<images/Android-Studio-user-interface-during-the-development-of-Android-mobile-App-Figure.jpg, id=302, 639.89063pt x 344.03531pt>
-File: images/Android-Studio-user-interface-during-the-development-of-Android-mobile-App-Figure.jpg Graphic file (type jpg)
-<use images/Android-Studio-user-interface-during-the-development-of-Android-mobile-App-Figure.jpg>
-Package pdftex.def Info: images/Android-Studio-user-interface-during-the-development-of-Android-mobile-App-Figure.jpg  used on input line 620.
-(pdftex.def)             Requested size: 390.0pt x 209.68274pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 631.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[19 <./images/Android-Studio-user-interface-during-the-development-of-Android-mobile-App-Figure.jpg>]
-Underfull \hbox (badness 1331) in paragraph at lines 635--639
-[]\OT1/cmr/m/n/14.4 uber ei-ne gro^^Ye An-zahl an Bi-blio-the-ken und Fra-me-works
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 645.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[20]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 652.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 669--671
-[]\OT1/cmr/bx/n/14.4 Aktivieren des Bluetooth-Adapters[[]10[]]: \OT1/cmr/m/n/14.4 Beim
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 675.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[22
-
-]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 692.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[23]
-<images/Screenshot_20250113_094518_Settings.jpg, id=349, 813.0375pt x 1743.51375pt>
-File: images/Screenshot_20250113_094518_Settings.jpg Graphic file (type jpg)
-<use images/Screenshot_20250113_094518_Settings.jpg>
-Package pdftex.def Info: images/Screenshot_20250113_094518_Settings.jpg  used on input line 697.
-(pdftex.def)             Requested size: 195.0pt x 418.15921pt.
-
-Underfull \hbox (badness 1701) in paragraph at lines 703--705
-[]\OT1/cmr/bx/n/14.4 Scanning von Bluetooth-Ger[]aten[[]10[]]: \OT1/cmr/m/n/14.4 So-bald Blue-
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 705.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[24 <./images/Screenshot_20250113_094518_Settings.jpg>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 719.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[25]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 736.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[26]
-<images/Screenshot_20250113_094628_Bluetooth App.jpg, id=398, 813.0375pt x 1743.51375pt>
-File: images/Screenshot_20250113_094628_Bluetooth App.jpg Graphic file (type jpg)
-<use images/Screenshot_20250113_094628_Bluetooth App.jpg>
-Package pdftex.def Info: images/Screenshot_20250113_094628_Bluetooth App.jpg  used on input line 740.
-(pdftex.def)             Requested size: 195.0pt x 418.15921pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 748.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[27 <./images/Screenshot_20250113_094628_Bluetooth App.jpg>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 764.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[28]
-<images/Screenshot_20250113_094600_Bluetooth App.jpg, id=425, 813.0375pt x 1743.51375pt>
-File: images/Screenshot_20250113_094600_Bluetooth App.jpg Graphic file (type jpg)
-<use images/Screenshot_20250113_094600_Bluetooth App.jpg>
-Package pdftex.def Info: images/Screenshot_20250113_094600_Bluetooth App.jpg  used on input line 781.
-(pdftex.def)             Requested size: 195.0pt x 418.15921pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 786.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[29]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 791.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[30 <./images/Screenshot_20250113_094600_Bluetooth App.jpg>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 810.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[31]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 827.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[32]
-Underfull \hbox (badness 2409) in paragraph at lines 834--837
-\OT1/cmr/bx/n/14.4 ScannedDevicesActivity[[]10[]]: \OT1/cmr/m/n/14.4 Die von der MainAc-ti-vi-ty
- []
-
-
-Underfull \hbox (badness 1629) in paragraph at lines 834--837
-\OT1/cmr/m/n/14.4 Da-durch er-hal-ten Nut-zer*innen einen []Uberblick []uber al-le
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 846.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[33]
-<images/Screenshot_20250113_094607_Bluetooth App.jpg, id=510, 1084.05pt x 2324.685pt>
-File: images/Screenshot_20250113_094607_Bluetooth App.jpg Graphic file (type jpg)
-<use images/Screenshot_20250113_094607_Bluetooth App.jpg>
-Package pdftex.def Info: images/Screenshot_20250113_094607_Bluetooth App.jpg  used on input line 861.
-(pdftex.def)             Requested size: 195.0pt x 418.14148pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 866.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[34]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 870.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[35 <./images/Screenshot_20250113_094607_Bluetooth App.jpg>]
-Underfull \hbox (badness 3291) in paragraph at lines 871--872
-[]\OT1/cmr/bx/n/14.4 activity[]main.xml[[]10[]]: \OT1/cmr/m/n/14.4 Enth[]alt drei Schalt-fl[]achen f[]ur
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
-[]\OT1/cmr/bx/n/14.4 Bluetooth-Berechtigungen[[]10[]]: \OT1/cmr/m/n/14.4 Die App ben[]otigt
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
-\OT1/cmr/m/n/14.4 ver-schie-de-ne Be-rech-ti-gun-gen, um Blue-tooth zu ver-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
-\OT1/cmr/m/n/14.4 wen-den. []Altere Android-Versionen (bis An-dro-id 11)
- []
-
-
-Underfull \hbox (badness 2573) in paragraph at lines 881--884
-\OT1/cmr/m/n/14.4 ben[]otigen et-wa an-dro-id.permission.BLUETOOTH und an-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
-\OT1/cmr/m/n/14.4 dro-id.permission.BLUETOOTH[]ADMIN, w[]ahrend neue-
- []
-
-
-Underfull \hbox (badness 3724) in paragraph at lines 881--884
-\OT1/cmr/m/n/14.4 re Ver-sio-nen (ab An-dro-id 12, API-Level 31) zus[]atzlich
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 881--884
-\OT1/cmr/m/n/14.4 an-dro-id.permission.BLUETOOTH[]CONNECT und an-dro-
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 884.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[36]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 899.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[37]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 914.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[38]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 932.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[39]
-<images/Screenshot_20250113_094506_Bluetooth App.jpg, id=598, 1084.05pt x 2324.685pt>
-File: images/Screenshot_20250113_094506_Bluetooth App.jpg Graphic file (type jpg)
-<use images/Screenshot_20250113_094506_Bluetooth App.jpg>
-Package pdftex.def Info: images/Screenshot_20250113_094506_Bluetooth App.jpg  used on input line 946.
-(pdftex.def)             Requested size: 195.0pt x 418.14148pt.
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 951.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[40]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 956.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[41 <./images/Screenshot_20250113_094506_Bluetooth App.jpg>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 958.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[42]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 980.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[43
-
-]
-Underfull \hbox (badness 2573) in paragraph at lines 987--991
-[]\OT1/cmr/m/n/14.4 Das feh-len-de Sender-Modul stellt ei-ne er-heb-li-che Ein-
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 994.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[44]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1027.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[45
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1044
-[]\OT1/cmr/m/n/14.4 Ein wei-te-rer wich-ti-ger Schritt w[]are die platt-
- []
-
-
-Underfull \hbox (badness 2181) in paragraph at lines 1039--1044
-\OT1/cmr/m/n/14.4 form[]ubergreifende Ent-wick-lung, ins-be-son-de-re f[]ur iOS, um
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1052.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[46]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1062.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[47]
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 1070.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 1070.
-
-
-LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 1070.
-
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 1070.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 1070.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 1070.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 1070.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 1070.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 1070.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <13> on input line 1070.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9.09996> on input line 1070.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6.5> on input line 1070.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1071--1071
-[]\OT1/cmr/m/n/12 DSGVO-Gesetz.de. []  Datenschutz-Grundverordnung (DSGVO) -
- []
-
-
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1070.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[48
-
-]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1073.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[49] (main.aux)
+(main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
 
 
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.0pt have occurred.
-
-
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 74EF1E486B8CDC32C21EAD62A30D47A7;3670.
+(rerunfilecheck)             Checksum: 810EE29D602C7284D3E36ADF6963EABF;3138.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32037 strings out of 473576
- 647147 string characters out of 5714857
- 1606102 words of memory out of 5000000
- 54560 multiletter control sequences out of 15000+600000
- 566901 words of font info for 66 fonts, out of 8000000 for 9000
+ 30857 strings out of 473576
+ 625049 string characters out of 5714857
+ 1498770 words of memory out of 5000000
+ 53651 multiletter control sequences out of 15000+600000
+ 564836 words of font info for 58 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 110i,26n,116p,725b,2815s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (57 pages, 2612480 bytes).
+ 110i,25n,107p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (15 pages, 132402 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
- 308 named destinations out of 1000 (max. 500000)
- 240 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 212 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
