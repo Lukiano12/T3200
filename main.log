@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  30 JUN 2025 12:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  1 JUL 2025 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1119,7 +1119,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 135.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 135.
-<images/DHBW_d_R_FN_46mm_4c.jpg, id=83, 133.33815pt x 73.7154pt>
+<images/DHBW_d_R_FN_46mm_4c.jpg, id=131, 133.33815pt x 73.7154pt>
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
 Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 140.
@@ -1248,7 +1248,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 272.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 304.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1258,36 +1258,42 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 [1
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+[]\OT1/cmr/m/n/12 Nur we-ni-ge ak-tu-el-le Mo-bil-ger[]ate un-terst[]utzen Blue-tooth 5.1
+ []
+
+
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 276.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 320.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[2
-
-]
+[2]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 281.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 325.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[3
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 330--330
+[]\OT1/cmr/bx/n/14.4 Vorhandene Her-aus-for-de-run-gen und
+ []
 
-]
+
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 286.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 359.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1297,60 +1303,22 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 [4
 
 ]
+Overfull \vbox (162.55008pt too high) has occurred while \output is active []
+
+
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 310.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 359.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[5
+[5]
 
-]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 321.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[6
-
-]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 334.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[7
-
-]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 338.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[8
-
-]
-
-LaTeX Warning: Empty bibliography on input line 346.
+LaTeX Warning: Empty bibliography on input line 367.
 
 (main.aux)
  ***********
@@ -1362,7 +1330,7 @@ L3 programming layer <2024-12-09>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 810EE29D602C7284D3E36ADF6963EABF;3138.
+(rerunfilecheck)             Checksum: 746A2A89BDA9640EE417AA30FE6760C3;7496.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -1373,17 +1341,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30857 strings out of 473576
- 625049 string characters out of 5714857
- 1498770 words of memory out of 5000000
- 53651 multiletter control sequences out of 15000+600000
- 564836 words of font info for 58 fonts, out of 8000000 for 9000
+ 30883 strings out of 473576
+ 625436 string characters out of 5714857
+ 1503768 words of memory out of 5000000
+ 53667 multiletter control sequences out of 15000+600000
+ 565173 words of font info for 59 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 110i,25n,107p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (15 pages, 132402 bytes).
+ 110i,25n,109p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\lnztadil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (12 pages, 148069 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

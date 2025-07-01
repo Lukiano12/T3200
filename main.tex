@@ -69,14 +69,14 @@
 %---------------------------------------------------------
 % Platzhalter
 %---------------------------------------------------------
-\newcommand{\titel}{Entwicklung eines mobilen Warnsystems zur Minimierung von Abbiegeunfällen zwischen LKW und Fußgänger*innen}
+\newcommand{\titel}{Verbesserung eines Bluetooth-basierten Warnsystems für den Straßenverkehr durch Datenlogging und innovative Visualisierungstechniken}
 \newcommand{\untertitel}{}
-\newcommand{\arbeit}{Studienarbeit T3100}
+\newcommand{\arbeit}{Studienarbeit T3200}
 \newcommand{\studiengang}{Elektrotechnik}
 \newcommand{\studienrichtung}{Fahrzeugelektronik}
 \newcommand{\autor}{Luka Tadic}
-\newcommand{\abgabe}{13.01.2025}
-\newcommand{\bearbeitungszeitraum}{09.10.2024 - 13.01.2025}
+\newcommand{\abgabe}{14.07.2025}
+\newcommand{\bearbeitungszeitraum}{07.04.2025 - 14.07.2025}
 \newcommand{\matrikelnr}{5726700}
 \newcommand{\kurs}{TFE22-1}
 \newcommand{\firma}{}
@@ -266,74 +266,95 @@ Friedrichshafen, den \today \\[1ex]
 
 \section{Einleitung}
 
+\subsection{Motivation}
+In den letzten Jahren ist die Zahl der tödlichen Verkehrsunfälle bedauerlicherweise gestiegen, was auf eine Vielzahl von Faktoren wie die 
+steigende Verkehrsdichte sowie mangelnde Aufmerksamkeit und Sorgfalt im Straßenverkehr zurückzuführen sein kann. 
+Um dieser negativen Entwicklung entgegenzuwirken, wurden unterschiedliche Maßnahmen ergriffen. 
+Neben strengeren Sicherheitsgesetzen haben sich vor allem technologische Innovationen wie Fahrzeugkameras, 
+Sensorik und verschiedene Fahrerassistenzsysteme als wesentliche Instrumente zur Unfallprävention herauskristallisiert.
 
-    \subsection{Motivation}
-
-\clearpage
+Eine besonders bedeutende Neuerung im Bereich der LKW-Sicherheit stellen Abbiegeassistenten dar. 
+Diese Systeme helfen, den toten Winkel zu reduzieren und somit Unfälle – insbesondere beim Rechtsabbiegen – zu vermeiden. 
+Trotz dieser technischen Fortschritte besteht weiterhin Potenzial für weitere Verbesserungen. Eine umfassende Forschung und Entwicklung 
+im Bereich von Fahrerassistenzsystemen könnte zukünftig dazu beitragen, das allgemeine Verkehrsrisiko weiter zu senken und die Verkehrssicherheit
+signifikant zu erhöhen.
 
 \subsection{Zielsetzung}
+Zielsetzung dieser Studienarbeit ist es, einen 
+leistungsfähigen Datenlogger zu entwickeln und die Visualisierung 
+zu verbessern, um die Funktionalität des Fahrerassistenzsystems zu erhöhen 
+und dadurch dessen Entwicklung zu erleichtern. Durch die Implementierung eines 
+leistungsfähigen Datenloggers sollen Messwerte systematisch und zuverlässig 
+erfasst werden können, was eine effektivere Zusammenarbeit im Entwicklungsteam 
+ermöglicht und die Notwendigkeit einer dauerhaften Hardwareverbindung reduziert. Die Optimierung der Visualisierung 
+dient dazu, Messergebnisse klarer und übersichtlicher darzustellen, um künftige Analysen und Tests zu vereinfachen und somit
+ die Qualität und Genauigkeit der Positionsbestimmung zu erhöhen. Diese Verbesserungen sollen letztlich zu einer höheren Effizienz
+  im Entwicklungsprozess führen und 
+somit einen wesentlichen Beitrag zur Erhöhung der Verkehrssicherheit leisten.
+
+
+\section{Rückblick auf das mobile Warnsystem}
+\subsection{Konzept und Zielsetzung}
+Die vorherige Studienarbeit verfolgte das Ziel, ein mobiles Warnsystem zur Minimierung von 
+Abbiegeunfällen zwischen LKW und ungeschützten Verkehrsteilnehmenden wie Fußgängerinnen und Radfahrerinnen zu entwickeln.
+Zentrales Element dieses Systems war eine mobile Applikation, die als aktiver Bluetooth-Sender fungieren sollte. In Kombination 
+mit einem am LKW montierten Empfängerboard (basierend auf dem u-blox XPLR-AOA-1 Kit) sollte mithilfe der Angle-of-Arrival (AoA)-Technologie 
+die Position des Smartphones lokalisiert und bei drohender Gefahr eine Warnung ausgegeben werden. Das System versprach einen 
+kostengünstigen und einfach zugänglichen Ansatz zur Verbesserung der Verkehrssicherheit im städtischen Raum.
+
+\subsection{Bluetooth AoA und technische Grundlagen}
+Die AoA-Technologie (Angle of Arrival) ist Teil des Bluetooth 5.1 Standards und ermöglicht die Positionsbestimmung
+ eines Senders durch Messung des Einfallswinkels der Funksignale an mehreren Antennen eines Empfängers. 
+ Voraussetzung hierfür ist jedoch ein exakter Zugang zu den Bluetooth-Sendeparametern sowie eine Antennenkonfiguration 
+ mit bekannten geometrischen Abständen. Das u-blox XPLR-AOA-1 Development Kit stellt hierzu eine geeignete Hardwarelösung dar, 
+ da es mit einem AoA-fähigen Empfängerboard und einem sogenannten Tag (Sender) ausgestattet ist. Ziel der Arbeit war es, das Smartphone 
+ funktional durch diesen Tag zu ersetzen. [1][2][3]
+
+ \subsection{Herausforderungen und Gründe für die Projektpause}
+ Im praktischen Verlauf der Umsetzung traten mehrere schwerwiegende technische Limitierungen auf, die die Fortführung des Projekts verhinderten:
+
+ \begin{itemize}
+    \item Aktuelle Smartphone-Firmware (insbesondere auf Android-Basis) verhindert in der Regel den vollständigen Zugriff auf die Bluetooth-Sendeparameter. Ein gezieltes Emittieren von BLE-Signalen, wie es zur AoA-Ortung erforderlich ist, ist mit Standard-SDKs nicht möglich.
+    \item Nur wenige aktuelle Mobilgeräte unterstützen Bluetooth 5.1 vollständig, was die Reichweite und Genauigkeit der Ortung stark einschränkt.
+    \item Die Emulation des u-blox Tags durch das Smartphone scheiterte daher an mangelnden Systemrechten, fehlender Low-Level-API-Zugriffe und nicht ausreichender Hardwareunterstützung.
+ \end{itemize}
+Diese Faktoren führten dazu, dass das Projekt in der geplanten Form nicht abgeschlossen werden konnte. 
+Die zugrundeliegende Idee bleibt jedoch vielversprechend und kann in Zukunft wieder aufgegriffen werden, sobald sich 
+die technischen Rahmenbedingungen verbessert haben.[4][5][6][7]
 
 \clearpage
 
-\section{Idee und Konzept}
-\label{sec:Idee und Konzept}
+\section{Grundlagen Datenlogger}
+\subsection{Zweck und Funktionalität eines Datenloggers}
+\subsection{Anwendungsbereiche im Kontext der Studienarbeit}
+\subsection{Vorhandene Herausforderungen und Lösungsansätze}
 
-\clearpage
+\section{Entwicklung des Datenloggers}
+\subsection{Anforderungen an die Software}
+\subsection{Auswahl geeigneter Technologien und Tools}
+\subsection{Implementierung und Integration in bestehende Systeme}
+\subsection{Ergebnisse und Evaluation}
 
-\section{Anforderungen und Zielgruppe}
+\section{Grundlagen der Visualisierung}
+\subsection{Anforderungen an eine effektive Visualisierung}
+\subsection{Darstellungsmöglichkeiten und -technologien}
 
+\section{Entwicklung der neuen Visualisierung}
+\subsection{Analyse der bestehenden Visualisierung}
+\subsection{Konzept einer verbesserten Visualisierung}
+\subsection{Implementierung der verbesserten Visualisierung}
+\subsection{Ergebnisse und Benutzerfreundlichkeit}
 
-\clearpage
+\section{Test und Validierung}
+\subsection{Testmethodik und -umgebung}
+\subsection{Ergebnisse der Tests}
+\subsection{Diskussion der Testergebnisse und Optimierungspotentiale}
 
-\section{Bluetooth}
+\section{Kritische Bewertung und Ausblick}
+\subsection{Reflexion der erreichten Ergebnisse}
+\subsection{Grenzen der aktuellen Umsetzung}
+\subsection{Vorschläge für zukünftige Weiterentwicklungen}
 
-\subsection{Allgemeine Grundlagen}
-
-
-\subsection{Funktionsweise}
-
-
-\subsection{Verbindungsaufbau}
-
-
-
-\subsection{Bluetooth-Klassen}
-
-
-
-\subsection{Bluetooth-Versionen}
-
-
-\subsection{Vorteile und Herausforderungen}
-
-
-\clearpage
-
-\section{Entwicklung der App}
-
-\subsection{Android oder Apple}
-
-
-\subsection{Android Studio}
-
-
-
-\clearpage
-
-\subsection{Eigenschaften und Funktionen}
-
-
-\subsubsection{Bluetooth-Erkennung und Warnfunktion}
-
-
-\subsubsection{Geräteverwaltung und Anzeigefunktionen}
-
-\subsubsection{Layout und Benutzeroberfläche}
-
-
-\clearpage
-
-\section{Problematik}
 
 \clearpage
 %---------------------------------------------------------
