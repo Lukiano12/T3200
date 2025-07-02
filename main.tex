@@ -223,28 +223,28 @@ Friedrichshafen, den \today \\[1ex]
 \clearpage
 
 \section*{Abkürzungsverzeichnis}
+\begin{acronym}
+    \acro{AoA}{Angle-of-Arrival}
+    \acro{API}{Application Programming Interface}
+    \acro{BLE}{Bluetooth Low Energy}
+    \acro{LKW}{Lastkraftwagen}
+    \acro{SDK}{Software Development Kit}
+    \acro{CSV}{Comma-seperated values}
+    \acro{JSON}{JavaScript Object Notation}
 
-   \textbf{AoA}  - Angle-of-Arrival
+\end{acronym}
 
-   \textbf{API} - Application Programming Interface
+   
 
-   \textbf{BLE} - Bluetooth Low Energy
+   
 
-   \textbf{DHBW} - Duale Hochschule Baden-Württemberg
+   
 
-   \textbf{FHSS} - Frequency Hopping Spread Spectrum
+   
 
-   \textbf{ISM} - Industrial, Scientific, Medical
 
-   \textbf{LKW} - Lastkraftwagen
 
-   \textbf{DSGVO} - Datenschutz-Grundverordnung
 
-   \textbf{UI} - User Interface
-
-   \textbf{UX} - User Experience
-
-   \textbf{XML} - Extensible Markup Language
 
 
 
@@ -273,11 +273,21 @@ Um dieser negativen Entwicklung entgegenzuwirken, wurden unterschiedliche Maßna
 Neben strengeren Sicherheitsgesetzen haben sich vor allem technologische Innovationen wie Fahrzeugkameras, 
 Sensorik und verschiedene Fahrerassistenzsysteme als wesentliche Instrumente zur Unfallprävention herauskristallisiert.
 
-Eine besonders bedeutende Neuerung im Bereich der LKW-Sicherheit stellen Abbiegeassistenten dar. 
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/abbiegeassistent-scaled-7b2478b8}\\[1ex]
+    \centering
+    \caption{Beispiel Rechtsabbiegen LKW}
+    \label{ABBILDUNG}
+\end{figure}
+
+
+Eine besonders bedeutende Neuerung im Bereich der \acf{LKW}-Sicherheit stellen Abbiegeassistenten dar. 
 Diese Systeme helfen, den toten Winkel zu reduzieren und somit Unfälle – insbesondere beim Rechtsabbiegen – zu vermeiden. 
 Trotz dieser technischen Fortschritte besteht weiterhin Potenzial für weitere Verbesserungen. Eine umfassende Forschung und Entwicklung 
 im Bereich von Fahrerassistenzsystemen könnte zukünftig dazu beitragen, das allgemeine Verkehrsrisiko weiter zu senken und die Verkehrssicherheit
 signifikant zu erhöhen. [1]
+
+\clearpage
 
 \subsection{Zielsetzung}
 Zielsetzung dieser Studienarbeit ist es, einen 
@@ -292,31 +302,39 @@ dient dazu, Messergebnisse klarer und übersichtlicher darzustellen, um künftig
   im Entwicklungsprozess führen und 
 somit einen wesentlichen Beitrag zur Erhöhung der Verkehrssicherheit leisten.
 
+\clearpage
 
 \section{Rückblick auf das mobile Warnsystem}
 \subsection{Konzept und Zielsetzung}
 Die vorherige Studienarbeit verfolgte das Ziel, ein mobiles Warnsystem zur Minimierung von 
-Abbiegeunfällen zwischen LKW und ungeschützten Verkehrsteilnehmenden wie Fußgängerinnen und Radfahrerinnen zu entwickeln.
+Abbiegeunfällen zwischen \ac{LKW} und ungeschützten Verkehrsteilnehmenden wie Fußgängerinnen und Radfahrerinnen zu entwickeln.
 Zentrales Element dieses Systems war eine mobile Applikation, die als aktiver Bluetooth-Sender fungieren sollte. In Kombination 
-mit einem am LKW montierten Empfängerboard (basierend auf dem u-blox XPLR-AOA-1 Kit) sollte mithilfe der Angle-of-Arrival (AoA)-Technologie 
+mit einem am \ac{LKW} montierten Empfängerboard (basierend auf dem u-blox XPLR-AOA-1 Kit) sollte mithilfe der \acf{AoA}-Technologie 
 die Position des Smartphones lokalisiert und bei drohender Gefahr eine Warnung ausgegeben werden. Das System versprach einen 
 kostengünstigen und einfach zugänglichen Ansatz zur Verbesserung der Verkehrssicherheit im städtischen Raum.
 
 \subsection{Bluetooth AoA und technische Grundlagen}
-Die AoA-Technologie (Angle of Arrival) ist Teil des Bluetooth 5.1 Standards und ermöglicht die Positionsbestimmung
+Die \ac{AoA}-Technologie ist Teil des Bluetooth 5.1 Standards und ermöglicht die Positionsbestimmung
  eines Senders durch Messung des Einfallswinkels der Funksignale an mehreren Antennen eines Empfängers. 
  Voraussetzung hierfür ist jedoch ein exakter Zugang zu den Bluetooth-Sendeparametern sowie eine Antennenkonfiguration 
- mit bekannten geometrischen Abständen. Das u-blox XPLR-AOA-1 Development Kit stellt hierzu eine geeignete Hardwarelösung dar, 
- da es mit einem AoA-fähigen Empfängerboard und einem sogenannten Tag (Sender) ausgestattet ist. Ziel der Arbeit war es, das Smartphone 
+ mit bekannten geometrischen Abständen. Das u-blox XPLR-AOA-1 Explorer Kit stellt hierzu eine geeignete Hardwarelösung dar, 
+ da es mit einem \ac{AoA}-fähigen Empfängerboard und einem sogenannten Tag (Sender) ausgestattet ist. Ziel der Arbeit war es, das Smartphone 
  funktional durch diesen Tag zu ersetzen. [1][2][3]
+
+ \begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/XPLR-AOA-with-C209-and-C211-02_0}\\[1ex]
+    \centering
+    \caption{XPLR-AOA Explorer Kit}
+    \label{ABBILDUNG}
+\end{figure}
 
  \subsection{Herausforderungen und Gründe für die Projektpause}
  Im praktischen Verlauf der Umsetzung traten mehrere schwerwiegende technische Limitierungen auf, die die Fortführung des Projekts verhinderten:
 
  \begin{itemize}
-    \item Aktuelle Smartphone-Firmware (insbesondere auf Android-Basis) verhindert in der Regel den vollständigen Zugriff auf die Bluetooth-Sendeparameter. Ein gezieltes Emittieren von BLE-Signalen, wie es zur AoA-Ortung erforderlich ist, ist mit Standard-SDKs nicht möglich.
+    \item Aktuelle Smartphone-Firmware (insbesondere auf Android-Basis) verhindert in der Regel den vollständigen Zugriff auf die Bluetooth-Sendeparameter. Ein gezieltes Emittieren von \acf{BLE}-Signalen, wie es zur \ac{AoA}-Ortung erforderlich ist, ist mit Standard-\acf{SDK} nicht möglich.
     \item Nur wenige aktuelle Mobilgeräte unterstützen Bluetooth 5.1 vollständig, was die Reichweite und Genauigkeit der Ortung stark einschränkt.
-    \item Die Emulation des u-blox Tags durch das Smartphone scheiterte daher an mangelnden Systemrechten, fehlender Low-Level-API-Zugriffe und nicht ausreichender Hardwareunterstützung.
+    \item Die Emulation des u-blox Tags durch das Smartphone scheiterte daher an mangelnden Systemrechten, fehlender Low-Level-\acf{API}-Zugriffe und nicht ausreichender Hardwareunterstützung.
  \end{itemize}
 Diese Faktoren führten dazu, dass das Projekt in der geplanten Form nicht abgeschlossen werden konnte. 
 Die zugrundeliegende Idee bleibt jedoch vielversprechend und kann in Zukunft wieder aufgegriffen werden, sobald sich 
@@ -326,11 +344,78 @@ die technischen Rahmenbedingungen verbessert haben.[4][5][6][7]
 
 \section{Grundlagen Datenlogger}
 \subsection{Zweck und Funktionalität eines Datenloggers}
+Ein Datenlogger ist ein autonom arbeitendes Gerät oder Softwaremodul, das physikalische oder digitale Messwerte über einen definierten 
+Zeitraum hinweg aufzeichnet. Ziel ist es, Veränderungen systematisch und zuverlässig zu erfassen, um sie später analysieren, auswerten 
+oder dokumentieren zu können. Typische erfasste Daten umfassen beispielsweise Temperatur, Spannung, Zeitstempel, Lage- oder Positionsdaten.
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Datalogger}\\[1ex]
+    \centering
+    \caption{Datenlogger Cube (Avisaro 2.0) zur Speicherung von Sensor- und Prozessdaten}
+    \label{ABBILDUNG}
+\end{figure}
+
+Im Gegensatz zu interaktiven Messsystemen arbeitet ein Datenlogger in der Regel unabhängig und ohne dauerhafte Verbindung 
+zu einem Steuergerät. Dies macht ihn besonders geeignet für mobile oder schwer zugängliche Anwendungen. Durch kontinuierliche 
+Aufzeichnung lassen sich Messwerte nachvollziehbar dokumentieren, was vor allem in der Entwicklung, Fehlersuche und Validierung technischer 
+Systeme von Bedeutung ist.
+
+Wichtige Eigenschaften eines Datenloggers sind unter anderem eine ausreichende Speicherkapazität, 
+Energieeffizienz und die Kompatibilität zu verschiedenen Datenformaten wie \acf{CSV} oder \acf{JSON}. Moderne Logger 
+bieten darüber hinaus Schnittstellen für drahtlose Datenübertragung oder automatisierte Synchronisation mit Analysetools.
+
 \subsection{Anwendungsbereiche im Kontext der Studienarbeit}
+Im Rahmen dieser Studienarbeit wird der Datenlogger gezielt eingesetzt, um die Entwicklungsarbeit am Bluetooth-\ac{AoA}-basierten
+ Lokalisierungssystem effizienter und flexibler zu gestalten. Ziel ist es, die Abhängigkeit von einer aktiven Verbindung zur 
+ Hardware während der Test- und Anpassungsphasen zu minimieren. Personen, die an der Parametrierung oder Feinjustierung des Systems
+  arbeiten, sollen in die Lage versetzt werden, auch ohne direkte Verbindung zur u-blox-Hardware auf reale Messdaten zuzugreifen.
+
+Der Datenlogger dient dabei nicht nur der reinen Aufzeichnung, sondern ermöglicht die Speicherung von tatsächlich erfassten, 
+originalgetreuen Messwerten. Diese Werte können anschließend in separate Programme oder Auswertungswerkzeuge importiert werden,
+ um dort Berechnungen, Analysen und grafische Darstellungen durchzuführen. Änderungen an Parametern oder Auswertealgorithmen können 
+ somit auf Basis gespeicherter Daten vorgenommen und getestet werden, ohne dass dafür eine erneute Datenerfassung mit der realen Sensorik notwendig ist.
+
+Darüber hinaus erlaubt der Datenlogger eine „Offline-Simulation“ oder ein Daten-Replay mit echten Werten. Diese Vorgehensweise bietet den 
+Vorteil, dass Optimierungen zunächst im Testsystem geprüft werden können. Erst wenn ein Ergebnis zufriedenstellend ist, wird es auf das reale 
+System übertragen. Damit leistet der Datenlogger einen wesentlichen Beitrag zur Entkopplung von Entwicklung und Hardwareverfügbarkeit, 
+was vor allem in Teamkonstellationen und bei paralleler Arbeit an mehreren Teilaspekten des Systems von großem Nutzen ist.
+
 \subsection{Vorhandene Herausforderungen und Lösungsansätze}
+Bei der Entwicklung eines zuverlässigen Datenloggers im Kontext des Bluetooth\ac{AoA}-Systems treten verschiedene Herausforderungen auf. 
+Eine der zentralen Schwierigkeiten liegt in der exakten zeitlichen Zuordnung der erfassten Daten. Für eine sinnvolle Auswertung müssen 
+Zeitstempel, Empfangswinkel und weitere Messgrößen synchronisiert und konsistent gespeichert werden.
+
+Ein weiteres Problem stellt die effiziente und verlustfreie Speicherung großer Datenmengen dar. 
+Hierbei müssen sowohl die Speicherkapazität als auch die Lesbarkeit und Weiterverwendbarkeit berücksichtigt werden. Gerade 
+im Hinblick auf die spätere Analyse mit gängigen Tools wie Python oder MATLAB ist ein gut strukturiertes Datenformat – etwa \ac{CSV} oder \ac{JSON} – von 
+hoher Bedeutung.
+
+Auch die Integration in bestehende Entwicklungsprozesse erfordert eine durchdachte Schnittstellengestaltung.
+ Der Datenlogger muss flexibel und modular aufgebaut sein, damit er problemlos in verschiedene Testumgebungen 
+ eingebunden werden kann. Gleichzeitig soll der Energieverbrauch möglichst gering gehalten werden, um auch den mobilen Einsatz über längere
+  Zeiträume hinweg zu ermöglichen.
+
+Lösungsansätze bestehen in der Verwendung eines einfachen, standardisierten Speicherformats, einem modularen 
+Softwaredesign mit klar dokumentierten Schnittstellen sowie in der Implementierung grundlegender Fehlererkennungs- und Synchronisationsmechanismen. 
+Diese Maßnahmen sollen sicherstellen, dass der Datenlogger zuverlässig, energieeffizient und nutzerfreundlich eingesetzt werden kann.
+
+\clearpage
 
 \section{Entwicklung des Datenloggers}
 \subsection{Anforderungen an die Software}
+Die Software des Datenloggers muss in der Lage sein, Messwerte des Bluetooth-\ac{AoA}-Systems automatisch und kontinuierlich zu erfassen, zu speichern 
+und für die spätere Analyse verfügbar zu machen. Zu den grundlegenden funktionalen Anforderungen gehört die Unterstützung strukturierter Exportformate 
+wie \ac{CSV} oder \ac{JSON}, um die Weiterverarbeitung in gängigen Tools wie Python oder MATLAB zu ermöglichen. Zudem soll die Software konfigurierbar sein, 
+um Messparameter wie Samplingrate oder Filterbedingungen flexibel anpassen zu können.
+
+Nicht-funktionale Anforderungen betreffen insbesondere die Zuverlässigkeit und Ressourcenschonung. Die Anwendung soll auch bei längeren 
+Aufzeichnungen stabil laufen, sparsam mit Speicher und Energie umgehen und eine einfache Bedienbarkeit bieten. Eine modulare Architektur ist dabei 
+essenziell, um Erweiterungen oder Anpassungen effizient umzusetzen.
+
+Für das vorliegende Projekt ist außerdem besonders wichtig, dass die Software auch ohne direkte Verbindung zur u-blox-Hardware 
+einsatzfähig ist. Aufgezeichnete Daten müssen für eine Offline-Auswertung und Visualisierung nutzbar sein, um iterative Verbesserungen an 
+Parametern oder Algorithmen unabhängig von der Hardwareumgebung vornehmen zu können.
+
 \subsection{Auswahl geeigneter Technologien und Tools}
 \subsection{Implementierung und Integration in bestehende Systeme}
 \subsection{Ergebnisse und Evaluation}

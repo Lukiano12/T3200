@@ -1,33 +1,33 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Zielsetzung}{1}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Rückblick auf das mobile Warnsystem}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Konzept und Zielsetzung}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Bluetooth AoA und technische Grundlagen}{2}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Herausforderungen und Gründe für die Projektpause}{2}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Grundlagen Datenlogger}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Zweck und Funktionalität eines Datenloggers}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Anwendungsbereiche im Kontext der Studienarbeit}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Vorhandene Herausforderungen und Lösungsansätze}{5}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Entwicklung des Datenloggers}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Anforderungen an die Software}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Auswahl geeigneter Technologien und Tools}{5}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Implementierung und Integration in bestehende Systeme}{5}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Ergebnisse und Evaluation}{5}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Grundlagen der Visualisierung}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Anforderungen an eine effektive Visualisierung}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Darstellungsmöglichkeiten und -technologien}{5}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Entwicklung der neuen Visualisierung}{5}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Analyse der bestehenden Visualisierung}{5}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Konzept einer verbesserten Visualisierung}{5}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Implementierung der verbesserten Visualisierung}{5}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Ergebnisse und Benutzerfreundlichkeit}{5}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Test und Validierung}{5}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Testmethodik und -umgebung}{5}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ergebnisse der Tests}{5}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Diskussion der Testergebnisse und Optimierungspotentiale}{5}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Kritische Bewertung und Ausblick}{5}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Reflexion der erreichten Ergebnisse}{5}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Grenzen der aktuellen Umsetzung}{5}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Vorschläge für zukünftige Weiterentwicklungen}{5}{subsection.8.3}%
+\contentsline {subsection}{\numberline {1.2}Zielsetzung}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Rückblick auf das mobile Warnsystem}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Konzept und Zielsetzung}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Bluetooth AoA und technische Grundlagen}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Herausforderungen und Gründe für die Projektpause}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Grundlagen Datenlogger}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Zweck und Funktionalität eines Datenloggers}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Anwendungsbereiche im Kontext der Studienarbeit}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Vorhandene Herausforderungen und Lösungsansätze}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Entwicklung des Datenloggers}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Anforderungen an die Software}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Auswahl geeigneter Technologien und Tools}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Implementierung und Integration in bestehende Systeme}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Ergebnisse und Evaluation}{10}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Grundlagen der Visualisierung}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Anforderungen an eine effektive Visualisierung}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Darstellungsmöglichkeiten und -technologien}{10}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Entwicklung der neuen Visualisierung}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Analyse der bestehenden Visualisierung}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Konzept einer verbesserten Visualisierung}{10}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Implementierung der verbesserten Visualisierung}{10}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Ergebnisse und Benutzerfreundlichkeit}{10}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Test und Validierung}{10}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Testmethodik und -umgebung}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Ergebnisse der Tests}{10}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Diskussion der Testergebnisse und Optimierungspotentiale}{10}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Kritische Bewertung und Ausblick}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Reflexion der erreichten Ergebnisse}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Grenzen der aktuellen Umsetzung}{10}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Vorschläge für zukünftige Weiterentwicklungen}{10}{subsection.8.3}%
