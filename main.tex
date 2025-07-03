@@ -578,9 +578,38 @@ Durch die Trennung von Messung, Speicherung, Wiederverwendung und Visualisierung
 das sowohl im Live-Betrieb als auch für Offline-Analysen geeignet ist. Die Nutzung des JSONL-Formats gewährleistet einfache 
 Nachverarbeitung und hohe Transparenz im Entwicklungsprozess.
 
-
-
 \subsection{Ergebnisse und Evaluation}
+
+Die Implementierung des Datenloggers konnte erfolgreich in die bestehende Systemumgebung integriert werden. Die Erweiterung 
+erfolgte durch ein einzelnes, in Python geschriebenes Modul, das mit nur wenigen Anpassungen in den vorhandenen Code eingebunden wurde. 
+Diese modulare Herangehensweise ermöglichte eine einfache Integration, ohne die Stabilität der bestehenden C++- und Python-Strukturen zu beeinträchtigen.
+
+Der Datenlogger ist in der Lage, strukturierte Messdaten zuverlässig zu erfassen, im JSONL-Format zu speichern und diese in der 
+\texttt{replayLogger.py} zur erneuten Verarbeitung und Visualisierung bereitzustellen. Durch die gezielte Nachberechnung der gespeicherten 
+Parameter kann die Parametrisierung und Optimierung der Tag-Ortung nun auch ohne aktiven Hardwarezugang erfolgen. Dies stellt einen wesentlichen
+ Fortschritt gegenüber früheren Ansätzen dar, bei denen für jede Änderung eine Live-Verbindung zur u-blox-Hardware erforderlich war.
+
+Zur weiteren Erleichterung der Nutzung wurde eine Batch-Datei (BAT-Datei) erstellt, die den Datenlogger automatisch 
+startet und eine benutzerfreundliche Auswahl der abzuspielenden Daten ermöglicht. Dadurch können mehrere aufgezeichnete Datensätze
+ parallel gespeichert, umbenannt und bei Bedarf erneut abgespielt werden. Dies erleichtert sowohl die Organisation als auch die Wiederverwendbarkeit
+  der Messdaten erheblich.
+
+Die Kommunikation zwischen Logger und Visualisierung über TCP funktioniert stabil, sodass eine Echtzeit- oder zeitnahe Darstellung 
+der Messdaten in der grafischen Oberfläche möglich ist. Die Darstellung der Ergebnisse im UI ist erfolgreich umgesetzt worden; die gespeicherten
+ Positions- und Sensordaten lassen sich korrekt laden und werden visuell ansprechend aufbereitet.
+
+Ein weiterer Vorteil liegt in der verbesserten Teamfähigkeit des Systems. Da echte Messwerte gespeichert und wiederverwendet werden können, 
+ist eine parallele Bearbeitung durch mehrere Teammitglieder möglich – unabhängig von der Verfügbarkeit der physischen Hardware.
+
+Aktuell wurden nur kurze bis mittellange Messreihen (mehrere Minuten) getestet, die zuverlässig aufgezeichnet und verarbeitet werden konnten. 
+Für den produktiven Einsatz müssen jedoch noch weiterführende Tests mit längeren Aufzeichnungen durchgeführt werden, um Speicherstabilität und 
+Verarbeitungsgeschwindigkeit auch bei größeren Datenmengen zu validieren.
+
+Insgesamt bildet der Datenlogger eine stabile Grundlage für künftige Entwicklungs- und Testarbeiten und ermöglicht sowohl effizientere als auch 
+hardwareunabhängige Validierungsprozesse.
+
+
+\clearpage
 
 \section{Grundlagen der Visualisierung}
 \subsection{Anforderungen an eine effektive Visualisierung}
