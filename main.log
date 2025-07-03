@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  2 JUL 2025 10:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  3 JUL 2025 10:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1026,6 +1026,9 @@ LaTeX Warning: Label `ABBILDUNG' multiply defined.
 
 LaTeX Warning: Label `ABBILDUNG' multiply defined.
 
+
+LaTeX Warning: Label `ABBILDUNG' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1252,7 +1255,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 [6
 
 ]
-<images/abbiegeassistent-scaled-7b2478b8.jpeg, id=240, 1927.2pt x 745.28438pt>
+<images/abbiegeassistent-scaled-7b2478b8.jpeg, id=242, 1927.2pt x 745.28438pt>
 File: images/abbiegeassistent-scaled-7b2478b8.jpeg Graphic file (type jpg)
 <use images/abbiegeassistent-scaled-7b2478b8.jpeg>
 Package pdftex.def Info: images/abbiegeassistent-scaled-7b2478b8.jpeg  used on input line 277.
@@ -1288,7 +1291,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 ]
 Package acronym Info: Label `acro:AoA' newly defined as it shall be overridden
 although it is yet undefined on input line 312.
-<images/XPLR-AOA-with-C209-and-C211-02_0.png, id=255, 640.3925pt x 530.98375pt>
+<images/XPLR-AOA-with-C209-and-C211-02_0.png, id=257, 640.3925pt x 530.98375pt>
 File: images/XPLR-AOA-with-C209-and-C211-02_0.png Graphic file (type png)
 <use images/XPLR-AOA-with-C209-and-C211-02_0.png>
 Package pdftex.def Info: images/XPLR-AOA-with-C209-and-C211-02_0.png  used on input line 325.
@@ -1341,7 +1344,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  []
 
 [5]
-<images/Datalogger.jpg, id=275, 426.59375pt x 249.93375pt>
+<images/Datalogger.jpg, id=277, 426.59375pt x 249.93375pt>
 File: images/Datalogger.jpg Graphic file (type jpg)
 <use images/Datalogger.jpg>
 Package pdftex.def Info: images/Datalogger.jpg  used on input line 352.
@@ -1391,20 +1394,10 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 411--414
-[]\OT1/cmr/m/n/12 Nicht-funktionale An-for-de-run-gen be-tref-fen ins-be-son-de-re die Zu-
- []
-
-
-Underfull \hbox (badness 2368) in paragraph at lines 411--414
-\OT1/cmr/m/n/12 verl[]assigkeit und Res-sour-cen-scho-nung. Die An-wen-dung soll auch bei
- []
-
-
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 444.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 436.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1417,7 +1410,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 444.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 477.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1425,8 +1418,58 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  []
 
 [10]
+<images/1906_abbildung1 (1).png, id=314, 501.875pt x 220.825pt>
+File: images/1906_abbildung1 (1).png Graphic file (type png)
+<use images/1906_abbildung1 (1).png>
+Package pdftex.def Info: images/1906_abbildung1 (1).png  used on input line 505.
+(pdftex.def)             Requested size: 390.0pt x 171.60933pt.
 
-LaTeX Warning: Empty bibliography on input line 452.
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 516.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[11 <./images/1906_abbildung1 (1).png (PNG copy)>]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 543.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[12]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 606.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[13]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 606.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[14]
+
+LaTeX Warning: Empty bibliography on input line 614.
 
 (main.aux)
  ***********
@@ -1452,17 +1495,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31005 strings out of 473576
- 628210 string characters out of 5714857
- 1504649 words of memory out of 5000000
- 53767 multiletter control sequences out of 15000+600000
- 565173 words of font info for 59 fonts, out of 8000000 for 9000
+ 31321 strings out of 473576
+ 631217 string characters out of 5714857
+ 1530597 words of memory out of 5000000
+ 54057 multiletter control sequences out of 15000+600000
+ 565510 words of font info for 61 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 110i,25n,109p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\lnztadil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (17 pages, 719639 bytes).
+ 110i,25n,113p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\lnztadil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (21 pages, 835444 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
+ 282 words of extra memory for PDF output out of 10000 (max. 10000000)
 

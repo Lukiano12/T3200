@@ -403,21 +403,183 @@ Diese Maßnahmen sollen sicherstellen, dass der Datenlogger zuverlässig, energi
 
 \section{Entwicklung des Datenloggers}
 \subsection{Anforderungen an die Software}
-Die Software des Datenloggers muss in der Lage sein, Messwerte des Bluetooth-\ac{AoA}-Systems automatisch und kontinuierlich zu erfassen, zu speichern 
-und für die spätere Analyse verfügbar zu machen. Zu den grundlegenden funktionalen Anforderungen gehört die Unterstützung strukturierter Exportformate 
-wie \ac{CSV} oder \ac{JSON}, um die Weiterverarbeitung in gängigen Tools wie Python oder MATLAB zu ermöglichen. Zudem soll die Software konfigurierbar sein, 
-um Messparameter wie Samplingrate oder Filterbedingungen flexibel anpassen zu können.
+Die bestehende Softwarebasis setzt bereits auf eine performante C++-Schicht für die zeitkritische Kommunikation mit 
+der u-blox-Hardware und auf ergänzende Python-Skripte für Tests und Auswertungen. Dieses zweistufige Konzept bleibt erhalten: 
+Der neue Datenlogger wird vollständig in Python implementiert und greift über schlanke Schnittstellen auf die vorhandenen C++-Funktionen zu. 
+So können Erweiterungen schnell umgesetzt werden, ohne den stabilen Kerncode anzutasten.
 
-Nicht-funktionale Anforderungen betreffen insbesondere die Zuverlässigkeit und Ressourcenschonung. Die Anwendung soll auch bei längeren 
-Aufzeichnungen stabil laufen, sparsam mit Speicher und Energie umgehen und eine einfache Bedienbarkeit bieten. Eine modulare Architektur ist dabei 
-essenziell, um Erweiterungen oder Anpassungen effizient umzusetzen.
+Als Speicherformat dient JSON. Es ermöglicht, Messwerte – etwa Zeitstempel, AoA-Winkel, Signalstärke und relevante Metadaten – in einer 
+klar strukturierten, menschenlesbaren Datei abzulegen. Die Dateien lassen sich bei Bedarf komprimieren und ohne Konvertierung in gängige 
+Analyse- oder Visualisierungsprogramme importieren.
 
-Für das vorliegende Projekt ist außerdem besonders wichtig, dass die Software auch ohne direkte Verbindung zur u-blox-Hardware 
-einsatzfähig ist. Aufgezeichnete Daten müssen für eine Offline-Auswertung und Visualisierung nutzbar sein, um iterative Verbesserungen an 
-Parametern oder Algorithmen unabhängig von der Hardwareumgebung vornehmen zu können.
+Diese Kombination aus C++ (für hardwarenahen Durchsatz) und Python (für flexible Daten­verarbeitung) erfüllt die Anforderungen 
+an Zuverlässigkeit, Erweiterbarkeit und unkomplizierte Offline-Analyse. Sie stellt zudem sicher, dass Teammitglieder auch ohne direkten 
+Hardwarezugriff reale Datensätze einspielen, parametrieren und visualisieren können.
 
+[8][9]
 \subsection{Auswahl geeigneter Technologien und Tools}
+Für die Erweiterung des bestehenden Prototyps wurde bewusst an der zweigeteilten Sprachebene festgehalten: 
+zeitkritische Kommunikation und Treiberfunktionen laufen weiterhin in C++, während der neue Datenlogger in Python 
+implementiert wird. So können die vorhandenen C++-Routinen unverändert genutzt werden, während Python durch seine hohe 
+Entwicklungsgeschwindigkeit schnelle Anpassungen und Auswertungen ermöglicht.
+
+Als Speicherformat wurde JSON gewählt. Es erlaubt, Messwerte – etwa Zeitstempel, Winkel und 
+Signalstärke – zusammen mit Metadaten in einer klaren, hierarchischen Struktur abzulegen. Die Dateien bleiben damit menschenlesbar 
+und lassen sich ohne Umwege in gängige Analyse- und Visualisierungswerkzeuge importieren. Bei Bedarf kann eine Kompression eingesetzt werden, 
+um Speicherplatz zu sparen.
+
+Mit dieser Kombination werden die in Abschnitt 4.1 genannten Anforderungen erfüllt: Die Lösung ist leicht erweiterbar, 
+plattform­unabhängig und stellt die Daten in einem Format bereit, das direkt für Offline-Analysen genutzt werden kann.
+
+[8][9]
+
 \subsection{Implementierung und Integration in bestehende Systeme}
+
+Die Implementierung des Datenloggers erfolgte im Rahmen eines bestehenden Lokalisierungssystems, das auf der Bluetooth-AoA-Technologie 
+(Angle of Arrival) basiert. Ziel war es, die Erfassung, Speicherung und spätere Analyse von Messwerten so zu gestalten, dass diese unabhängig
+von einer Live-Hardwareverbindung möglich ist und flexibel in den Entwicklungsprozess integriert werden kann.
+
+\paragraph{Messung – Entstehung der Rohdaten}
+
+Im Zentrum der Messung stehen zwei Hauptkomponenten: das sogenannte \textit{Tag}, das als zu verfolgendes Objekt fungiert 
+und kontinuierlich Signale sendet, sowie mindestens zwei \textit{Anker} (Anchors), die als fest installierte Empfangseinheiten dienen. 
+Die Anker, ausgestattet mit mehreren Antennen, empfangen das Signal des Tags und bestimmen den Einfallswinkel (Angle of Arrival, AoA), unter dem 
+das Signal ankommt. Zusätzlich werden häufig weitere Sensordaten erfasst, beispielsweise Geschwindigkeit oder Risikoabschätzungen.
+
+\paragraph{Datenerfassung und -aufbereitung}
+
+Die Kommunikation zwischen Ankern und Rechner erfolgt typischerweise über eine serielle Schnittstelle oder Bluetooth Low Energy (BLE). 
+Ein Python-Skript (z.\,B. \texttt{getAnchorData.py}) liest die Rohdaten kontinuierlich aus. Für jede einzelne Messung werden strukturierte Informationen
+erfasst, darunter:
+
+\begin{itemize}
+    \item \texttt{anchors}: Positionen der Anker, z.\,B. \texttt{[[3, 0], [0, 0]]}
+    \item \texttt{angles}: Die gemessenen Winkel, z.\,B. \texttt{[-31, 24]}
+    \item \texttt{sensor\_values}: Eine Liste weiterer Sensordaten:
+\begin{lstlisting}[language=]
+[
+  {"theta": 90, "val": -31, "pos": [3, 0], "speed_along_line": 0, "risk_level": 1},
+  {"theta": 90, "val": 24, "pos": [0, 0], "speed_along_line": 0, "risk_level": 1}
+]
+\end{lstlisting}
+\end{itemize}
+
+Die Daten werden zeilenweise im JSON Lines-Format (\texttt{.jsonl}) gespeichert. Jede Zeile enthält einen Zeitstempel und die zugehörigen Sensordaten. 
+Ein Beispiel für eine gespeicherte Messung ist:
+
+\begin{verbatim}
+{"timestamp": "2025-06-03T06:32:50.140342", 
+ "raw_sensor_data": {
+   "anchors": [[3, 0], [0, 0]], 
+   "angles": [-31, 24], 
+   "sensor_values": [...]
+ }}
+\end{verbatim}
+
+\paragraph{Berechnung der Tag-Position – Triangulation}
+
+Aus den gemessenen Winkeln und bekannten Positionen der Anker wird die Position des Tags durch Triangulation berechnet. Jeder Anker 
+definiert eine Gerade, auf der sich der Tag befinden könnte. Die Schnittpunktberechnung dieser Geraden liefert eine Positionsschätzung. Die Richtung 
+jeder Linie ergibt sich aus dem gemessenen Winkel mittels:
+
+\[
+dx = \sin(\theta), \quad dy = \cos(\theta)
+\]
+
+Der Schnittpunkt wird mithilfe der folgenden Gleichung bestimmt:
+
+\[
+t_1 = \frac{(x_2 - x_1) \cdot dy_2 - (y_2 - y_1) \cdot dx_2}
+           {dx_1 \cdot dy_2 - dy_1 \cdot dx_2}
+\]
+
+und
+
+\[
+x = x_1 + t_1 \cdot dx_1, \quad y = y_1 + t_1 \cdot dy_1
+\]
+
+Diese Berechnung kann sowohl live während der Datenerfassung als auch im Nachgang im sogenannten Replay-Modus erfolgen.
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/1906_abbildung1 (1)}\\[1ex]
+    \centering
+    \caption{Beispiel Triangulation}
+    \label{ABBILDUNG}
+\end{figure}
+
+\paragraph{Speicherung und Weiterverarbeitung}
+
+Sämtliche berechneten Werte – Winkel, Position, Sensordaten – werden chronologisch gespeichert. Das Python-Skript \texttt{replayLogger.py} 
+ermöglicht das Einlesen dieser Datei und berechnet bei Bedarf die Position erneut. Dies erlaubt eine erneute Analyse oder die Anwendung überarbeiteter 
+Algorithmen.
+
+\paragraph{Nachträgliche Optimierung der Rechenlogik}
+
+Während der frühen Entwicklungsphase bestand ein grundlegendes Problem darin, dass beim Replay die gespeicherten Daten lediglich wiedergegeben wurden, wie sie während der ursprünglichen Messung aufgezeichnet worden waren. Das bedeutete, dass keine Neuberechnung der Tag-Position erfolgte – Anpassungen an Parametern oder Algorithmen blieben somit wirkungslos. 
+
+Im weiteren Verlauf wurde dieser Fehler behoben. Das Replay-Modul (\texttt{replayLogger.py}) wurde so erweitert, dass beim Einlesen der Logdaten die gespeicherten Rohwerte wie Winkel und Ankerpositionen erneut verarbeitet werden. Auf diese Weise erfolgt bei jedem Replay eine aktuelle Berechnung der Position mittels Triangulation. Dadurch können Änderungen in der Positionsberechnung zunächst rein softwareseitig überprüft und validiert werden – ganz ohne Hardwareeinsatz. Nach erfolgreicher Evaluierung lassen sich die neuen Parameter und Berechnungsverfahren schließlich in das Echtzeit-Tracking-System übernehmen.
+
+\paragraph{Visualisierung der Messdaten}
+
+Der Datenlogger stellt über eine TCP-Verbindung eine Schnittstelle zur grafischen Visualisierung her (z.\,B. durch das Skript \texttt{ui.py}). 
+Jede Messung wird als JSON-Objekt an die Benutzeroberfläche übertragen und enthält neben der berechneten Position auch zugehörige Sensordaten. 
+Die Benutzeroberfläche stellt folgende Informationen dar:
+
+\begin{itemize}
+    \item Die aktuelle Position des Tags
+    \item Visualisierte Sensorwerte (z.\,B. durch Farben, Pfeile oder Symbole)
+    \item Zusatzinformationen wie Bewegung oder Risikobewertung
+\end{itemize}
+
+\paragraph{Zusammenfassung des Datenflusses}
+
+Der vollständige Ablauf lässt sich wie folgt beschreiben:
+
+\begin{enumerate}
+    \item \textbf{Messung:} Anker empfangen Signale und bestimmen Winkel sowie Sensordaten.
+    \item \textbf{Datenerfassung:} Python-Skripte lesen die Daten aus und speichern sie als JSONL.
+    \item \textbf{Speicherung:} Die Daten werden zeilenweise mit Zeitstempel archiviert.
+    \item \textbf{Replay:} Ein weiteres Skript liest die Daten, berechnet ggf. die Position und sendet sie weiter.
+    \item \textbf{Visualisierung:} Eine Benutzeroberfläche stellt Position und Sensordaten visuell dar.
+\end{enumerate}
+
+\paragraph{Beispiel einer vollständigen Messung}
+
+\begin{itemize}
+    \item Anker 1: Winkel = \(-31^\circ\), Position = [3, 0]
+    \item Anker 2: Winkel = \(24^\circ\), Position = [0, 0]
+\end{itemize}
+
+\textbf{Speicherung:}
+\begin{verbatim}
+{"timestamp": "...", 
+ "raw_sensor_data": {
+   "anchors": [[3, 0], [0, 0]], 
+   "angles": [-31, 24], 
+   "sensor_values": [...]
+ }}
+\end{verbatim}
+
+\textbf{Replay:}  
+Der Datenlogger berechnet erneut die Position und sendet z.\,B.:
+
+\begin{verbatim}
+{"point": {"position": [x, y], "Uncertainty": 0}, 
+ "sensor_values": [...]}
+\end{verbatim}
+
+\textbf{Visualisierung:}  
+Die Benutzeroberfläche zeigt Position, Bewegung und Risikobewertung an.
+
+\paragraph{Fazit}
+
+Durch die Trennung von Messung, Speicherung, Wiederverwendung und Visualisierung wurde ein System geschaffen, 
+das sowohl im Live-Betrieb als auch für Offline-Analysen geeignet ist. Die Nutzung des JSONL-Formats gewährleistet einfache 
+Nachverarbeitung und hohe Transparenz im Entwicklungsprozess.
+
+
+
 \subsection{Ergebnisse und Evaluation}
 
 \section{Grundlagen der Visualisierung}
