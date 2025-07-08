@@ -26,17 +26,22 @@
 \contentsline {subsection}{\numberline {4.4}Ergebnisse und Evaluation}{14}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Grundlagen der Visualisierung}{15}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Anforderungen an eine effektive Visualisierung}{15}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Darstellungsmöglichkeiten und -technologien}{15}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Entwicklung der neuen Visualisierung}{15}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Analyse der bestehenden Visualisierung}{15}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Konzept einer verbesserten Visualisierung}{15}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Implementierung der verbesserten Visualisierung}{15}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Ergebnisse und Benutzerfreundlichkeit}{15}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Test und Validierung}{15}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Testmethodik und -umgebung}{15}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ergebnisse der Tests}{15}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Diskussion der Testergebnisse und Optimierungspotentiale}{15}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Kritische Bewertung und Ausblick}{15}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Reflexion der erreichten Ergebnisse}{15}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Grenzen der aktuellen Umsetzung}{15}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Vorschläge für zukünftige Weiterentwicklungen}{15}{subsection.8.3}%
+\contentsline {subsection}{\numberline {5.2}Darstellungsmöglichkeiten und -technologien}{16}{subsection.5.2}%
+\contentsline {paragraph}{Darstellungsformen}{16}{section*.29}%
+\contentsline {paragraph}{Technologische Umsetzung}{16}{section*.30}%
+\contentsline {paragraph}{Schnittstellen und Erweiterbarkeit}{17}{section*.31}%
+\contentsline {paragraph}{Optionale Abbildungsempfehlung}{17}{section*.32}%
+\contentsline {paragraph}{Fazit}{18}{section*.33}%
+\contentsline {section}{\numberline {6}Entwicklung der neuen Visualisierung}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Analyse der bestehenden Visualisierung}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Konzept einer verbesserten Visualisierung}{20}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Implementierung der verbesserten Visualisierung}{20}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Ergebnisse und Benutzerfreundlichkeit}{20}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Test und Validierung}{20}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Testmethodik und -umgebung}{20}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Ergebnisse der Tests}{20}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Diskussion der Testergebnisse und Optimierungspotentiale}{20}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Kritische Bewertung und Ausblick}{20}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Reflexion der erreichten Ergebnisse}{20}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Grenzen der aktuellen Umsetzung}{20}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Vorschläge für zukünftige Weiterentwicklungen}{20}{subsection.8.3}%
