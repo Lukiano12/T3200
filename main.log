@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  8 JUL 2025 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  9 JUL 2025 14:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1527,7 +1527,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 768.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 758.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1540,7 +1540,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 768.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 783.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1548,8 +1548,190 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  []
 
 [20]
+Underfull \hbox (badness 1158) in paragraph at lines 785--788
+\OT1/cmr/m/n/12 Be-trach-ter wur-de die Be-nut-ze-ro-ber-fl[]ache (UI) um-fas-send []uberarbeitet.
+ []
 
-LaTeX Warning: Empty bibliography on input line 776.
+
+Underfull \hbox (badness 1502) in paragraph at lines 804--807
+\OT1/cmr/m/n/12 tu-rier-te JSON-Datenpakete sen-det. Die-se ent-hal-ten In-for-ma-tio-nen zur
+ []
+
+
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 816.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[21]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 847.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[22]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 865.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[23]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 899.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[24
+
+]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 926.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[25]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 954.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[26]
+Underfull \hbox (badness 1142) in paragraph at lines 963--967
+ []\OT1/cmr/bx/n/12 Limitierungen in der Po-si-ti-ons-dar-stel-lung[] \OT1/cmr/m/n/12 Trotz im-ple-men-tier-ter
+ []
+
+
+Underfull \hbox (badness 1917) in paragraph at lines 974--978
+\OT1/cmr/m/n/12 wur-de ge-gen[]uber der ur-spr[]unglichen Ver-si-on deut-lich ver-bes-sert. Die
+ []
+
+
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 982.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[27]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1009.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[28]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1043.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[29
+
+]
+Underfull \hbox (badness 6876) in paragraph at lines 1045--1049
+ []\OT1/cmr/bx/n/12 Begrenzte Ge-nau-ig-keit der Po-si-ti-ons-be-stim-mung[] \OT1/cmr/m/n/12 Die Po-si-ti-
+ []
+
+
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1070.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[30]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1098.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[31]
+Underfull \hbox (badness 1132) in paragraph at lines 1100--1103
+ []\OT1/cmr/bx/n/12 Erweiterung der Vi-sua-li-sie-rungsm[]oglichkeiten[] \OT1/cmr/m/n/12 Die Vi-sua-li-sie-rung
+ []
+
+
+Underfull \hbox (badness 7273) in paragraph at lines 1118--1121
+ []\OT1/cmr/bx/n/12 Systemintegration und Mo-du-la-ri-sie-rung[] \OT1/cmr/m/n/12 Lang-fris-tig w[]are ei-ne
+ []
+
+
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1126.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[32]
+
+File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
+<use images/DHBW_d_R_FN_46mm_4c.jpg>
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 1131.
+(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
+
+Overfull \hbox (20.10214pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+[33]
+
+LaTeX Warning: Empty bibliography on input line 1139.
 
 (main.aux)
  ***********
@@ -1575,17 +1757,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31343 strings out of 473576
- 631430 string characters out of 5714857
+ 31391 strings out of 473576
+ 631906 string characters out of 5714857
  1530712 words of memory out of 5000000
  54065 multiletter control sequences out of 15000+600000
  565510 words of font info for 61 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 110i,25n,109p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,25n,113p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lnztadil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (27 pages, 857204 bytes).
+Output written on main.pdf (40 pages, 901865 bytes).
 PDF statistics:
- 467 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
+ 567 PDF objects out of 1000 (max. 8388607)
+ 159 named destinations out of 1000 (max. 500000)
  282 words of extra memory for PDF output out of 10000 (max. 10000000)
 

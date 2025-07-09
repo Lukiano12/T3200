@@ -751,18 +751,381 @@ Nachbearbeitung historischer Messdaten. Die Einführung des Datenloggers und ein
 fundierte, nachvollziehbare sowie interaktive Darstellung aller relevanten Systemparameter ermöglichen.
 
 \subsection{Konzept einer verbesserten Visualisierung}
+
+Basierend auf der Analyse der bisherigen Darstellung ergeben sich mehrere Ansatzpunkte für eine funktional und ästhetisch verbesserte Visualisierung
+ der Tag-Ortung. Ziel ist es, die Ausgabe so zu gestalten, dass auch technisch weniger versierte Personen – beispielsweise Besucher auf Messen oder 
+ Mitglieder in interdisziplinären Projektteams – intuitiv die Funktionsweise und Aussagekraft des Fahrerassistenzsystems nachvollziehen können.
+
+Ein zentrales Element der neuen Visualisierung ist die verbesserte Darstellung des Tags. Bisher wurde dieser lediglich als bewegender Punkt im 
+Koordinatensystem dargestellt, was der realen Anwendung – z.\,B. einem Fußgänger oder Fahrradfahrer im Straßenverkehr – kaum gerecht wurde. Zukünftig 
+soll der Tag durch ein erkennbares Modell wie etwa eine stilisierte menschliche Figur (z.\,B. ein Stickman) ersetzt werden. Zusätzlich ist vorgesehen,
+ visuelle Elemente wie ein LKW-Modell in die Darstellung zu integrieren, um die reale Gefahrenlage bei Abbiegesituationen plausibler zu simulieren. 
+ Dadurch wird nicht nur die Position, sondern auch die Bedeutung und Relevanz der Situation besser vermittelt.
+
+Zur Verbesserung der Verständlichkeit soll die Bewegung des Tags flüssiger und zeitlich realistischer erfolgen. In der bisherigen Version war die 
+Bewegung teils sprunghaft oder verzögert, was eine genaue Nachverfolgung erschwerte. Durch feinere Interpolation und optimierte Synchronisation mit 
+den übermittelten Messwerten soll die visuelle Bewegung stärker der tatsächlichen Bewegung des realen Objekts entsprechen.
+
+Darüber hinaus ist geplant, ein interaktives Interface mit zusätzlichen Informationen bereitzustellen. So sollen Parameter wie Winkel, 
+Positionskoordinaten, Geschwindigkeit oder Risikoindikatoren dynamisch eingeblendet und aktualisiert werden können. Ergänzende Steuerungselemente erlauben
+ es, die Wiedergabe der gespeicherten Daten zu pausieren, zu beschleunigen oder schrittweise durchzugehen – ein wesentliches Werkzeug für Entwicklerinnen 
+ und Entwickler bei der Fehleranalyse und Parametrierung.
+
+Ein weiterer Aspekt der verbesserten Darstellung betrifft das bisher fest eingeblendete Koordinatensystem. Dieses war zwar funktional nützlich,
+ beeinträchtigte jedoch stellenweise die Lesbarkeit und ästhetische Wirkung der grafischen Oberfläche – insbesondere bei öffentlichkeitswirksamen 
+ Präsentationen oder auf begrenzten Anzeigeflächen. Künftig soll daher eine Option implementiert werden, das Koordinatensystem bei Bedarf auszublenden 
+ oder gezielt ein- und auszublenden (Toggle-Funktion). Dies erlaubt eine flexiblere Darstellung und steigert die Übersichtlichkeit – insbesondere wenn 
+ die rein visuelle Wahrnehmung im Vordergrund stehen soll.
+
+Insgesamt verfolgt das neue Visualisierungskonzept das Ziel, eine Brücke zwischen technischer Präzision und intuitiver Darstellbarkeit zu schlagen. 
+Es soll nicht nur die Qualität der Entwicklung verbessern, sondern auch die Kommunikation der Systemfunktionalität nach außen erleichtern – etwa in 
+Präsentationen, bei Tests oder in zukünftigen Anwenderstudien.
+
 \subsection{Implementierung der verbesserten Visualisierung}
+Zur besseren Nachvollziehbarkeit der gemessenen Bewegungsdaten und zur verständlichen Darstellung des Systems für technische wie nicht-technische 
+Betrachter wurde die Benutzeroberfläche (UI) umfassend überarbeitet. Die Implementierung erfolgte in Python unter Verwendung des 
+\texttt{tkinter}-Frameworks, wodurch eine flexible und plattformunabhängige grafische Visualisierung ermöglicht wurde.
+
+\paragraph{Grundstruktur und Aufbau}
+
+Die Benutzeroberfläche besteht aus einem zentralen Zeichenbereich (Canvas), auf dem die Bewegung des zu lokalisierenden Objekts (Tag) visualisiert wird. 
+Ergänzt wird dieser durch eine Steuerleiste am unteren Rand zur Interaktion (z.,B. Start/Stop der Visualisierung oder Ein-/Ausblenden von Antennendaten) 
+sowie einer Informationsleiste zur Anzeige der aktuellen Position und Zusatzdaten.
+
+Die Visualisierung ist in mehreren Schichten aufgebaut:
+\begin{itemize}
+\item Darstellung des Tags als dynamisch skalierbare Figur (z.,B. Stickman oder Fahrzeugabbildung)
+\item Hintergrundkoordinatensystem mit optional einblendbaren Achsen und Skalen
+\item Einblendung der Position und Orientierung der Antennenarrays sowie der zugehörigen Messrichtungen (AoA-Linien)
+\end{itemize}
+
+\paragraph{Verarbeitung eingehender Daten}
+
+Die Visualisierung kommuniziert über eine TCP-Verbindung mit dem Datenlogger, der kontinuierlich strukturierte JSON-Datenpakete sendet. Diese enthalten 
+Informationen zur geschätzten Position des Tags, Sensordaten sowie Metainformationen. Eine dedizierte Serverkomponente in der UI nimmt die Daten entgegen,
+ extrahiert relevante Parameter und aktualisiert die grafische Darstellung entsprechend.
+
+Zur Verbesserung der Darstellung wurde ein Glättungsverfahren mit exponentiellem Filter implementiert, um Positionssprünge durch Rauschen oder Ausreißer 
+zu reduzieren. Gleichzeitig werden unrealistische Sprünge oder abrupte Änderungen durch Grenzwerte abgefangen.
+
+\paragraph{Darstellungskonzept des Tags}
+
+Anstelle eines einfachen Punkts wird das Tag nun als abstrahierte Figur (z.,B. Stickman) dargestellt. Diese passt sich dynamisch in Größe und Farbe an
+ den Abstand zu den Antennen an, um Nähe, Risiko oder Interaktionszonen visuell hervorzuheben. Alternativ kann ein repräsentatives Fahrzeugmodell 
+ (z.,B. ein LKW-Bild) eingebunden werden, um reale Szenarien wie Fahrassistenzsysteme intuitiver zu vermitteln.
+
+\paragraph{Visualisierung der Antennen und Sensorlinien}
+
+Die Position der Antennenarrays wird grafisch dargestellt und durch Linien ergänzt, welche die gemessenen Einfallswinkel (AoA) andeuten. Diese Linien 
+zeigen die theoretische Messrichtung, was ein besseres Verständnis der Triangulation erlaubt. Zudem wurde eine numerische Winkelanzeige an den 
+Antennenpositionen ergänzt.
+
+\paragraph{Interaktive Steuerung und Optimierungen}
+
+Ein zentrales Element ist die Möglichkeit, zwischen verschiedenen Visualisierungsmodi umzuschalten. Über ein Toggle-Button kann die Darstellung der 
+Koordinatenachsen und Sensorlinien aktiviert oder ausgeblendet werden, um je nach Anwendungsfall zwischen technischer Analyse und Präsentation zu 
+wechseln. Zusätzlich kann die Darstellung bei Bedarf in den Vollbildmodus gesetzt werden.
+
+Zur Steuerung und flexiblen Nutzung wurde außerdem eine ausführbare Batch-Datei (\texttt{.bat}) bereitgestellt, mit der definierte Logdateien gezielt 
+abgespielt und getestet werden können. Diese Struktur erlaubt es, mehrere gespeicherte Datensätze individuell zu benennen, abzurufen und ohne 
+Hardwarebezug zu analysieren.
+
+\paragraph{Zusammenfassung}
+
+Die überarbeitete Visualisierung stellt eine signifikante Verbesserung gegenüber der früheren Version dar. Sie bietet nicht nur eine realitätsnähere 
+und dynamischere Darstellung der Position des Tags, sondern erleichtert durch optionale Darstellungselemente und glattere Bewegung auch die Analyse und 
+Präsentation für unterschiedliche Zielgruppen. Gleichzeitig wurde Wert auf eine modulare und wartbare Struktur gelegt, sodass zukünftige 
+Erweiterungen – etwa die Integration weiterer Visualisierungselemente oder zusätzlicher Sensoren – problemlos möglich sind.
+
 \subsection{Ergebnisse und Benutzerfreundlichkeit}
+
+Die Implementierung der verbesserten Visualisierung zeigt insgesamt funktionale Fortschritte und eine gesteigerte Benutzerfreundlichkeit. Die Anbindung 
+über TCP funktioniert stabil sowohl im Echtzeitbetrieb mit Live-Messdaten als auch im Offline-Modus über den Datenlogger. Dies ermöglicht eine flexible 
+Analyse und Bewertung von Positionsdaten ohne permanenten Zugriff auf die Hardware. Die Integration der Replay-Funktion in die Benutzeroberfläche verläuft
+ nahtlos – gespeicherte Daten werden zuverlässig geladen, verarbeitet und dargestellt. Dies bietet insbesondere im Entwicklungs- und Testkontext deutliche
+  Vorteile, da Anpassungen und neue Algorithmen unabhängig von einer aktiven Messumgebung evaluiert werden können.
+
+Im Bereich der Darstellung konnte mit der Ersetzung des bisherigen Tag-Punktes durch eine abstrahierte Stickman-Figur ein deutlicher visueller 
+Fortschritt erzielt werden. Zusätzlich wurden Warnstufen eingeführt, welche die Distanz zu einem virtuellen LKW durch Farbwechsel (grün, gelb, rot) 
+kodieren. Auch die Antennenpositionen und deren Richtungsinformation werden grafisch dargestellt, wenngleich deren Schnittpunkt noch nicht exakt mit der 
+berechneten Tag-Position übereinstimmt. Insgesamt ist die Visualisierung deutlich intuitiver und eignet sich besser zur Präsentation auf Fachmessen oder
+ vor nicht-technischem Publikum. Ein optional zuschaltbares Koordinatensystem erlaubt zudem eine differenzierte technische Auswertung.
+
+Die Bewegung des Tags erscheint derzeit noch leicht ruckartig und verzögert. Es wurden bereits Maßnahmen zur Glättung durch exponentielles Smoothing 
+implementiert, allerdings zeigen sich in der Praxis weiterhin Limitierungen, die in zukünftigen Iterationen adressiert werden müssen.
+
+Die Bedienbarkeit der Oberfläche ist insgesamt positiv zu bewerten. Die grafische Benutzeroberfläche zeigt beim Start die relevanten Schaltflächen gut 
+sichtbar an. Durch den Toggle-Modus können Darstellungsmodi flexibel gewechselt werden – beispielsweise die Ein- und Ausblendung technischer Hilfslinien. 
+Die Benutzerführung ist intuitiv und ermöglicht auch technisch weniger versierten Anwendern eine effiziente Nutzung.
+
+Zusammenfassend lässt sich festhalten, dass die entwickelte Benutzeroberfläche eine stabile Basis für zukünftige Erweiterungen bietet. Neue Features 
+können mit überschaubarem Aufwand ergänzt werden, und die vorhandene Architektur erlaubt eine Trennung von Datenaufnahme und Visualisierung. Damit stellt
+ das System ein praktikables Werkzeug für die Weiterentwicklung, Testung und Demonstration von Assistenzsystemen dar.
+
+ \clearpage
 
 \section{Test und Validierung}
 \subsection{Testmethodik und -umgebung}
+
+Ziel der Tests war es, die Funktionsweise der entwickelten Komponenten -- insbesondere des Datenloggers und der neuen Visualisierung -- in einer 
+realitätsnahen, aber bewusst reduzierten Umgebung zu validieren. Es handelte sich dabei nicht um umfangreiche Praxistests in verschiedensten 
+Anwendungsszenarien, sondern um gezielte Funktionstests, die Fehlerquellen aufdecken und Verbesserungspotenziale aufzeigen sollten.
+
+\paragraph{Testziele}
+Im Mittelpunkt stand die Überprüfung folgender Aspekte:
+\begin{itemize}
+    \item Funktion der Datenerfassung, Speicherung und Wiedergabe im Replay-Modus
+    \item Konsistenz der TCP-Kommunikation zwischen Logger und UI
+    \item korrekte Verarbeitung gespeicherter JSONL-Daten
+    \item visuelle Rückmeldung in der Benutzeroberfläche (z.\,B. Darstellung des Tags, Antennen und Warnfarben)
+    \item allgemeine Bedienbarkeit und Reaktion der UI-Komponenten
+\end{itemize}
+
+\paragraph{Testarten}
+Es wurden verschiedene Testarten angewandt:
+\begin{itemize}
+    \item \textbf{Funktionstests}: Einzelne Module wurden separat geprüft (z.\,B. Speicherung, Wiedergabe, Visualisierung)
+    \item \textbf{Integrationstests}: Zusammenspiel von Datenlogger, Netzwerkverbindung und Visualisierung
+    \item \textbf{Systemtests}: Gesamtprüfung mit Live- oder gespeicherten Datenströmen
+    \item \textbf{Usability-Tests}: Subjektive Einschätzung der Verständlichkeit und Nutzbarkeit durch Projektbeteiligte
+\end{itemize}
+
+\paragraph{Testumgebung}
+Die Tests wurden auf einem Standard-PC unter Windows 10 mit Python 3.10 durchgeführt. Die Kommunikation lief lokal über eine TCP-Verbindung 
+(\texttt{localhost}), was eine stabile Übertragung ohne externe Netzwerkeinflüsse sicherstellte. Als Datenbasis kamen sowohl Live-Messungen mit 
+angeschlossener Hardware als auch gespeicherte JSONL-Dateien aus früheren Sessions zum Einsatz. Die grafische Benutzeroberfläche wurde dabei im 
+Vollbildmodus auf einem 24-Zoll-Bildschirm betrieben.
+
+\paragraph{Ablauf}
+Die Tests erfolgten manuell. Zunächst wurde die Verbindung zwischen Logger und UI geprüft. Anschließend wurden verschiedene Datensätze -- sowohl reale
+ Messungen als auch synthetische Beispiele -- über die \texttt{replayLogger.py} wiedergegeben. Dabei wurde beobachtet, wie die UI auf Positionsdaten, 
+ Sensordaten und Änderungen in der Darstellung reagiert. Auch die neue Funktion zur Darstellung eines Stickmans und des LKW-Bildes wurde systematisch 
+ getestet. Der Wechsel des Darstellungsmodus (z.\,B. Ein-/Ausblenden der Achsen) wurde ebenfalls geprüft.
+
+Ergänzend dazu wurde gezielt versucht, typische Grenzsituationen und Extremszenarien zu simulieren. Dazu gehörten beispielsweise sehr schnelle oder 
+sehr langsame Bewegungen des Tags, sowie Positionen am äußersten linken oder rechten Rand des Koordinatensystems. Ziel war es zu prüfen, ob die 
+Positionsberechnung, Visualisierung und Stabilität auch in diesen Randbereichen erwartungsgemäß funktionieren.
+
+\paragraph{Einschränkungen}
+Aufgrund zeitlicher und infrastruktureller Begrenzungen wurde auf umfangreiche Feldversuche oder Szenarien im Realbetrieb verzichtet. Ziel 
+war primär eine funktionale Prüfung der neu entwickelten Komponenten. Eine tiefgreifende Evaluierung im produktiven Umfeld ist für spätere 
+Projektphasen vorgesehen.
+
+
+
 \subsection{Ergebnisse der Tests}
+
+Die durchgeführten Tests hatten zum Ziel, die grundsätzliche Funktionalität des entwickelten Datenloggers sowie der erweiterten Visualisierung zu 
+überprüfen. Dabei standen insbesondere Aspekte wie Datenintegrität, Kommunikation, Benutzerfreundlichkeit und visuelle Darstellung im Vordergrund.
+
+\paragraph{Funktionalität und Kommunikation}
+Die Tests zeigten, dass die Speicherung der erfassten Sensordaten im JSONL-Format zuverlässig funktioniert. Auch die Wiedergabe der gespeicherten Daten 
+im Replay-Modus über \texttt{replayLogger.py} erwies sich als stabil. Die TCP-Kommunikation zwischen Datenlogger und grafischer Benutzeroberfläche konnte 
+ohne Verbindungsabbrüche oder Datenverluste durchgeführt werden. Es war möglich, sowohl reale Messdaten als auch gespeicherte Daten aus dem Logger 
+erfolgreich in die Benutzeroberfläche zu laden.
+
+\paragraph{Darstellung des Tags}
+Die Bewegung des Tags innerhalb der grafischen Oberfläche erwies sich noch als verbesserungsbedürftig. Obwohl bereits ein Glättungsalgorithmus 
+implementiert wurde, wirkt die Bewegung weiterhin leicht verzögert und ruckartig. Besonders bei Extrempositionen – also wenn sich der Tag weit 
+rechts oder links außerhalb des zentralen Bereichs bewegt – konnte beobachtet werden, dass die Ortung deutlich an Genauigkeit verliert. Dies liegt
+ am zugrunde liegenden Triangulationsverfahren: Wenn sich beide gemessenen Winkel stark überlagern, ist eine exakte Positionsbestimmung kaum noch 
+ möglich.
+
+\paragraph{Visualisierung und Layout}
+Die Darstellung wurde im Vergleich zum vorherigen Zustand deutlich verbessert. Anstelle eines einfachen Punktes wird der Tag nun als stilisierter 
+\textit{Stickman} visualisiert. Darüber hinaus wurde ein LKW-Bild zur Verdeutlichung der Anwendungssituation ergänzt. Die Antennenpositionen werden 
+grafisch dargestellt und mit Richtungslinien versehen, welche sich in den meisten Fällen korrekt im Bereich der ermittelten Position schneiden – ein 
+klares visuelles Feedback über die Funktionsweise des Systems. Dennoch bleibt die Darstellung grundsätzlich einfach gehalten. Zusätzliche 
+Visualisierungselemente wie eine Geschwindigkeitsanzeige, eine dynamische Skalierung des Bewegungsraums oder realistischere Proportionen der 
+dargestellten Objekte könnten künftig integriert werden.
+
+\paragraph{Benutzerfreundlichkeit}
+Die Benutzeroberfläche erwies sich in der Praxis als einfach zu bedienen. Beim Starten des Programms werden klar beschriftete Schaltflächen angezeigt, 
+die ohne Vorkenntnisse verständlich sind. Funktionen wie das Starten und Stoppen der Simulation oder das Umschalten von Koordinaten- und Antennenanzeige 
+sind intuitiv zugänglich. Die Implementierung der BAT-Datei zum Start des Datenloggers erleichtert zusätzlich die Bedienung, insbesondere für unerfahrene
+ Nutzer. Zudem kann zwischen verschiedenen gespeicherten Messreihen gewählt, diese umbenannt und erneut abgespielt werden.
+
+\paragraph{Zusammenfassende Bewertung}
+Insgesamt wurde mit dem entwickelten System ein funktionaler Prototyp geschaffen, der die gewünschten Kernfunktionen erfüllt. Die Integration des 
+Datenloggers in die bestehende Softwareumgebung ist gelungen und erlaubt eine flexible Nutzung, sowohl online als auch offline. Die Visualisierung 
+ist verständlicher als zuvor, besonders im Hinblick auf Präsentationen und Messen. Dennoch bestehen in mehreren Bereichen Potenziale zur weiteren 
+Optimierung, insbesondere in der flüssigen Bewegung des Tags, in der Genauigkeit der Darstellung sowie in der Erweiterung des visuellen Feedbacks für
+ komplexere Anwendungsszenarien.
+
 \subsection{Diskussion der Testergebnisse und Optimierungspotentiale}
+
+Die durchgeführten Funktionstests zeigen, dass die wesentlichen Kernziele – insbesondere die prototypische Realisierung des Datenloggers und 
+dessen Anbindung an die Visualisierung – erfüllt wurden. Dennoch offenbaren die Testergebnisse mehrere Schwachstellen und Hinweise auf künftigen 
+Verbesserungsbedarf, die im Folgenden diskutiert werden.
+
+\paragraph{Limitierungen in der Positionsdarstellung}
+
+Trotz implementierter Glättungsmechanismen bleibt die Bewegung des Tags auf der Benutzeroberfläche merklich ruckartig. Insbesondere bei 
+schnellen Richtungswechseln oder Bewegungen am Rand des Koordinatensystems treten Verzögerungen auf. Dies kann auf die gewählten Smoothing-Parameter 
+oder das einfache Exponentialfilter-Verfahren zurückgeführt werden, das bei dynamischen Bewegungen an seine Grenzen stößt. Eine adaptive Glättung, die 
+sich an der Bewegungsgeschwindigkeit orientiert, könnte hier künftig Abhilfe schaffen.
+
+Ein weiterer kritischer Punkt ist die eingeschränkte Genauigkeit der Positionsbestimmung bei extremen Positionen. Wenn sich der Tag sehr weit 
+links oder rechts außerhalb der Hauptmessachse befindet, versagt die Triangulation teilweise. Der Grund liegt in der Geometrie der AoA-Messung: 
+Bei annähernd parallelen Winkelmessungen zweier Anker wird der Schnittpunkt der Geraden numerisch instabil, was eine präzise Lokalisierung erschwert.
+
+\paragraph{Darstellung und Interpretation der Ergebnisse}
+
+Die Visualisierung wurde gegenüber der ursprünglichen Version deutlich verbessert. Die Einführung eines symbolischen Stickman-Modells sowie 
+eines schematischen LKW-Bildes erhöht die Verständlichkeit, besonders für externe Zielgruppen oder Präsentationen. Gleichzeitig bleibt die 
+grafische Ausgestaltung noch rudimentär. Elemente wie Maßstabsanzeige, Bewegungsverläufe, Risikozonen oder Geschwindigkeitspfeile fehlen bislang, 
+könnten aber die Interpretation der Szenarien erheblich erleichtern.
+
+Darüber hinaus könnte auch die Proportionalität zwischen realer Bewegung und Koordinatensystem verbessert werden. Aktuell ist die Zuordnung zwischen 
+physischer Verschiebung und grafischer Darstellung nicht intuitiv nachvollziehbar, was insbesondere bei der Validierung der Messergebnisse hinderlich 
+sein kann.
+
+\paragraph{Bedienbarkeit und Nutzbarkeit}
+
+Die Bedienung der Visualisierungsoberfläche gestaltet sich insgesamt benutzerfreundlich. Die eingefügten Steuerungselemente (z.\,B. Toggle-Schalter 
+für die Darstellung der Koordinatenachsen) sowie die Möglichkeit, das Programm per \texttt{.bat}-Datei zu starten, erleichtern die Nutzung auch für 
+weniger erfahrene Anwender. Die einfache Darstellung ist für erste Tests und Demonstrationen durchaus ausreichend, lässt sich jedoch hinsichtlich 
+Detailtiefe und Flexibilität weiterentwickeln.
+
+\paragraph{Potenziale zur Erweiterung}
+
+Für die Weiterentwicklung ergeben sich mehrere sinnvolle Ansätze. Neben einer grafischen Verfeinerung könnten folgende Maßnahmen zur 
+Optimierung beitragen:
+
+\begin{itemize}
+    \item Einführung eines dynamischen Zoom- oder Perspektivmodus zur besseren Verfolgung der Tag-Bewegung
+    \item Erweiterung der Darstellung um Geschwindigkeit, Bewegungsrichtung und Unsicherheitsbereiche
+    \item Modularisierung der Visualisierung zur einfacheren Einbindung weiterer Objekte oder Assistenzsysteme
+    \item Verbesserung der Glättungslogik mit adaptiven oder maschinellen Verfahren
+    \item Vorbereitung auf künftige Erweiterungen wie eine 3D-Ansicht oder AR-Darstellung
+\end{itemize}
+
+\paragraph{Fazit}
+
+Die bisherigen Testergebnisse zeigen eine solide Basis, auf der sich weiter aufbauen lässt. Sowohl die technische Funktionalität als auch die visuelle
+ Vermittlung der Daten sind grundsätzlich gegeben, müssen jedoch für eine belastbare Systembewertung und breitere Nutzbarkeit noch weiterentwickelt und 
+ verfeinert werden.
+
+ \clearpage
 
 \section{Kritische Bewertung und Ausblick}
 \subsection{Reflexion der erreichten Ergebnisse}
+
+Im Rahmen dieser Arbeit wurde das Ziel verfolgt, ein robustes Datenloggersystem zu entwickeln sowie die bestehende Visualisierung einer 
+Bluetooth-AoA-basierten Lokalisierungslösung gezielt zu erweitern. Rückblickend lässt sich feststellen, dass wesentliche Kernziele erfolgreich 
+umgesetzt wurden.
+
+Der entwickelte Datenlogger ermöglicht eine strukturierte und flexible Erfassung sowie Speicherung von Messdaten im JSONL-Format. Er erlaubt eine 
+spätere Wiedergabe der Daten ohne Hardwareeinsatz und schafft somit eine effektive Grundlage für Tests, Parametrierung und Algorithmenentwicklung. 
+Die Integration des Loggers in die bestehende Softwareumgebung erfolgte reibungslos durch ein separates Python-Skript mit minimalen Änderungen am 
+Ursprungscode. Auch die Konnektivität zur Benutzeroberfläche über eine TCP-Verbindung funktionierte stabil, sowohl im Live-Betrieb als auch im 
+Replay-Modus.
+
+Auf Seiten der Visualisierung wurde die bisher sehr reduzierte Darstellung um mehrere Elemente erweitert. Die Verwendung eines stilisierten 
+\textit{Stickman}-Modells zur Repräsentation des Tags, die Einbindung eines realitätsnahen LKW-Bildes sowie die farbliche Warnstufendarstellung 
+führten zu einer deutlich verständlicheren und praxistauglicheren Repräsentation. Dies ist insbesondere im Hinblick auf externe Präsentationen, 
+z.\,B. auf Messen oder in interdisziplinären Gremien, ein entscheidender Vorteil.
+
+Trotz dieser Fortschritte zeigen sich auch einige Grenzen. Die Bewegung des Tags ist nach wie vor leicht verzögert und nicht vollständig flüssig, 
+obwohl bereits erste Maßnahmen zur Glättung implementiert wurden. In Randbereichen des Messfeldes stößt die Triangulation durch sich überlappende 
+Winkelpaare an ihre mathematischen Grenzen, was zu ungenauen oder nicht vorhandenen Positionsschätzungen führt. Auch die visuelle Darstellung – etwa in 
+Bezug auf Maßstäblichkeit oder ergänzende Informationen wie Geschwindigkeit – bietet weiteres Verbesserungspotenzial.
+
+Nichtsdestotrotz konnte durch die modulare Struktur, den Einsatz etablierter Technologien (Python, JSON, TCP/IP) sowie den pragmatischen Ansatz ein 
+funktionierendes System geschaffen werden, das die Grundlage für weiterführende Entwicklungen bietet. Die Arbeit zeigt damit deutlich, dass durch 
+gezielte Ergänzungen und strukturiertes Vorgehen auch in einer begrenzten Projektlaufzeit signifikante Fortschritte in Funktionalität und 
+Benutzerfreundlichkeit erzielt werden können.
+
 \subsection{Grenzen der aktuellen Umsetzung}
+
+Trotz der erfolgreichen Umsetzung eines funktionalen Datenloggers und einer verbesserten Visualisierung bestehen derzeit noch mehrere Einschränkungen, 
+die das System in seiner Einsatzbreite und Qualität begrenzen.
+
+\paragraph{Begrenzte Genauigkeit der Positionsbestimmung} 
+Die Positionsschätzung des Tags basiert auf Triangulation aus den gemessenen AoA-Winkeln zweier Anker. Dieses Verfahren liefert nur dann 
+zuverlässige Ergebnisse, wenn die geometrische Anordnung der Anker günstig gewählt ist. Besonders bei Messungen an den Rändern des definierten 
+Messfelds (z.\,B. weit links oder rechts) kann es aufgrund der Überlagerung oder Parallelität der Winkellinien zu ungenauen oder gar nicht 
+berechenbaren Positionen kommen.
+
+\paragraph{Nicht vollständig realitätsgetreue Bewegungsdarstellung}
+Obwohl Maßnahmen zur Glättung der Bewegung (z.\,B. mittels Pufferung und Smoothing) umgesetzt wurden, wirkt die Visualisierung des bewegten 
+Tags weiterhin leicht ruckartig und reagiert nicht in Echtzeit. Zudem fehlt derzeit eine maßstabsgetreue Übertragung der tatsächlichen Bewegung 
+auf die Bildschirmanzeige.
+
+\paragraph{Einfaches visuelles Layout}
+Die Visualisierung nutzt bisher einfache grafische Elemente wie einen stilisierten \textit{Stickman} und ein eingefügtes PNG-Bild eines LKWs. 
+Die Darstellung unterstützt die Verständlichkeit, lässt jedoch hinsichtlich Detailtiefe, Ästhetik und Interaktivität noch deutlichen Spielraum 
+für Verbesserungen. Eine Möglichkeit zur perspektivischen Darstellung, Animation komplexerer Objekte oder eine interaktive Benutzersteuerung ist 
+bislang nicht vorgesehen.
+
+\paragraph{Begrenzte Testtiefe}
+Die entwickelte Lösung wurde im Rahmen kleinerer Testszenarien mit kurzer Laufzeit erprobt. Umfangreiche Testreihen unter realitätsnahen 
+Bedingungen – etwa mit komplexer Bewegung, Störeinflüssen oder Mehrpersonen-Szenarien – konnten zeitbedingt nicht durchgeführt werden.
+
+\paragraph{Fehlende erweiterte Analyse- und Mehrbenutzerfunktionen}
+Die aktuelle Implementierung erlaubt eine visuelle Einzelnutzung mit Echtzeitdarstellung bzw. Offline-Replay. Weiterführende Funktionalitäten wie 
+gleichzeitiger Mehrbenutzerzugriff, interaktive Analysewerkzeuge, Exportfunktionen oder statistische Auswertungen (z.\,B. Heatmaps) sind derzeit nicht 
+enthalten.
+
+\paragraph{Technische Einschränkungen der Visualisierung}
+Die Umsetzung der Benutzeroberfläche auf Basis von Python und Tkinter bringt den Vorteil einer schnellen Realisierbarkeit, schränkt jedoch die 
+grafischen und performanten Möglichkeiten ein. Zudem erfordert der Datenlogger eine strukturierte Ablage der JSONL-Dateien und Pfade, was die 
+Portabilität des Systems derzeit noch begrenzt.
+
+Diese Punkte zeigen klar auf, in welchen Bereichen gezielte Weiterentwicklungen erforderlich sind, um das System robuster, skalierbarer und 
+praxistauglicher zu gestalten.
+
 \subsection{Vorschläge für zukünftige Weiterentwicklungen}
+
+Basierend auf den Ergebnissen und Erkenntnissen der bisherigen Arbeit ergeben sich verschiedene Ansatzpunkte für eine sinnvolle Weiterentwicklung
+ des entwickelten Systems.
+
+\paragraph{Technische Optimierung der Bewegungsglättung}
+Die Bewegung des Tags ist in der aktuellen Version der Visualisierung noch nicht ausreichend flüssig. Zwar wurde bereits ein Glättungsverfahren 
+implementiert, jedoch führt es teils zu ruckelnden Darstellungen oder spürbaren Verzögerungen. Eine Weiterentwicklung könnte darin bestehen, 
+fortgeschrittene Filterverfahren wie Kalman- oder Savitzky-Golay-Filter zu integrieren, um eine realitätsnähere Bewegung des Tags zu erzielen.
+
+\paragraph{Verbesserung der Triangulation bei Randlagen}
+Ein beobachtetes Problem betrifft die Genauigkeit der Positionsbestimmung, insbesondere wenn sich das Tag am Rand des Erfassungsbereichs befindet. 
+Hierbei treten geometrische Probleme auf, da die beiden Winkelmessstrahlen nahezu parallel verlaufen und die Schnittpunktbestimmung ungenau wird. 
+Eine Möglichkeit zur Verbesserung besteht in der Integration eines dritten Antennen-Boards. Durch die zusätzliche Winkelmessung kann die geometrische 
+Ambiguität reduziert und die Lokalisierungsgenauigkeit signifikant gesteigert werden.
+
+\paragraph{Erweiterung der Replay-Funktionalität}
+Der Datenlogger erlaubt bereits das Abspielen aufgezeichneter Messdaten. In zukünftigen Versionen könnte diese Funktion erweitert werden, um Parameter 
+direkt über eine grafische Benutzeroberfläche anpassen zu können. Eine visuelle Konfigurationsmaske mit Live-Feedback würde die Entwicklungs- und 
+Testphase erheblich vereinfachen.
+
+\paragraph{Erweiterung der Visualisierungsmöglichkeiten}
+Die Visualisierung des Tags wurde bereits durch einen stilisierten Stickman sowie ein LKW-Modell ergänzt. Um jedoch noch realitätsnähere und
+professionellere Darstellungen zu ermöglichen – insbesondere bei öffentlichen Vorführungen oder Messen – könnten 3D-Modelle eingesetzt werden. 
+Auch zusätzliche visuelle Indikatoren wie Bewegungstrails, Heatmaps oder Geschwindigkeitssymbole wären denkbar.
+
+Zudem könnte das Koordinatensystem um interaktive Funktionen wie Zoom, Skalierung oder Ein-/Ausblendung erweitert werden. Mittelfristig wäre auch 
+der Umstieg auf eine leistungsfähigere Visualisierungsplattform, etwa auf Basis von Unity3D oder WebGL, zu evaluieren.
+
+\paragraph{Verbesserung der Benutzeroberfläche}
+Die aktuelle UI bietet bereits eine grundlegend benutzerfreundliche Bedienung. Zukünftig wäre jedoch eine webbasierte Variante wünschenswert, 
+die plattformunabhängig funktioniert und auch über mobile Endgeräte steuerbar ist. Eine intuitive Konfiguration von Replay-, Logging- und 
+Visualisierungsparametern würde die Nutzerfreundlichkeit zusätzlich steigern.
+
+\paragraph{Tests und Validierung}
+Die durchgeführten Tests waren in ihrem Umfang noch begrenzt. Für zukünftige Weiterentwicklungen sollte ein strukturierter Testkatalog 
+entwickelt werden, der typische Anwendungsszenarien, Grenzfälle und Langzeittests umfasst. Dadurch ließe sich die Robustheit und Zuverlässigkeit 
+der Lösung weiter erhöhen.
+
+\paragraph{Systemintegration und Modularisierung}
+Langfristig wäre eine stärkere Modularisierung der Softwarestruktur anzustreben. Durch eine saubere Trennung von Datenaufnahme, Auswertung, 
+Visualisierung und Replay-Modulen ließe sich die Wartbarkeit verbessern. Auch die Integration externer Sensoren oder Cloud-Plattformen zur 
+weitergehenden Analyse könnte über standardisierte Schnittstellen ermöglicht werden.
+
+\paragraph{Zusammenfassung}
+Insgesamt existieren vielfältige Ansatzpunkte für die Weiterentwicklung der Lösung. Diese reichen von technischen Verbesserungen der 
+Positionsbestimmung und Visualisierung über benutzerfreundliche UI-Konzepte bis hin zur Erweiterung des Hardware-Setups durch zusätzliche Anker. 
+Gerade die Kombination dieser Maßnahmen verspricht eine deutliche Steigerung der Systemqualität und Anwendbarkeit in praxisnahen Einsatzszenarien.
+
+
+
 
 
 \clearpage

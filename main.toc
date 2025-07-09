@@ -35,13 +35,48 @@
 \contentsline {section}{\numberline {6}Entwicklung der neuen Visualisierung}{19}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Analyse der bestehenden Visualisierung}{19}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Konzept einer verbesserten Visualisierung}{20}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Implementierung der verbesserten Visualisierung}{20}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Ergebnisse und Benutzerfreundlichkeit}{20}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Test und Validierung}{20}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Testmethodik und -umgebung}{20}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Ergebnisse der Tests}{20}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Diskussion der Testergebnisse und Optimierungspotentiale}{20}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Kritische Bewertung und Ausblick}{20}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Reflexion der erreichten Ergebnisse}{20}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Grenzen der aktuellen Umsetzung}{20}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Vorschläge für zukünftige Weiterentwicklungen}{20}{subsection.8.3}%
+\contentsline {subsection}{\numberline {6.3}Implementierung der verbesserten Visualisierung}{21}{subsection.6.3}%
+\contentsline {paragraph}{Grundstruktur und Aufbau}{21}{section*.34}%
+\contentsline {paragraph}{Verarbeitung eingehender Daten}{21}{section*.35}%
+\contentsline {paragraph}{Darstellungskonzept des Tags}{22}{section*.36}%
+\contentsline {paragraph}{Visualisierung der Antennen und Sensorlinien}{22}{section*.37}%
+\contentsline {paragraph}{Interaktive Steuerung und Optimierungen}{22}{section*.38}%
+\contentsline {paragraph}{Zusammenfassung}{22}{section*.39}%
+\contentsline {subsection}{\numberline {6.4}Ergebnisse und Benutzerfreundlichkeit}{22}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Test und Validierung}{24}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Testmethodik und -umgebung}{24}{subsection.7.1}%
+\contentsline {paragraph}{Testziele}{24}{section*.40}%
+\contentsline {paragraph}{Testarten}{24}{section*.41}%
+\contentsline {paragraph}{Testumgebung}{25}{section*.42}%
+\contentsline {paragraph}{Ablauf}{25}{section*.43}%
+\contentsline {paragraph}{Einschränkungen}{25}{section*.44}%
+\contentsline {subsection}{\numberline {7.2}Ergebnisse der Tests}{25}{subsection.7.2}%
+\contentsline {paragraph}{Funktionalität und Kommunikation}{25}{section*.45}%
+\contentsline {paragraph}{Darstellung des Tags}{26}{section*.46}%
+\contentsline {paragraph}{Visualisierung und Layout}{26}{section*.47}%
+\contentsline {paragraph}{Benutzerfreundlichkeit}{26}{section*.48}%
+\contentsline {paragraph}{Zusammenfassende Bewertung}{26}{section*.49}%
+\contentsline {subsection}{\numberline {7.3}Diskussion der Testergebnisse und Optimierungspotentiale}{27}{subsection.7.3}%
+\contentsline {paragraph}{Limitierungen in der Positionsdarstellung}{27}{section*.50}%
+\contentsline {paragraph}{Darstellung und Interpretation der Ergebnisse}{27}{section*.51}%
+\contentsline {paragraph}{Bedienbarkeit und Nutzbarkeit}{28}{section*.52}%
+\contentsline {paragraph}{Potenziale zur Erweiterung}{28}{section*.53}%
+\contentsline {paragraph}{Fazit}{28}{section*.54}%
+\contentsline {section}{\numberline {8}Kritische Bewertung und Ausblick}{29}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Reflexion der erreichten Ergebnisse}{29}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Grenzen der aktuellen Umsetzung}{30}{subsection.8.2}%
+\contentsline {paragraph}{Begrenzte Genauigkeit der Positionsbestimmung}{30}{section*.55}%
+\contentsline {paragraph}{Nicht vollständig realitätsgetreue Bewegungsdarstellung}{30}{section*.56}%
+\contentsline {paragraph}{Einfaches visuelles Layout}{30}{section*.57}%
+\contentsline {paragraph}{Begrenzte Testtiefe}{30}{section*.58}%
+\contentsline {paragraph}{Fehlende erweiterte Analyse- und Mehrbenutzerfunktionen}{30}{section*.59}%
+\contentsline {paragraph}{Technische Einschränkungen der Visualisierung}{31}{section*.60}%
+\contentsline {subsection}{\numberline {8.3}Vorschläge für zukünftige Weiterentwicklungen}{31}{subsection.8.3}%
+\contentsline {paragraph}{Technische Optimierung der Bewegungsglättung}{31}{section*.61}%
+\contentsline {paragraph}{Verbesserung der Triangulation bei Randlagen}{31}{section*.62}%
+\contentsline {paragraph}{Erweiterung der Replay-Funktionalität}{31}{section*.63}%
+\contentsline {paragraph}{Erweiterung der Visualisierungsmöglichkeiten}{32}{section*.64}%
+\contentsline {paragraph}{Verbesserung der Benutzeroberfläche}{32}{section*.65}%
+\contentsline {paragraph}{Tests und Validierung}{32}{section*.66}%
+\contentsline {paragraph}{Systemintegration und Modularisierung}{32}{section*.67}%
+\contentsline {paragraph}{Zusammenfassung}{32}{section*.68}%
