@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  10 JUL 2025 14:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  10 JUL 2025 14:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1655,12 +1655,12 @@ Underfull \hbox (badness 1502) in paragraph at lines 847--850
 File: images/Stickman Grün.png Graphic file (type png)
 <use images/Stickman Grün.png>
 Package pdftex.def Info: images/Stickman Grün.png  used on input line 861.
-(pdftex.def)             Requested size: 390.0pt x 280.30864pt.
+(pdftex.def)             Requested size: 312.00119pt x 224.24573pt.
 <images/Stickman Gelb.png, id=462, 549.55313pt x 389.20406pt>
 File: images/Stickman Gelb.png Graphic file (type png)
 <use images/Stickman Gelb.png>
 Package pdftex.def Info: images/Stickman Gelb.png  used on input line 867.
-(pdftex.def)             Requested size: 390.0pt x 276.2121pt.
+(pdftex.def)             Requested size: 312.00119pt x 220.96968pt.
 
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
@@ -1682,17 +1682,6 @@ Package pdftex.def Info: images/Stickman Rot.png  used on input line 873.
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 877.
-(pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
-
-Overfull \hbox (20.10214pt too wide) has occurred while \output is active
- [][] 
- []
-
-[25 <./images/Stickman Grün.png>]
-
-File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
-<use images/DHBW_d_R_FN_46mm_4c.jpg>
 Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 878.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
@@ -1700,8 +1689,8 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[26 <./images/Stickman Gelb.png>]
-<images/Visualisierung Antennen.png, id=482, 1444.64719pt x 810.02625pt>
+[25 <./images/Stickman Grün.png> <./images/Stickman Gelb.png>]
+<images/Visualisierung Antennen.png, id=478, 1444.64719pt x 810.02625pt>
 File: images/Visualisierung Antennen.png Graphic file (type png)
 <use images/Visualisierung Antennen.png>
 Package pdftex.def Info: images/Visualisierung Antennen.png  used on input line 887.
@@ -1717,13 +1706,13 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[27 <./images/Stickman Rot.png>]
-<images/Volle Darstellung.png, id=489, 1444.64719pt x 812.28468pt>
+[26 <./images/Stickman Rot.png>]
+<images/Volle Darstellung.png, id=485, 1444.64719pt x 812.28468pt>
 File: images/Volle Darstellung.png Graphic file (type png)
 <use images/Volle Darstellung.png>
 Package pdftex.def Info: images/Volle Darstellung.png  used on input line 905.
 (pdftex.def)             Requested size: 390.0pt x 219.28261pt.
-<images/Minimale Darstellung.png, id=490, 1443.89438pt x 812.28468pt>
+<images/Minimale Darstellung.png, id=486, 1443.89438pt x 812.28468pt>
 File: images/Minimale Darstellung.png Graphic file (type png)
 <use images/Minimale Darstellung.png>
 Package pdftex.def Info: images/Minimale Darstellung.png  used on input line 911.
@@ -1739,7 +1728,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[28 <./images/Visualisierung Antennen.png>]
+[27 <./images/Visualisierung Antennen.png>]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1750,7 +1739,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[29 <./images/Volle Darstellung.png> <./images/Minimale Darstellung.png>]
+[28 <./images/Volle Darstellung.png> <./images/Minimale Darstellung.png>]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1761,7 +1750,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[30]
+[29]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1772,7 +1761,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[31]
+[30]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1783,7 +1772,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[32
+[31
 
 ]
 
@@ -1796,13 +1785,13 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[33]
-<images/Gute Triangulation.png, id=533, 376.40625pt x 522.45187pt>
+[32]
+<images/Gute Triangulation.png, id=529, 376.40625pt x 522.45187pt>
 File: images/Gute Triangulation.png Graphic file (type png)
 <use images/Gute Triangulation.png>
 Package pdftex.def Info: images/Gute Triangulation.png  used on input line 1020.
 (pdftex.def)             Requested size: 195.0pt x 270.6641pt.
-<images/Schlechte Triangulation.png, id=534, 940.26282pt x 270.25969pt>
+<images/Schlechte Triangulation.png, id=530, 940.26282pt x 270.25969pt>
 File: images/Schlechte Triangulation.png Graphic file (type png)
 <use images/Schlechte Triangulation.png>
 Package pdftex.def Info: images/Schlechte Triangulation.png  used on input line 1026.
@@ -1818,7 +1807,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[34 <./images/Gute Triangulation.png>]
+[33 <./images/Gute Triangulation.png>]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1829,7 +1818,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[35 <./images/Schlechte Triangulation.png>]
+[34 <./images/Schlechte Triangulation.png>]
 Underfull \hbox (badness 1142) in paragraph at lines 1062--1066
  []\OT1/cmr/bx/n/12 Limitierungen in der Po-si-ti-ons-dar-stel-lung[] \OT1/cmr/m/n/12 Trotz im-ple-men-tier-ter
  []
@@ -1850,7 +1839,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[36]
+[35]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1861,7 +1850,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[37]
+[36]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1872,7 +1861,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[38
+[37
 
 ]
 Underfull \hbox (badness 6876) in paragraph at lines 1144--1148
@@ -1890,7 +1879,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[39]
+[38]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1901,7 +1890,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[40]
+[39]
 Underfull \hbox (badness 1132) in paragraph at lines 1199--1202
  []\OT1/cmr/bx/n/12 Erweiterung der Vi-sua-li-sie-rungsm[]oglichkeiten[] \OT1/cmr/m/n/12 Die Vi-sua-li-sie-rung
  []
@@ -1922,7 +1911,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[41]
+[40]
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1933,7 +1922,7 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  [][] 
  []
 
-[42]
+[41]
 
 LaTeX Warning: Empty bibliography on input line 1237.
 
@@ -1965,17 +1954,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### semi simple group (level 1) entered at line 1234 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31509 strings out of 473576
- 635481 string characters out of 5714857
+ 31508 strings out of 473576
+ 635474 string characters out of 5714857
  1530867 words of memory out of 5000000
  54159 multiletter control sequences out of 15000+600000
  565510 words of font info for 61 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  110i,26n,113p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lnztadil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (49 pages, 1701478 bytes).
+Output written on main.pdf (48 pages, 1700627 bytes).
 PDF statistics:
- 702 PDF objects out of 1000 (max. 8388607)
- 183 named destinations out of 1000 (max. 500000)
+ 697 PDF objects out of 1000 (max. 8388607)
+ 182 named destinations out of 1000 (max. 500000)
  342 words of extra memory for PDF output out of 10000 (max. 10000000)
 
