@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  10 JUL 2025 14:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.9)  10 JUL 2025 14:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1403,21 +1403,16 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
 [6
 
  <./images/Datalogger.jpg>]
-<images/Flussdiagramm Datenlogger.png, id=322, 1330.9725pt x 206.27063pt>
+<images/Flussdiagramm Datenlogger.png, id=322, 709.14937pt x 280.04625pt>
 File: images/Flussdiagramm Datenlogger.png Graphic file (type png)
 <use images/Flussdiagramm Datenlogger.png>
 Package pdftex.def Info: images/Flussdiagramm Datenlogger.png  used on input line 382.
-(pdftex.def)             Requested size: 390.0pt x 60.44012pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--393
-[]\OT1/cmr/bx/n/14.4 Vorhandene Her-aus-for-de-run-gen und
- []
-
+(pdftex.def)             Requested size: 390.0pt x 154.01735pt.
 
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
-Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 397.
+Package pdftex.def Info: images/DHBW_d_R_FN_46mm_4c.jpg  used on input line 392.
 (pdftex.def)             Requested size: 85.35826pt x 47.19005pt.
 
 Overfull \hbox (20.10214pt too wide) has occurred while \output is active
@@ -1425,6 +1420,11 @@ Overfull \hbox (20.10214pt too wide) has occurred while \output is active
  []
 
 [7 <./images/Flussdiagramm Datenlogger.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+[]\OT1/cmr/bx/n/14.4 Vorhandene Her-aus-for-de-run-gen und
+ []
+
+
 
 File: images/DHBW_d_R_FN_46mm_4c.jpg Graphic file (type jpg)
 <use images/DHBW_d_R_FN_46mm_4c.jpg>
@@ -1962,7 +1962,7 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  110i,26n,113p,725b,2477s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lnztadil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (48 pages, 1700627 bytes).
+Output written on main.pdf (48 pages, 1696847 bytes).
 PDF statistics:
  697 PDF objects out of 1000 (max. 8388607)
  182 named destinations out of 1000 (max. 500000)

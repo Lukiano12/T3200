@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1751443904.20487 "main.bcf" "main.bbl" "main" 1752151483.99241 0
+["biber main"] 1751443904.20487 "main.bcf" "main.bbl" "main" 1752152048.75592 0
   "literatur.bib" 1751278974 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "main.bcf" 1752151483 107807 ace29b9707913e6fa31620754d6b8d75 "pdflatex"
+  "main.bcf" 1752152048 107807 ace29b9707913e6fa31620754d6b8d75 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1752151480.69023 "c:/Users/lnztadil/Desktop/T3200/main.tex" "main.pdf" "main" 1752151483.99295 0
+["pdflatex"] 1752152045.46635 "c:/Users/lnztadil/Desktop/T3200/main.tex" "main.pdf" "main" 1752152048.75652 0
   "C:/Users/lnztadil/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1742397497 124121 7f2db78cdab76bac82b39be5e58389da ""
   "C:/Users/lnztadil/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1741616856 14064 df4676c093c4e71a0ed09badf2e7261b ""
   "C:/Users/lnztadil/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1736421697 11995304 639aba1e8c212e3b0ab6a8aed7b309d5 ""
@@ -161,13 +161,13 @@
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/lnztadil/Desktop/T3200/main.tex" 1752151476 76020 cf5ef6d5f7af37340a34f18965f1979c ""
+  "c:/Users/lnztadil/Desktop/T3200/main.tex" 1752151709 76020 cf5ef6d5f7af37340a34f18965f1979c ""
   "images/1906_abbildung1 (1).png" 1751532008 41658 d32dc76bb8fbfcb939044ed508040229 ""
   "images/Ablauf Funktion Datenlogger.png" 1752137136 21219 37ef4c72f639e9799b804406f4a2bef1 ""
   "images/Alte Visualisierung.png" 1752147228 155843 5cdee291880fbb81bd2faa0389ca5f1f ""
   "images/DHBW_d_R_FN_46mm_4c.jpg" 1751274416 17946 50287553cf5cb047b6c145a2811653f1 ""
   "images/Datalogger.jpg" 1751435935 37682 fa515c03bc6769a76cfeb8595a84a6e4 ""
-  "images/Flussdiagramm Datenlogger.png" 1752136518 30012 93d360249a60e5a807e69e21a539c825 ""
+  "images/Flussdiagramm Datenlogger.png" 1752152010 23960 58e540c51ab55f5ec640902e68c96e1e ""
   "images/Gute Triangulation.png" 1752150700 22876 1bb1de03aa353061001bcf5efed8d5dc ""
   "images/Minimale Darstellung.png" 1752149774 73113 58d884d254b5ae945cde8776f82289a3 ""
   "images/Schlechte Triangulation.png" 1752150551 24088 d0be1fb99c927759266917bc53f6ba27 ""
@@ -179,13 +179,13 @@
   "images/Volle Darstellung.png" 1752149703 223270 2fd319cb8b5807ba13db8d3bbc7e3db9 ""
   "images/XPLR-AOA-with-C209-and-C211-02_0.png" 1751274416 234459 c232287b511ce2bbb6ac0b629b48e895 ""
   "images/abbiegeassistent-scaled-7b2478b8.jpeg" 1751274416 219018 7c4658d95bdde44246d89d853cd487b6 ""
-  "main.aux" 1752151483 17435 dae3c638495ec36463fdd88dd581ce7a "pdflatex"
+  "main.aux" 1752152048 17435 dae3c638495ec36463fdd88dd581ce7a "pdflatex"
   "main.bbl" 1751443909 486 76d65a242ec496c9b4361af646ff12cb "biber main"
-  "main.lof" 1752151483 1819 1f50ac6390d1dd815a311ee6ecc465ca "pdflatex"
-  "main.out" 1752151483 7496 746a2a89bda9640ee417aa30fe6760c3 "pdflatex"
-  "main.run.xml" 1752151483 2431 2e2b54b1e44d26cb3a0d5b94e09175f2 "pdflatex"
-  "main.tex" 1752151476 76020 cf5ef6d5f7af37340a34f18965f1979c ""
-  "main.toc" 1752151483 6872 63aa9931f8a30972181a5a664f26ecc0 "pdflatex"
+  "main.lof" 1752152048 1819 1f50ac6390d1dd815a311ee6ecc465ca "pdflatex"
+  "main.out" 1752152048 7496 746a2a89bda9640ee417aa30fe6760c3 "pdflatex"
+  "main.run.xml" 1752152048 2431 2e2b54b1e44d26cb3a0d5b94e09175f2 "pdflatex"
+  "main.tex" 1752151709 76020 cf5ef6d5f7af37340a34f18965f1979c ""
+  "main.toc" 1752152048 6872 63aa9931f8a30972181a5a664f26ecc0 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
