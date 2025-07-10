@@ -233,6 +233,7 @@ Friedrichshafen, den \today \\[1ex]
     \acro{JSON}{JavaScript Object Notation}
     \acro{UI}{User Interface}
     \acro{JSONL}{JavaScript Object Notation Lines}
+    \acro{BAT}{batch}
 
 \end{acronym}
 
@@ -287,7 +288,7 @@ Eine besonders bedeutende Neuerung im Bereich der \acf{LKW}-Sicherheit stellen A
 Diese Systeme helfen, den toten Winkel zu reduzieren und somit Unfälle – insbesondere beim Rechtsabbiegen – zu vermeiden. 
 Trotz dieser technischen Fortschritte besteht weiterhin Potenzial für weitere Verbesserungen. Eine umfassende Forschung und Entwicklung 
 im Bereich von Fahrerassistenzsystemen könnte zukünftig dazu beitragen, das allgemeine Verkehrsrisiko weiter zu senken und die Verkehrssicherheit
-signifikant zu erhöhen. [1]
+signifikant zu erhöhen.
 
 \clearpage
 
@@ -321,7 +322,7 @@ Die \ac{AoA}-Technologie ist Teil des Bluetooth 5.1 Standards und ermöglicht di
  Voraussetzung hierfür ist jedoch ein exakter Zugang zu den Bluetooth-Sendeparametern sowie eine Antennenkonfiguration 
  mit bekannten geometrischen Abständen. Das u-blox XPLR-AOA-1 Explorer Kit stellt hierzu eine geeignete Hardwarelösung dar, 
  da es mit einem \ac{AoA}-fähigen Empfängerboard und einem sogenannten Tag (Sender) ausgestattet ist. Ziel der Arbeit war es, das Smartphone 
- funktional durch diesen Tag zu ersetzen. [1][2][3]
+ funktional durch diesen Tag zu ersetzen.
 
  \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/XPLR-AOA-with-C209-and-C211-02_0}\\[1ex]
@@ -340,7 +341,7 @@ Die \ac{AoA}-Technologie ist Teil des Bluetooth 5.1 Standards und ermöglicht di
  \end{itemize}
 Diese Faktoren führten dazu, dass das Projekt in der geplanten Form nicht abgeschlossen werden konnte. 
 Die zugrundeliegende Idee bleibt jedoch vielversprechend und kann in Zukunft wieder aufgegriffen werden, sobald sich 
-die technischen Rahmenbedingungen verbessert haben.[4][5][6][7]
+die technischen Rahmenbedingungen verbessert haben.
 
 \clearpage
 
@@ -376,6 +377,13 @@ Der Datenlogger dient dabei nicht nur der reinen Aufzeichnung, sondern ermöglic
 originalgetreuen Messwerten. Diese Werte können anschließend in separate Programme oder Auswertungswerkzeuge importiert werden,
  um dort Berechnungen, Analysen und grafische Darstellungen durchzuführen. Änderungen an Parametern oder Auswertealgorithmen können 
  somit auf Basis gespeicherter Daten vorgenommen und getestet werden, ohne dass dafür eine erneute Datenerfassung mit der realen Sensorik notwendig ist.
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Flussdiagramm Datenlogger.png}\\[1ex]
+    \centering
+    \caption{Integration Datenlogger}
+    \label{ABBILDUNG}
+\end{figure}
 
 Darüber hinaus erlaubt der Datenlogger eine „Offline-Simulation“ oder ein Daten-Replay mit echten Werten. Diese Vorgehensweise bietet den 
 Vorteil, dass Optimierungen zunächst im Testsystem geprüft werden können. Erst wenn ein Ergebnis zufriedenstellend ist, wird es auf das reale 
@@ -418,7 +426,6 @@ Diese Kombination aus C++ (für hardwarenahen Durchsatz) und Python (für flexib
 an Zuverlässigkeit, Erweiterbarkeit und unkomplizierte Offline-Analyse. Sie stellt zudem sicher, dass Teammitglieder auch ohne direkten 
 Hardwarezugriff reale Datensätze einspielen, parametrieren und visualisieren können.
 
-[8][9]
 \subsection{Auswahl geeigneter Technologien und Tools}
 Für die Erweiterung des bestehenden Prototyps wurde bewusst an der zweigeteilten Sprachebene festgehalten: 
 zeitkritische Kommunikation und Treiberfunktionen laufen weiterhin in C++, während der neue Datenlogger in Python 
@@ -464,7 +471,7 @@ erfasst, darunter:
 \end{lstlisting}
 \end{itemize}
 
-Die Daten werden zeilenweise im JSON Lines-Format (\texttt{.jsonl}) gespeichert. Jede Zeile enthält einen Zeitstempel und die zugehörigen Sensordaten. 
+Die Daten werden zeilenweise im \ac{JSON} Lines-Format (\texttt{.jsonl}) gespeichert. Jede Zeile enthält einen Zeitstempel und die zugehörigen Sensordaten. 
 Ein Beispiel für eine gespeicherte Messung ist:
 
 \begin{verbatim}
@@ -500,6 +507,18 @@ x = x_1 + t_1 \cdot dx_1, \quad y = y_1 + t_1 \cdot dy_1
 \]
 
 Diese Berechnung kann sowohl live während der Datenerfassung als auch im Nachgang im sogenannten Replay-Modus erfolgen.
+
+\vspace{1em}
+\textbf{Legende zur Formel:}
+\begin{itemize}
+    \item $x_1, y_1$: Koordinaten des ersten Ankers
+    \item $x_2, y_2$: Koordinaten des zweiten Ankers
+    \item $\theta_1, \theta_2$: Empfangene Winkelinformationen (\ac{AoA}) an Anker 1 bzw. Anker 2
+    \item $dx_1, dy_1$: Richtungsvektor vom ersten Anker, berechnet mit $\sin(\theta_1), \cos(\theta_1)$
+    \item $dx_2, dy_2$: Richtungsvektor vom zweiten Anker analog dazu
+    \item $t_1$: Skalierungsfaktor entlang der Linie des ersten Ankers zur Schnittpunktberechnung
+    \item $x, y$: Berechnete Position des Tags im zweidimensionalen Raum
+\end{itemize}
 
 \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/1906_abbildung1 (1)}\\[1ex]
@@ -538,11 +557,19 @@ Der vollständige Ablauf lässt sich wie folgt beschreiben:
 
 \begin{enumerate}
     \item \textbf{Messung:} Anker empfangen Signale und bestimmen Winkel sowie Sensordaten.
-    \item \textbf{Datenerfassung:} Python-Skripte lesen die Daten aus und speichern sie als JSONL.
+    \item \textbf{Datenerfassung:} Python-Skripte lesen die Daten aus und speichern sie als \ac{JSONL}.
     \item \textbf{Speicherung:} Die Daten werden zeilenweise mit Zeitstempel archiviert.
     \item \textbf{Replay:} Ein weiteres Skript liest die Daten, berechnet ggf. die Position und sendet sie weiter.
     \item \textbf{Visualisierung:} Eine Benutzeroberfläche stellt Position und Sensordaten visuell dar.
 \end{enumerate}
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Ablauf Funktion Datenlogger.png}\\[1ex]
+    \centering
+    \caption{Ablauf Funktion Datenlogger}
+    \label{ABBILDUNG}
+\end{figure}
+
 
 \paragraph{Beispiel einer vollständigen Messung}
 
@@ -584,19 +611,27 @@ Die Implementierung des Datenloggers konnte erfolgreich in die bestehende System
 erfolgte durch ein einzelnes, in Python geschriebenes Modul, das mit nur wenigen Anpassungen in den vorhandenen Code eingebunden wurde. 
 Diese modulare Herangehensweise ermöglichte eine einfache Integration, ohne die Stabilität der bestehenden C++- und Python-Strukturen zu beeinträchtigen.
 
-Der Datenlogger ist in der Lage, strukturierte Messdaten zuverlässig zu erfassen, im JSONL-Format zu speichern und diese in der 
+Der Datenlogger ist in der Lage, strukturierte Messdaten zuverlässig zu erfassen, im \ac{JSONL}-Format zu speichern und diese in der 
 \texttt{replayLogger.py} zur erneuten Verarbeitung und Visualisierung bereitzustellen. Durch die gezielte Nachberechnung der gespeicherten 
 Parameter kann die Parametrisierung und Optimierung der Tag-Ortung nun auch ohne aktiven Hardwarezugang erfolgen. Dies stellt einen wesentlichen
  Fortschritt gegenüber früheren Ansätzen dar, bei denen für jede Änderung eine Live-Verbindung zur u-blox-Hardware erforderlich war.
 
-Zur weiteren Erleichterung der Nutzung wurde eine Batch-Datei (BAT-Datei) erstellt, die den Datenlogger automatisch 
+Zur weiteren Erleichterung der Nutzung wurde eine \acf{BAT}-Datei erstellt, die den Datenlogger automatisch 
 startet und eine benutzerfreundliche Auswahl der abzuspielenden Daten ermöglicht. Dadurch können mehrere aufgezeichnete Datensätze
  parallel gespeichert, umbenannt und bei Bedarf erneut abgespielt werden. Dies erleichtert sowohl die Organisation als auch die Wiederverwendbarkeit
   der Messdaten erheblich.
 
 Die Kommunikation zwischen Logger und Visualisierung über TCP funktioniert stabil, sodass eine Echtzeit- oder zeitnahe Darstellung 
-der Messdaten in der grafischen Oberfläche möglich ist. Die Darstellung der Ergebnisse im UI ist erfolgreich umgesetzt worden; die gespeicherten
+der Messdaten in der grafischen Oberfläche möglich ist. Die Darstellung der Ergebnisse im \acf{UI}(Visualisierung) ist erfolgreich umgesetzt worden; die gespeicherten
  Positions- und Sensordaten lassen sich korrekt laden und werden visuell ansprechend aufbereitet.
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Vergleich Parametrisierung.png}\\[1ex]
+    \centering
+    \caption{Vergleich Parametrisierung früher und heute}
+    \label{ABBILDUNG}
+\end{figure}
+
 
 Ein weiterer Vorteil liegt in der verbesserten Teamfähigkeit des Systems. Da echte Messwerte gespeichert und wiederverwendet werden können, 
 ist eine parallele Bearbeitung durch mehrere Teammitglieder möglich – unabhängig von der Verfügbarkeit der physischen Hardware.
@@ -642,7 +677,7 @@ Speicherprobleme oder Verzögerungen auftreten. Gleichzeitig soll der Ressourcen
 gewährleisten.
 
 Darüber hinaus ist die \textbf{Schnittstellenkompatibilität} entscheidend. Die Visualisierung kommuniziert über eine TCP-Verbindung mit dem Datenlogger 
-und verarbeitet strukturierte JSON-Daten. Sie muss in der Lage sein, kontinuierlich neue Informationen entgegenzunehmen, korrekt zu interpretieren und 
+und verarbeitet strukturierte \ac{JSON}-Daten. Sie muss in der Lage sein, kontinuierlich neue Informationen entgegenzunehmen, korrekt zu interpretieren und 
 grafisch darzustellen.
 
 Schließlich sollte die Visualisierung eine \textbf{benutzerfreundliche Interaktion} bieten. Die Bedienoberfläche muss auch für neue Projektmitglieder
@@ -683,7 +718,7 @@ Zur Anzeige der Daten kommen vor allem folgende Bibliotheken und Technologien zu
     \item \textbf{Matplotlib:} Für einfache 2D-Visualisierung der Anker, Tags und Bewegungslinien.
     \item \textbf{Pygame (alternativ):} Bei Bedarf für performantere, interaktive Darstellungen mit benutzerdefinierter Steuerung.
     \item \textbf{TCP-Kommunikation:} Die Visualisierung empfängt die Daten über eine TCP-Verbindung, die vom Datenlogger bereitgestellt wird (z.\,B. Skript \texttt{ui.py}).
-    \item \textbf{JSON-Verarbeitung:} Die Logdateien und Echtzeitdaten liegen im JSON- bzw. JSONL-Format vor und werden zeilenweise eingelesen.
+    \item \textbf{JSON-Verarbeitung:} Die Logdateien und Echtzeitdaten liegen im \ac{JSON}- bzw. \ac{JSONL}-Format vor und werden zeilenweise eingelesen.
 \end{itemize}
 
 Der Aufbau der Visualisierung ist modular gehalten, sodass zukünftige Änderungen – etwa am Format der Sensordaten oder an der
@@ -695,7 +730,7 @@ Die Benutzeroberfläche ist so gestaltet, dass verschiedene Datenquellen unterst
 Replay-Modus möglich, in dem ältere Messungen abgespielt werden. Dies wird durch einen einfachen Startbefehl (z.\,B. über eine Batch-Datei oder
  Kommandozeilenparameter) gesteuert.
 
-Die Datenstruktur aus der JSONL-Datei ermöglicht eine verlustfreie Weiterverarbeitung der gespeicherten Informationen. Durch die Trennung von 
+Die Datenstruktur aus der \ac{JSONL}-Datei ermöglicht eine verlustfreie Weiterverarbeitung der gespeicherten Informationen. Durch die Trennung von 
 Backend (Logger/Replay) und Frontend (Visualisierung) ist das System erweiterbar. Eine spätere Portierung auf moderne GUI-Frameworks 
 (z.\,B. \texttt{Tkinter}, \texttt{PyQt}, oder webbasierte Tools wie \texttt{Plotly Dash}) ist ebenso denkbar wie eine Erweiterung auf 3D-Darstellungen 
 mithilfe von OpenGL oder Unity.
@@ -725,14 +760,22 @@ bilden damit eine wichtige Grundlage für die weiterführende Analyse, Parametri
 \section{Entwicklung der neuen Visualisierung}
 \subsection{Analyse der bestehenden Visualisierung}
 
-Die bisherige grafische Benutzeroberfläche (UI) wurde in Python entwickelt und diente der Echtzeitdarstellung der aus dem Bluetooth-AoA-System ermittelten
+Die bisherige grafische Benutzeroberfläche (\ac{UI}) wurde in Python entwickelt und diente der Echtzeitdarstellung der aus dem Bluetooth-\ac{AoA}-System ermittelten
  Tag-Position. Als zentrales Element wurde ein zweidimensionales kartesisches Koordinatensystem verwendet, innerhalb dessen ein einzelner Punkt die 
  Bewegung des Tags repräsentierte. Die Position dieses Punktes wurde entweder durch eine direkte Live-Messung mit der Hardware oder durch eine 
  vereinfachte Simulation erzeugt – eine Möglichkeit zur Wiederverwendung gespeicherter Daten durch einen Datenlogger war zu diesem Zeitpunkt noch nicht
   implementiert.
 
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Alte Visualisierung.png}\\[1ex]
+    \centering
+    \caption{Alte Visualisierung}
+    \label{ABBILDUNG}
+\end{figure}
+
+
 Zur besseren Nachvollziehbarkeit der geometrischen Zusammenhänge wurden auch die fest installierten Empfangseinheiten (Anker) im Koordinatensystem 
-visualisiert. Von deren Positionen ausgehend wurden Linien gezeichnet, welche die gemessenen Einfallswinkel (Angle of Arrival, AoA) darstellten. Die 
+visualisiert. Von deren Positionen ausgehend wurden Linien gezeichnet, welche die gemessenen Einfallswinkel (\ac{AoA}) darstellten. Die 
 Idee dahinter war, die Triangulation – also die Schnittpunktberechnung zweier Richtungslinien – visuell darzustellen und die damit berechnete Tag-Position
  zu validieren.
 
@@ -783,7 +826,7 @@ Präsentationen, bei Tests oder in zukünftigen Anwenderstudien.
 
 \subsection{Implementierung der verbesserten Visualisierung}
 Zur besseren Nachvollziehbarkeit der gemessenen Bewegungsdaten und zur verständlichen Darstellung des Systems für technische wie nicht-technische 
-Betrachter wurde die Benutzeroberfläche (UI) umfassend überarbeitet. Die Implementierung erfolgte in Python unter Verwendung des 
+Betrachter wurde die Benutzeroberfläche \ac{UI} umfassend überarbeitet. Die Implementierung erfolgte in Python unter Verwendung des 
 \texttt{tkinter}-Frameworks, wodurch eine flexible und plattformunabhängige grafische Visualisierung ermöglicht wurde.
 
 \paragraph{Grundstruktur und Aufbau}
@@ -796,13 +839,13 @@ Die Visualisierung ist in mehreren Schichten aufgebaut:
 \begin{itemize}
 \item Darstellung des Tags als dynamisch skalierbare Figur (z.,B. Stickman oder Fahrzeugabbildung)
 \item Hintergrundkoordinatensystem mit optional einblendbaren Achsen und Skalen
-\item Einblendung der Position und Orientierung der Antennenarrays sowie der zugehörigen Messrichtungen (AoA-Linien)
+\item Einblendung der Position und Orientierung der Antennenarrays sowie der zugehörigen Messrichtungen (\ac{AoA}-Linien)
 \end{itemize}
 
 \paragraph{Verarbeitung eingehender Daten}
 
-Die Visualisierung kommuniziert über eine TCP-Verbindung mit dem Datenlogger, der kontinuierlich strukturierte JSON-Datenpakete sendet. Diese enthalten 
-Informationen zur geschätzten Position des Tags, Sensordaten sowie Metainformationen. Eine dedizierte Serverkomponente in der UI nimmt die Daten entgegen,
+Die Visualisierung kommuniziert über eine TCP-Verbindung mit dem Datenlogger, der kontinuierlich strukturierte \ac{JSON}-Datenpakete sendet. Diese enthalten 
+Informationen zur geschätzten Position des Tags, Sensordaten sowie Metainformationen. Eine dedizierte Serverkomponente in der \ac{UI} nimmt die Daten entgegen,
  extrahiert relevante Parameter und aktualisiert die grafische Darstellung entsprechend.
 
 Zur Verbesserung der Darstellung wurde ein Glättungsverfahren mit exponentiellem Filter implementiert, um Positionssprünge durch Rauschen oder Ausreißer 
@@ -810,15 +853,43 @@ zu reduzieren. Gleichzeitig werden unrealistische Sprünge oder abrupte Änderun
 
 \paragraph{Darstellungskonzept des Tags}
 
-Anstelle eines einfachen Punkts wird das Tag nun als abstrahierte Figur (z.,B. Stickman) dargestellt. Diese passt sich dynamisch in Größe und Farbe an
+Anstelle eines einfachen Punkts wird das Tag nun als abstrahierte Figur (Stickman) dargestellt. Diese passt sich dynamisch in Größe und Farbe an
  den Abstand zu den Antennen an, um Nähe, Risiko oder Interaktionszonen visuell hervorzuheben. Alternativ kann ein repräsentatives Fahrzeugmodell 
- (z.,B. ein LKW-Bild) eingebunden werden, um reale Szenarien wie Fahrassistenzsysteme intuitiver zu vermitteln.
+ (ein \ac{LKW}-Bild) eingebunden werden, um reale Szenarien wie Fahrassistenzsysteme intuitiver zu vermitteln.
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Stickman Grün.png}\\[1ex]
+    \centering
+    \caption{Grün - keine Gefahr noch}
+    \label{ABBILDUNG}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Stickman Gelb.png}\\[1ex]
+    \centering
+    \caption{Gelb - Warnung, Gefahr möglich}
+    \label{ABBILDUNG}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Stickman Rot.png}\\[1ex]
+    \centering
+    \caption{Rot - Achtung, Kollisionsgefahr}
+    \label{ABBILDUNG}
+\end{figure}
+
 
 \paragraph{Visualisierung der Antennen und Sensorlinien}
 
-Die Position der Antennenarrays wird grafisch dargestellt und durch Linien ergänzt, welche die gemessenen Einfallswinkel (AoA) andeuten. Diese Linien 
+Die Position der Antennenarrays wird grafisch dargestellt und durch Linien ergänzt, welche die gemessenen Einfallswinkel (\ac{AoA}) andeuten. Diese Linien 
 zeigen die theoretische Messrichtung, was ein besseres Verständnis der Triangulation erlaubt. Zudem wurde eine numerische Winkelanzeige an den 
 Antennenpositionen ergänzt.
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Visualisierung Antennen.png}\\[1ex]
+    \centering
+    \caption{Visualisierung der Antennen und Sensorlinien}
+    \label{ABBILDUNG}
+\end{figure}
+
 
 \paragraph{Interaktive Steuerung und Optimierungen}
 
@@ -829,6 +900,20 @@ wechseln. Zusätzlich kann die Darstellung bei Bedarf in den Vollbildmodus geset
 Zur Steuerung und flexiblen Nutzung wurde außerdem eine ausführbare Batch-Datei (\texttt{.bat}) bereitgestellt, mit der definierte Logdateien gezielt 
 abgespielt und getestet werden können. Diese Struktur erlaubt es, mehrere gespeicherte Datensätze individuell zu benennen, abzurufen und ohne 
 Hardwarebezug zu analysieren.
+
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Volle Darstellung.png}\\[1ex]
+    \centering
+    \caption{Volle Darstellung Benutzeroberfläche}
+    \label{ABBILDUNG}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Minimale Darstellung.png}\\[1ex]
+    \centering
+    \caption{Minimale Darstellung Benutzeroberfläche}
+    \label{ABBILDUNG}
+\end{figure}
+
 
 \paragraph{Zusammenfassung}
 
@@ -846,7 +931,7 @@ Analyse und Bewertung von Positionsdaten ohne permanenten Zugriff auf die Hardwa
   Vorteile, da Anpassungen und neue Algorithmen unabhängig von einer aktiven Messumgebung evaluiert werden können.
 
 Im Bereich der Darstellung konnte mit der Ersetzung des bisherigen Tag-Punktes durch eine abstrahierte Stickman-Figur ein deutlicher visueller 
-Fortschritt erzielt werden. Zusätzlich wurden Warnstufen eingeführt, welche die Distanz zu einem virtuellen LKW durch Farbwechsel (grün, gelb, rot) 
+Fortschritt erzielt werden. Zusätzlich wurden Warnstufen eingeführt, welche die Distanz zu einem virtuellen \ac{LKW} durch Farbwechsel (grün, gelb, rot) 
 kodieren. Auch die Antennenpositionen und deren Richtungsinformation werden grafisch dargestellt, wenngleich deren Schnittpunkt noch nicht exakt mit der 
 berechneten Tag-Position übereinstimmt. Insgesamt ist die Visualisierung deutlich intuitiver und eignet sich besser zur Präsentation auf Fachmessen oder
  vor nicht-technischem Publikum. Ein optional zuschaltbares Koordinatensystem erlaubt zudem eine differenzierte technische Auswertung.
@@ -875,8 +960,8 @@ Anwendungsszenarien, sondern um gezielte Funktionstests, die Fehlerquellen aufde
 Im Mittelpunkt stand die Überprüfung folgender Aspekte:
 \begin{itemize}
     \item Funktion der Datenerfassung, Speicherung und Wiedergabe im Replay-Modus
-    \item Konsistenz der TCP-Kommunikation zwischen Logger und UI
-    \item korrekte Verarbeitung gespeicherter JSONL-Daten
+    \item Konsistenz der TCP-Kommunikation zwischen Logger und \ac{UI}
+    \item korrekte Verarbeitung gespeicherter \ac{JSONL}-Daten
     \item visuelle Rückmeldung in der Benutzeroberfläche (z.\,B. Darstellung des Tags, Antennen und Warnfarben)
     \item allgemeine Bedienbarkeit und Reaktion der UI-Komponenten
 \end{itemize}
@@ -893,13 +978,13 @@ Es wurden verschiedene Testarten angewandt:
 \paragraph{Testumgebung}
 Die Tests wurden auf einem Standard-PC unter Windows 10 mit Python 3.10 durchgeführt. Die Kommunikation lief lokal über eine TCP-Verbindung 
 (\texttt{localhost}), was eine stabile Übertragung ohne externe Netzwerkeinflüsse sicherstellte. Als Datenbasis kamen sowohl Live-Messungen mit 
-angeschlossener Hardware als auch gespeicherte JSONL-Dateien aus früheren Sessions zum Einsatz. Die grafische Benutzeroberfläche wurde dabei im 
+angeschlossener Hardware als auch gespeicherte \ac{JSONL}-Dateien aus früheren Sessions zum Einsatz. Die grafische Benutzeroberfläche wurde dabei im 
 Vollbildmodus auf einem 24-Zoll-Bildschirm betrieben.
 
 \paragraph{Ablauf}
 Die Tests erfolgten manuell. Zunächst wurde die Verbindung zwischen Logger und UI geprüft. Anschließend wurden verschiedene Datensätze -- sowohl reale
  Messungen als auch synthetische Beispiele -- über die \texttt{replayLogger.py} wiedergegeben. Dabei wurde beobachtet, wie die UI auf Positionsdaten, 
- Sensordaten und Änderungen in der Darstellung reagiert. Auch die neue Funktion zur Darstellung eines Stickmans und des LKW-Bildes wurde systematisch 
+ Sensordaten und Änderungen in der Darstellung reagiert. Auch die neue Funktion zur Darstellung eines Stickmans und des \ac{LKW}-Bildes wurde systematisch 
  getestet. Der Wechsel des Darstellungsmodus (z.\,B. Ein-/Ausblenden der Achsen) wurde ebenfalls geprüft.
 
 Ergänzend dazu wurde gezielt versucht, typische Grenzsituationen und Extremszenarien zu simulieren. Dazu gehörten beispielsweise sehr schnelle oder 
@@ -919,7 +1004,7 @@ Die durchgeführten Tests hatten zum Ziel, die grundsätzliche Funktionalität d
 überprüfen. Dabei standen insbesondere Aspekte wie Datenintegrität, Kommunikation, Benutzerfreundlichkeit und visuelle Darstellung im Vordergrund.
 
 \paragraph{Funktionalität und Kommunikation}
-Die Tests zeigten, dass die Speicherung der erfassten Sensordaten im JSONL-Format zuverlässig funktioniert. Auch die Wiedergabe der gespeicherten Daten 
+Die Tests zeigten, dass die Speicherung der erfassten Sensordaten im \ac{JSONL}-Format zuverlässig funktioniert. Auch die Wiedergabe der gespeicherten Daten 
 im Replay-Modus über \texttt{replayLogger.py} erwies sich als stabil. Die TCP-Kommunikation zwischen Datenlogger und grafischer Benutzeroberfläche konnte 
 ohne Verbindungsabbrüche oder Datenverluste durchgeführt werden. Es war möglich, sowohl reale Messdaten als auch gespeicherte Daten aus dem Logger 
 erfolgreich in die Benutzeroberfläche zu laden.
@@ -931,9 +1016,23 @@ rechts oder links außerhalb des zentralen Bereichs bewegt – konnte beobachtet
  am zugrunde liegenden Triangulationsverfahren: Wenn sich beide gemessenen Winkel stark überlagern, ist eine exakte Positionsbestimmung kaum noch 
  möglich.
 
+\begin{figure}[H]
+    \includegraphics[width=0.5\linewidth]{images/Gute Triangulation.png}\\[1ex]
+    \centering
+    \caption{Gute Triangulation}
+    \label{ABBILDUNG}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=1\linewidth]{images/Schlechte Triangulation.png}\\[1ex]
+    \centering
+    \caption{Schlechte Triangulation}
+    \label{ABBILDUNG}
+\end{figure}
+
+
 \paragraph{Visualisierung und Layout}
 Die Darstellung wurde im Vergleich zum vorherigen Zustand deutlich verbessert. Anstelle eines einfachen Punktes wird der Tag nun als stilisierter 
-\textit{Stickman} visualisiert. Darüber hinaus wurde ein LKW-Bild zur Verdeutlichung der Anwendungssituation ergänzt. Die Antennenpositionen werden 
+Stickman visualisiert. Darüber hinaus wurde ein \ac{LKW}-Bild zur Verdeutlichung der Anwendungssituation ergänzt. Die Antennenpositionen werden 
 grafisch dargestellt und mit Richtungslinien versehen, welche sich in den meisten Fällen korrekt im Bereich der ermittelten Position schneiden – ein 
 klares visuelles Feedback über die Funktionsweise des Systems. Dennoch bleibt die Darstellung grundsätzlich einfach gehalten. Zusätzliche 
 Visualisierungselemente wie eine Geschwindigkeitsanzeige, eine dynamische Skalierung des Bewegungsraums oder realistischere Proportionen der 
@@ -942,7 +1041,7 @@ dargestellten Objekte könnten künftig integriert werden.
 \paragraph{Benutzerfreundlichkeit}
 Die Benutzeroberfläche erwies sich in der Praxis als einfach zu bedienen. Beim Starten des Programms werden klar beschriftete Schaltflächen angezeigt, 
 die ohne Vorkenntnisse verständlich sind. Funktionen wie das Starten und Stoppen der Simulation oder das Umschalten von Koordinaten- und Antennenanzeige 
-sind intuitiv zugänglich. Die Implementierung der BAT-Datei zum Start des Datenloggers erleichtert zusätzlich die Bedienung, insbesondere für unerfahrene
+sind intuitiv zugänglich. Die Implementierung der \ac{BAT}-Datei zum Start des Datenloggers erleichtert zusätzlich die Bedienung, insbesondere für unerfahrene
  Nutzer. Zudem kann zwischen verschiedenen gespeicherten Messreihen gewählt, diese umbenannt und erneut abgespielt werden.
 
 \paragraph{Zusammenfassende Bewertung}
@@ -966,13 +1065,13 @@ oder das einfache Exponentialfilter-Verfahren zurückgeführt werden, das bei dy
 sich an der Bewegungsgeschwindigkeit orientiert, könnte hier künftig Abhilfe schaffen.
 
 Ein weiterer kritischer Punkt ist die eingeschränkte Genauigkeit der Positionsbestimmung bei extremen Positionen. Wenn sich der Tag sehr weit 
-links oder rechts außerhalb der Hauptmessachse befindet, versagt die Triangulation teilweise. Der Grund liegt in der Geometrie der AoA-Messung: 
+links oder rechts außerhalb der Hauptmessachse befindet, versagt die Triangulation teilweise. Der Grund liegt in der Geometrie der \ac{AoA}-Messung: 
 Bei annähernd parallelen Winkelmessungen zweier Anker wird der Schnittpunkt der Geraden numerisch instabil, was eine präzise Lokalisierung erschwert.
 
 \paragraph{Darstellung und Interpretation der Ergebnisse}
 
 Die Visualisierung wurde gegenüber der ursprünglichen Version deutlich verbessert. Die Einführung eines symbolischen Stickman-Modells sowie 
-eines schematischen LKW-Bildes erhöht die Verständlichkeit, besonders für externe Zielgruppen oder Präsentationen. Gleichzeitig bleibt die 
+eines schematischen \ac{LKW}-Bildes erhöht die Verständlichkeit, besonders für externe Zielgruppen oder Präsentationen. Gleichzeitig bleibt die 
 grafische Ausgestaltung noch rudimentär. Elemente wie Maßstabsanzeige, Bewegungsverläufe, Risikozonen oder Geschwindigkeitspfeile fehlen bislang, 
 könnten aber die Interpretation der Szenarien erheblich erleichtern.
 
@@ -1012,17 +1111,17 @@ Die bisherigen Testergebnisse zeigen eine solide Basis, auf der sich weiter aufb
 \subsection{Reflexion der erreichten Ergebnisse}
 
 Im Rahmen dieser Arbeit wurde das Ziel verfolgt, ein robustes Datenloggersystem zu entwickeln sowie die bestehende Visualisierung einer 
-Bluetooth-AoA-basierten Lokalisierungslösung gezielt zu erweitern. Rückblickend lässt sich feststellen, dass wesentliche Kernziele erfolgreich 
+Bluetooth-{AoA}-basierten Lokalisierungslösung gezielt zu erweitern. Rückblickend lässt sich feststellen, dass wesentliche Kernziele erfolgreich 
 umgesetzt wurden.
 
-Der entwickelte Datenlogger ermöglicht eine strukturierte und flexible Erfassung sowie Speicherung von Messdaten im JSONL-Format. Er erlaubt eine 
+Der entwickelte Datenlogger ermöglicht eine strukturierte und flexible Erfassung sowie Speicherung von Messdaten im \ac{JSONL}-Format. Er erlaubt eine 
 spätere Wiedergabe der Daten ohne Hardwareeinsatz und schafft somit eine effektive Grundlage für Tests, Parametrierung und Algorithmenentwicklung. 
 Die Integration des Loggers in die bestehende Softwareumgebung erfolgte reibungslos durch ein separates Python-Skript mit minimalen Änderungen am 
 Ursprungscode. Auch die Konnektivität zur Benutzeroberfläche über eine TCP-Verbindung funktionierte stabil, sowohl im Live-Betrieb als auch im 
 Replay-Modus.
 
 Auf Seiten der Visualisierung wurde die bisher sehr reduzierte Darstellung um mehrere Elemente erweitert. Die Verwendung eines stilisierten 
-\textit{Stickman}-Modells zur Repräsentation des Tags, die Einbindung eines realitätsnahen LKW-Bildes sowie die farbliche Warnstufendarstellung 
+Stickman-Modells zur Repräsentation des Tags, die Einbindung eines realitätsnahen \ac{LKW}-Bildes sowie die farbliche Warnstufendarstellung 
 führten zu einer deutlich verständlicheren und praxistauglicheren Repräsentation. Dies ist insbesondere im Hinblick auf externe Präsentationen, 
 z.\,B. auf Messen oder in interdisziplinären Gremien, ein entscheidender Vorteil.
 
@@ -1031,7 +1130,7 @@ obwohl bereits erste Maßnahmen zur Glättung implementiert wurden. In Randberei
 Winkelpaare an ihre mathematischen Grenzen, was zu ungenauen oder nicht vorhandenen Positionsschätzungen führt. Auch die visuelle Darstellung – etwa in 
 Bezug auf Maßstäblichkeit oder ergänzende Informationen wie Geschwindigkeit – bietet weiteres Verbesserungspotenzial.
 
-Nichtsdestotrotz konnte durch die modulare Struktur, den Einsatz etablierter Technologien (Python, JSON, TCP/IP) sowie den pragmatischen Ansatz ein 
+Nichtsdestotrotz konnte durch die modulare Struktur, den Einsatz etablierter Technologien (Python, JSON, TCP) sowie den pragmatischen Ansatz ein 
 funktionierendes System geschaffen werden, das die Grundlage für weiterführende Entwicklungen bietet. Die Arbeit zeigt damit deutlich, dass durch 
 gezielte Ergänzungen und strukturiertes Vorgehen auch in einer begrenzten Projektlaufzeit signifikante Fortschritte in Funktionalität und 
 Benutzerfreundlichkeit erzielt werden können.
@@ -1042,7 +1141,7 @@ Trotz der erfolgreichen Umsetzung eines funktionalen Datenloggers und einer verb
 die das System in seiner Einsatzbreite und Qualität begrenzen.
 
 \paragraph{Begrenzte Genauigkeit der Positionsbestimmung} 
-Die Positionsschätzung des Tags basiert auf Triangulation aus den gemessenen AoA-Winkeln zweier Anker. Dieses Verfahren liefert nur dann 
+Die Positionsschätzung des Tags basiert auf Triangulation aus den gemessenen \ac{AoA}-Winkeln zweier Anker. Dieses Verfahren liefert nur dann 
 zuverlässige Ergebnisse, wenn die geometrische Anordnung der Anker günstig gewählt ist. Besonders bei Messungen an den Rändern des definierten 
 Messfelds (z.\,B. weit links oder rechts) kann es aufgrund der Überlagerung oder Parallelität der Winkellinien zu ungenauen oder gar nicht 
 berechenbaren Positionen kommen.
@@ -1053,7 +1152,7 @@ Tags weiterhin leicht ruckartig und reagiert nicht in Echtzeit. Zudem fehlt derz
 auf die Bildschirmanzeige.
 
 \paragraph{Einfaches visuelles Layout}
-Die Visualisierung nutzt bisher einfache grafische Elemente wie einen stilisierten \textit{Stickman} und ein eingefügtes PNG-Bild eines LKWs. 
+Die Visualisierung nutzt bisher einfache grafische Elemente wie einen stilisierten Stickman und ein eingefügtes Bild eines \ac{LKW}s. 
 Die Darstellung unterstützt die Verständlichkeit, lässt jedoch hinsichtlich Detailtiefe, Ästhetik und Interaktivität noch deutlichen Spielraum 
 für Verbesserungen. Eine Möglichkeit zur perspektivischen Darstellung, Animation komplexerer Objekte oder eine interaktive Benutzersteuerung ist 
 bislang nicht vorgesehen.
@@ -1069,7 +1168,7 @@ enthalten.
 
 \paragraph{Technische Einschränkungen der Visualisierung}
 Die Umsetzung der Benutzeroberfläche auf Basis von Python und Tkinter bringt den Vorteil einer schnellen Realisierbarkeit, schränkt jedoch die 
-grafischen und performanten Möglichkeiten ein. Zudem erfordert der Datenlogger eine strukturierte Ablage der JSONL-Dateien und Pfade, was die 
+grafischen und performanten Möglichkeiten ein. Zudem erfordert der Datenlogger eine strukturierte Ablage der \ac{JSONL}-Dateien und Pfade, was die 
 Portabilität des Systems derzeit noch begrenzt.
 
 Diese Punkte zeigen klar auf, in welchen Bereichen gezielte Weiterentwicklungen erforderlich sind, um das System robuster, skalierbarer und 
@@ -1097,7 +1196,7 @@ direkt über eine grafische Benutzeroberfläche anpassen zu können. Eine visuel
 Testphase erheblich vereinfachen.
 
 \paragraph{Erweiterung der Visualisierungsmöglichkeiten}
-Die Visualisierung des Tags wurde bereits durch einen stilisierten Stickman sowie ein LKW-Modell ergänzt. Um jedoch noch realitätsnähere und
+Die Visualisierung des Tags wurde bereits durch einen stilisierten Stickman sowie ein \ac{LKW}-Modell ergänzt. Um jedoch noch realitätsnähere und
 professionellere Darstellungen zu ermöglichen – insbesondere bei öffentlichen Vorführungen oder Messen – könnten 3D-Modelle eingesetzt werden. 
 Auch zusätzliche visuelle Indikatoren wie Bewegungstrails, Heatmaps oder Geschwindigkeitssymbole wären denkbar.
 
@@ -1105,7 +1204,7 @@ Zudem könnte das Koordinatensystem um interaktive Funktionen wie Zoom, Skalieru
 der Umstieg auf eine leistungsfähigere Visualisierungsplattform, etwa auf Basis von Unity3D oder WebGL, zu evaluieren.
 
 \paragraph{Verbesserung der Benutzeroberfläche}
-Die aktuelle UI bietet bereits eine grundlegend benutzerfreundliche Bedienung. Zukünftig wäre jedoch eine webbasierte Variante wünschenswert, 
+Die aktuelle \ac{UI} bietet bereits eine grundlegend benutzerfreundliche Bedienung. Zukünftig wäre jedoch eine webbasierte Variante wünschenswert, 
 die plattformunabhängig funktioniert und auch über mobile Endgeräte steuerbar ist. Eine intuitive Konfiguration von Replay-, Logging- und 
 Visualisierungsparametern würde die Nutzerfreundlichkeit zusätzlich steigern.
 
@@ -1121,7 +1220,7 @@ weitergehenden Analyse könnte über standardisierte Schnittstellen ermöglicht 
 
 \paragraph{Zusammenfassung}
 Insgesamt existieren vielfältige Ansatzpunkte für die Weiterentwicklung der Lösung. Diese reichen von technischen Verbesserungen der 
-Positionsbestimmung und Visualisierung über benutzerfreundliche UI-Konzepte bis hin zur Erweiterung des Hardware-Setups durch zusätzliche Anker. 
+Positionsbestimmung und Visualisierung über benutzerfreundliche \ac{UI}-Konzepte bis hin zur Erweiterung des Hardware-Setups durch zusätzliche Anker. 
 Gerade die Kombination dieser Maßnahmen verspricht eine deutliche Steigerung der Systemqualität und Anwendbarkeit in praxisnahen Einsatzszenarien.
 
 
@@ -1133,10 +1232,8 @@ Gerade die Kombination dieser Maßnahmen verspricht eine deutliche Steigerung de
 % Bibliografie
 %---------------------------------------------------------
 \begingroup
-\renewcommand{\bibfont}{\fontsize{13pt}{12pt}\selectfont}  
 \sloppy
 \nocite{*}
 \printbibliography
-\endgroup
 
 \end{document}
