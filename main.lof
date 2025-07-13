@@ -1,17 +1,17 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Beispiel Rechtsabbiegen LKW}}{1}{figure.caption.8}%
-\contentsline {figure}{\numberline {2}{\ignorespaces XPLR-AOA Explorer Kit}}{4}{figure.caption.11}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Datenlogger Cube (Avisaro 2.0) zur Speicherung von Sensor- und Prozessdaten}}{6}{figure.caption.15}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Integration Datenlogger}}{7}{figure.caption.18}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Beispiel Triangulation}}{12}{figure.caption.22}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Ablauf Funktion Datenlogger}}{13}{figure.caption.29}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Vergleich Parametrisierung früher und heute}}{15}{figure.caption.34}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Alte Visualisierung}}{20}{figure.caption.40}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Grün - keine Gefahr noch}}{23}{figure.caption.44}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Gelb - Warnung, Gefahr möglich}}{24}{figure.caption.45}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Rot - Achtung, Kollisionsgefahr}}{24}{figure.caption.46}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Visualisierung der Antennen und Sensorlinien}}{25}{figure.caption.48}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Volle Darstellung Benutzeroberfläche}}{26}{figure.caption.50}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Minimale Darstellung Benutzeroberfläche}}{26}{figure.caption.51}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Gute Triangulation}}{30}{figure.caption.60}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Schlechte Triangulation}}{31}{figure.caption.61}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Rechtsabbiegesituation mit Abbiegeassistent \blx@tocontentsinit {0}\cite {abbiegeassistent-foerderung}}}{1}{figure.caption.17}%
+\contentsline {figure}{\numberline {2}{\ignorespaces u-blox XPLR-AOA-2 Explorer Kit \blx@tocontentsinit {0}\cite {u-blox-xplr-aoa2}}}{4}{figure.caption.18}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Datenlogger Cube (Avisaro 2.0) zur Speicherung von Sensor- und Prozessdaten \blx@tocontentsinit {0}\cite {wikipedia-datalogger}}}{6}{figure.caption.22}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Einbindung des Datenloggers in den Entwicklungsprozess Quelle: Eigene Darstellung}}{7}{figure.caption.25}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Beispielhafte Triangulation \blx@tocontentsinit {0}\cite {comconsult-wlan-ortung}}}{11}{figure.caption.29}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Gesamter Datenfluss vom Messvorgang bis zur Visualisierung Quelle: Eigene Darstellung}}{11}{figure.caption.31}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Parametrierung ohne (links) und mit (rechts) Datenlogger-Workflow Quelle: Eigene Darstellung}}{13}{figure.caption.36}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Alte Visualisierung \blx@tocontentsinit {0}\cite {tadic-studienarbeit-ui}}}{17}{figure.caption.42}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Grün - keine Gefahr noch \blx@tocontentsinit {0}\cite {tadic-studienarbeit-ui}}}{20}{figure.caption.46}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Gelb - Warnung, Gefahr möglich \blx@tocontentsinit {0}\cite {tadic-studienarbeit-ui}}}{21}{figure.caption.47}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Rot - Achtung, Kollisionsgefahr \blx@tocontentsinit {0}\cite {tadic-studienarbeit-ui}}}{21}{figure.caption.48}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Visualisierung der Antennen und Sensorlinien \blx@tocontentsinit {0}\cite {tadic-studienarbeit-ui}}}{22}{figure.caption.50}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Volle Darstellung Benutzeroberfläche \blx@tocontentsinit {0}\cite {tadic-studienarbeit-ui}}}{23}{figure.caption.52}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Minimale Darstellung Benutzeroberfläche \blx@tocontentsinit {0}\cite {tadic-studienarbeit-ui}}}{23}{figure.caption.53}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Gute Triangulation Quelle:Eigene Darstellung}}{28}{figure.caption.62}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Schlechte Triangulation Quelle:Eigene Darstellung}}{29}{figure.caption.63}%

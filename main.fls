@@ -331,6 +331,11 @@ INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\main.lof
 INPUT .\main.lof
 INPUT main.lof
@@ -338,7 +343,6 @@ OUTPUT main.lof
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
@@ -372,7 +376,6 @@ INPUT .\images\XPLR-AOA-with-C209-and-C211-02_0.png
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
@@ -405,19 +408,13 @@ INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\1906_abbildung1 (1).png
-INPUT .\images\1906_abbildung1 (1).png
-INPUT .\images\1906_abbildung1 (1).png
-INPUT .\images\1906_abbildung1 (1).png
-INPUT .\images\1906_abbildung1 (1).png
-INPUT .\images\1906_abbildung1 (1).png
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\1906_abbildung1.png
+INPUT .\images\1906_abbildung1.png
+INPUT .\images\1906_abbildung1.png
+INPUT .\images\1906_abbildung1.png
+INPUT .\images\1906_abbildung1.png
+INPUT .\images\1906_abbildung1.png
+INPUT .\images\1906_abbildung1.png
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
@@ -428,9 +425,6 @@ INPUT .\images\Ablauf Funktion Datenlogger.png
 INPUT .\images\Ablauf Funktion Datenlogger.png
 INPUT .\images\Ablauf Funktion Datenlogger.png
 INPUT .\images\Ablauf Funktion Datenlogger.png
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
@@ -453,16 +447,16 @@ INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT .\images\Alte Visualisierung.png
-INPUT .\images\Alte Visualisierung.png
-INPUT .\images\Alte Visualisierung.png
-INPUT .\images\Alte Visualisierung.png
-INPUT .\images\Alte Visualisierung.png
-INPUT .\images\Alte Visualisierung.png
-INPUT .\images\Alte Visualisierung.png
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\Alte Visualisierung.png
+INPUT .\images\Alte Visualisierung.png
+INPUT .\images\Alte Visualisierung.png
+INPUT .\images\Alte Visualisierung.png
+INPUT .\images\Alte Visualisierung.png
+INPUT .\images\Alte Visualisierung.png
+INPUT .\images\Alte Visualisierung.png
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
@@ -535,6 +529,9 @@ INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\Gute Triangulation.png
 INPUT .\images\Gute Triangulation.png
 INPUT .\images\Gute Triangulation.png
@@ -542,6 +539,9 @@ INPUT .\images\Gute Triangulation.png
 INPUT .\images\Gute Triangulation.png
 INPUT .\images\Gute Triangulation.png
 INPUT .\images\Gute Triangulation.png
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
+INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\Schlechte Triangulation.png
 INPUT .\images\Schlechte Triangulation.png
 INPUT .\images\Schlechte Triangulation.png
@@ -573,7 +573,6 @@ INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
 INPUT .\images\DHBW_d_R_FN_46mm_4c.jpg
@@ -589,10 +588,10 @@ INPUT C:\Users\lnztadil\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\
 INPUT C:\Users\lnztadil\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
@@ -603,11 +602,7 @@ INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfont
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmssbx10.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
-INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
 INPUT C:\Users\lnztadil\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb

@@ -19,13 +19,50 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
+    \entry{abbiegeassistent-foerderung}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a989531c076941102cdb594bd7c2da36}{%
+           family={{Abbiegeassistent.de}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a989531c076941102cdb594bd7c2da36}
+      \strng{fullhash}{a989531c076941102cdb594bd7c2da36}
+      \strng{fullhashraw}{a989531c076941102cdb594bd7c2da36}
+      \strng{bibnamehash}{a989531c076941102cdb594bd7c2da36}
+      \strng{authorbibnamehash}{a989531c076941102cdb594bd7c2da36}
+      \strng{authornamehash}{a989531c076941102cdb594bd7c2da36}
+      \strng{authorfullhash}{a989531c076941102cdb594bd7c2da36}
+      \strng{authorfullhashraw}{a989531c076941102cdb594bd7c2da36}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{note}{Bildquelle zu Abb.\,\ref{fig:abbiegeassistent}}
+      \field{title}{Förderung von Abbiegeassistenzsystemen}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.abbiegeassistent.de/foerderung/
+      \endverb
+      \verb{url}
+      \verb https://www.abbiegeassistent.de/foerderung/
+      \endverb
+    \endentry
     \entry{SlightIncreaseNumber}{online}{}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
-      \field{note}{Springer Professional; Unfallstatistik 2023, Zugriff 2025-07-01}
+      \field{note}{Springer Professional; Unfallstatistik 2023}
       \field{title}{Slight Increase in the Number of Road Fatalities in 2023}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.springerprofessional.de/road-safety/companies---institutions/slight-increase-in-the-number-of-road-fatalities-in-2023/26824974
       \endverb
@@ -65,17 +102,14 @@
       \strng{authornamehash}{5b3f1be6b7dcc0d7003a40d73d7dbb5b}
       \strng{authorfullhash}{a1cfb6abca5724ed516248e086f0d1c2}
       \strng{authorfullhashraw}{a1cfb6abca5724ed516248e086f0d1c2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{2}
-      \field{isbn}{9781492082169}
-      \field{note}{Kapitel 8 erläutert Bluetooth 5.1 und Angle-of-Arrival}
       \field{title}{Getting Started with Bluetooth Low Energy: Tools and Techniques for Low-Power Networking}
       \field{year}{2021}
     \endentry
-    \entry{uBloxAoAWhitepaper}{misc}{}{}
+    \entry{uBloxAoAWhitepaper}{online}{}{}
       \name{author}{1}{}{%
         {{hash=ce67d5508a290f64ab6c0ffd9c130268}{%
            family={{u-blox AG}},
@@ -89,16 +123,59 @@
       \strng{authornamehash}{ce67d5508a290f64ab6c0ffd9c130268}
       \strng{authorfullhash}{ce67d5508a290f64ab6c0ffd9c130268}
       \strng{authorfullhashraw}{ce67d5508a290f64ab6c0ffd9c130268}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.u-blox.com/en/docs/UBX-19055559}}
-      \field{note}{Whitepaper zur Funktionsweise von Bluetooth-AoA}
+      \field{note}{Whitepaper zur AoA-Funktionsweise}
       \field{title}{Using Bluetooth AoA for High-Precision Indoor Positioning}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
       \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.u-blox.com/en/docs/UBX-19055559
+      \endverb
+      \verb{url}
+      \verb https://www.u-blox.com/en/docs/UBX-19055559
+      \endverb
     \endentry
-    \entry{androidBLElimitation}{misc}{}{}
+    \entry{u-blox-xplr-aoa2}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ce67d5508a290f64ab6c0ffd9c130268}{%
+           family={{u-blox AG}},
+           familyi={u\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce67d5508a290f64ab6c0ffd9c130268}
+      \strng{fullhash}{ce67d5508a290f64ab6c0ffd9c130268}
+      \strng{fullhashraw}{ce67d5508a290f64ab6c0ffd9c130268}
+      \strng{bibnamehash}{ce67d5508a290f64ab6c0ffd9c130268}
+      \strng{authorbibnamehash}{ce67d5508a290f64ab6c0ffd9c130268}
+      \strng{authornamehash}{ce67d5508a290f64ab6c0ffd9c130268}
+      \strng{authorfullhash}{ce67d5508a290f64ab6c0ffd9c130268}
+      \strng{authorfullhashraw}{ce67d5508a290f64ab6c0ffd9c130268}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Bildquelle zu Abb.\,\ref{fig:xplr-aoa}}
+      \field{title}{XPLR-AOA-2 Kit: Bluetooth AoA/AoD Explorer Kit}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.u-blox.com/en/product/xplr-aoa-2-kit
+      \endverb
+      \verb{url}
+      \verb https://www.u-blox.com/en/product/xplr-aoa-2-kit
+      \endverb
+    \endentry
+    \entry{androidBLElimitation}{online}{}{}
       \name{author}{1}{}{%
         {{hash=7ace771b22ac28958ff5694e260839cc}{%
            family={{Android Developers}},
@@ -112,109 +189,119 @@
       \strng{authornamehash}{7ace771b22ac28958ff5694e260839cc}
       \strng{authorfullhash}{7ace771b22ac28958ff5694e260839cc}
       \strng{authorfullhashraw}{7ace771b22ac28958ff5694e260839cc}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://developer.android.com/guide/topics/connectivity/bluetooth-le}}
-      \field{note}{Dokumentiert Zugriffs­restriktionen auf BLE-Sende­parameter unter Android 12+}
-      \field{title}{Bluetooth Low Energy – Android Developers Guide}
+      \field{note}{Zugriffs­beschränkungen auf BLE-Sende­parameter unter Android 12+}
+      \field{title}{Bluetooth Low Energy — Android Developers Guide}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
       \field{year}{2023}
-    \endentry
-    \entry{ble51market2023}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=84539b4780dccc038d9b9cfd67f039cf}{%
-           family={{Bluetooth SIG}},
-           familyi={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{84539b4780dccc038d9b9cfd67f039cf}
-      \strng{fullhash}{84539b4780dccc038d9b9cfd67f039cf}
-      \strng{fullhashraw}{84539b4780dccc038d9b9cfd67f039cf}
-      \strng{bibnamehash}{84539b4780dccc038d9b9cfd67f039cf}
-      \strng{authorbibnamehash}{84539b4780dccc038d9b9cfd67f039cf}
-      \strng{authornamehash}{84539b4780dccc038d9b9cfd67f039cf}
-      \strng{authorfullhash}{84539b4780dccc038d9b9cfd67f039cf}
-      \strng{authorfullhashraw}{84539b4780dccc038d9b9cfd67f039cf}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.bluetooth.com/bluetooth-resources/2023-market-update/}}
-      \field{note}{Bericht zur Verbreitung von Bluetooth 5.1/5.2-fähigen Endgeräten}
-      \field{title}{Bluetooth Market Update 2023}
-      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.android.com/guide/topics/connectivity/bluetooth-le
+      \endverb
+      \verb{url}
+      \verb https://developer.android.com/guide/topics/connectivity/bluetooth-le
+      \endverb
     \endentry
     \entry{poole2020data}{book}{}{}
-      \name{author}{2}{}{%
-        {{hash=9ad5efb8d461b040f7b5ea00c198fb43}{%
-           family={Poole},
-           familyi={P\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod}}}%
-        {{hash=6e4b941757270d4fed27a53d95c2893c}{%
-           family={Bernard},
-           familyi={B\bibinitperiod},
-           given={Dianne},
-           giveni={D\bibinitperiod}}}%
+      \name{author}{1}{}{%
+        {{hash=1453e0324d82b879764718053f21a56b}{%
+           family={Austerlitz},
+           familyi={A\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {New York}%
+        {San Diego}%
       }
       \list{publisher}{1}{%
-        {TechPress}%
+        {Academic Press}%
       }
-      \strng{namehash}{d5343d3e657fdbba80ed3587dffacf69}
-      \strng{fullhash}{d5343d3e657fdbba80ed3587dffacf69}
-      \strng{fullhashraw}{d5343d3e657fdbba80ed3587dffacf69}
-      \strng{bibnamehash}{d5343d3e657fdbba80ed3587dffacf69}
-      \strng{authorbibnamehash}{d5343d3e657fdbba80ed3587dffacf69}
-      \strng{authornamehash}{d5343d3e657fdbba80ed3587dffacf69}
-      \strng{authorfullhash}{d5343d3e657fdbba80ed3587dffacf69}
-      \strng{authorfullhashraw}{d5343d3e657fdbba80ed3587dffacf69}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \strng{namehash}{1453e0324d82b879764718053f21a56b}
+      \strng{fullhash}{1453e0324d82b879764718053f21a56b}
+      \strng{fullhashraw}{1453e0324d82b879764718053f21a56b}
+      \strng{bibnamehash}{1453e0324d82b879764718053f21a56b}
+      \strng{authorbibnamehash}{1453e0324d82b879764718053f21a56b}
+      \strng{authornamehash}{1453e0324d82b879764718053f21a56b}
+      \strng{authorfullhash}{1453e0324d82b879764718053f21a56b}
+      \strng{authorfullhashraw}{1453e0324d82b879764718053f21a56b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{978-1234567890}
-      \field{title}{Data Acquisition Systems and Data Loggers}
-      \field{year}{2020}
+      \field{edition}{2}
+      \field{note}{Standardwerk zu PC-basierten Daten­aufnahme­systemen}
+      \field{title}{Data Acquisition Techniques Using PCs}
+      \field{year}{2002}
     \endentry
     \entry{smith2018sensors}{book}{}{}
-      \name{author}{2}{}{%
-        {{hash=5d0ddda3a367ceb26fbaeca02e391c22}{%
-           family={Smith},
-           familyi={S\bibinitperiod},
-           given={John},
+      \name{author}{1}{}{%
+        {{hash=e76d46be5d7ee9722f07829c42358f70}{%
+           family={Fraden},
+           familyi={F\bibinitperiod},
+           given={Jacob},
            giveni={J\bibinitperiod}}}%
-        {{hash=b92ae34934cb6ff75c24275dfd7298b7}{%
-           family={Lee},
-           familyi={L\bibinitperiod},
-           given={Karen},
-           giveni={K\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {London}%
+        {Cham}%
       }
       \list{publisher}{1}{%
-        {Engineering Press}%
+        {Springer}%
       }
-      \strng{namehash}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \strng{fullhash}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \strng{fullhashraw}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \strng{bibnamehash}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \strng{authorbibnamehash}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \strng{authornamehash}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \strng{authorfullhash}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \strng{authorfullhashraw}{8083f76111ce4a5879dbf3e484a3e5f3}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \strng{namehash}{e76d46be5d7ee9722f07829c42358f70}
+      \strng{fullhash}{e76d46be5d7ee9722f07829c42358f70}
+      \strng{fullhashraw}{e76d46be5d7ee9722f07829c42358f70}
+      \strng{bibnamehash}{e76d46be5d7ee9722f07829c42358f70}
+      \strng{authorbibnamehash}{e76d46be5d7ee9722f07829c42358f70}
+      \strng{authornamehash}{e76d46be5d7ee9722f07829c42358f70}
+      \strng{authorfullhash}{e76d46be5d7ee9722f07829c42358f70}
+      \strng{authorfullhashraw}{e76d46be5d7ee9722f07829c42358f70}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{978-0987654321}
-      \field{title}{Sensors and Logging in Embedded Systems}
-      \field{year}{2018}
+      \field{edition}{5}
+      \field{note}{Grundlagen­werk zu Sensor­prinzipien u. Datenerfassung}
+      \field{title}{Handbook of Modern Sensors: Physics, Designs, and Applications}
+      \field{year}{2016}
     \endentry
-    \entry{dewesoft2024guide}{misc}{}{}
+    \entry{wikipedia-datalogger}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhashraw}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Bildquelle zu Abb.\,\ref{fig:datenlogger_cube}}
+      \field{title}{Data Logger — Wikipedia, the free encyclopedia}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Data_logger
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Data_logger
+      \endverb
+    \endentry
+    \entry{dewesoft2024guide}{online}{}{}
       \name{author}{1}{}{%
         {{hash=da19409567d928f91632bed42627859b}{%
            family={Dewesoft},
@@ -228,13 +315,22 @@
       \strng{authornamehash}{da19409567d928f91632bed42627859b}
       \strng{authorfullhash}{da19409567d928f91632bed42627859b}
       \strng{authorfullhashraw}{da19409567d928f91632bed42627859b}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://dewesoft.com/blog/what-is-data-logger}}
       \field{title}{What Is a Data Logger (Datalogger) – The Ultimate Guide}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
       \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://dewesoft.com/blog/what-is-data-logger
+      \endverb
+      \verb{url}
+      \verb https://dewesoft.com/blog/what-is-data-logger
+      \endverb
     \endentry
     \entry{rs2022guide}{online}{}{}
       \name{author}{1}{}{%
@@ -250,12 +346,16 @@
       \strng{authornamehash}{ea215ec6203dae21594979add1078e43}
       \strng{authorfullhash}{ea215ec6203dae21594979add1078e43}
       \strng{authorfullhashraw}{ea215ec6203dae21594979add1078e43}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{A Complete Guide to Data Loggers}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
       \field{year}{2022}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://uk.rs-online.com/web/content/discovery/ideas-and-advice/data-loggers-guide
       \endverb
@@ -263,64 +363,36 @@
       \verb https://uk.rs-online.com/web/content/discovery/ideas-and-advice/data-loggers-guide
       \endverb
     \endentry
-    \entry{dwyer2015what}{article}{}{}
+    \entry{cpp_python_integration}{incollection}{}{}
       \name{author}{1}{}{%
-        {{hash=f4a5fc9f4a926d367c8f65871dc06c60}{%
-           family={{Dwyer Instruments}},
-           familyi={D\bibinitperiod}}}%
+        {{hash=b1ba9610a18cb091d0a9602e75b8476f}{%
+           family={Langtangen},
+           familyi={L\bibinitperiod},
+           given={Hans\bibnamedelima Petter},
+           giveni={H\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
-      \strng{namehash}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \strng{fullhash}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \strng{fullhashraw}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \strng{bibnamehash}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \strng{authorbibnamehash}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \strng{authornamehash}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \strng{authorfullhash}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \strng{authorfullhashraw}{f4a5fc9f4a926d367c8f65871dc06c60}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b1ba9610a18cb091d0a9602e75b8476f}
+      \strng{fullhash}{b1ba9610a18cb091d0a9602e75b8476f}
+      \strng{fullhashraw}{b1ba9610a18cb091d0a9602e75b8476f}
+      \strng{bibnamehash}{b1ba9610a18cb091d0a9602e75b8476f}
+      \strng{authorbibnamehash}{b1ba9610a18cb091d0a9602e75b8476f}
+      \strng{authornamehash}{b1ba9610a18cb091d0a9602e75b8476f}
+      \strng{authorfullhash}{b1ba9610a18cb091d0a9602e75b8476f}
+      \strng{authorfullhashraw}{b1ba9610a18cb091d0a9602e75b8476f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Dwyer Technical Library}
-      \field{title}{What Are Data Loggers?}
-      \field{year}{2015}
-      \verb{urlraw}
-      \verb https://www.dwyeromega.com
-      \endverb
-      \verb{url}
-      \verb https://www.dwyeromega.com
-      \endverb
+      \field{booktitle}{Python Scripting for Computational Science}
+      \field{title}{Combining Python with Fortran, C, and C++}
+      \field{year}{2004}
+      \field{pages}{169\bibrangedash 204}
+      \range{pages}{36}
     \endentry
-    \entry{cpp_python_integration}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=26aeabd0c99c77002e55825fbcd435af}{%
-           family={—},
-           familyi={\bibinithyphendelim \bibinitperiod}}}%
-      }
-      \strng{namehash}{26aeabd0c99c77002e55825fbcd435af}
-      \strng{fullhash}{26aeabd0c99c77002e55825fbcd435af}
-      \strng{fullhashraw}{26aeabd0c99c77002e55825fbcd435af}
-      \strng{bibnamehash}{26aeabd0c99c77002e55825fbcd435af}
-      \strng{authorbibnamehash}{26aeabd0c99c77002e55825fbcd435af}
-      \strng{authornamehash}{26aeabd0c99c77002e55825fbcd435af}
-      \strng{authorfullhash}{26aeabd0c99c77002e55825fbcd435af}
-      \strng{authorfullhashraw}{26aeabd0c99c77002e55825fbcd435af}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{cppcat.com}
-      \field{note}{Online-Artikel zu Best Practices der Kombination von C++ und Python}
-      \field{title}{C++ Python Integration: Bridging High Performance and Productivity}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://cppcat.com/cpp-python-integration
-      \endverb
-      \verb{url}
-      \verb https://cppcat.com/cpp-python-integration
-      \endverb
-    \endentry
-    \entry{json_logging_bestpractices}{article}{}{}
+    \entry{json_logging_bestpractices}{online}{}{}
       \name{author}{1}{}{%
         {{hash=93a9b264c12d95ef0ce8f462f0233928}{%
            family={Isaiah},
@@ -336,14 +408,16 @@
       \strng{authornamehash}{93a9b264c12d95ef0ce8f462f0233928}
       \strng{authorfullhash}{93a9b264c12d95ef0ce8f462f0233928}
       \strng{authorfullhashraw}{93a9b264c12d95ef0ce8f462f0233928}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Better Stack Community}
-      \field{note}{Praxisleitfaden zur strukturierten Protokollierung im JSON-Format}
       \field{title}{A Beginner’s Guide to JSON Logging}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://betterstack.com/community/guides/logging/json-logging
       \endverb
@@ -351,91 +425,72 @@
       \verb https://betterstack.com/community/guides/logging/json-logging
       \endverb
     \endentry
-    \entry{tkinter_guidelines}{misc}{}{}
+    \entry{tadic-studienarbeit-ui}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=c1ab258ec5d47fb3aea574d3224239d8}{%
-           family={Rosebrock},
-           familyi={R\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
+        {{hash=0a146f31bfe8293a8b4ec5d3b67e4317}{%
+           family={Tadic},
+           familyi={T\bibinitperiod},
+           given={Luka},
+           giveni={L\bibinitperiod}}}%
       }
-      \strng{namehash}{c1ab258ec5d47fb3aea574d3224239d8}
-      \strng{fullhash}{c1ab258ec5d47fb3aea574d3224239d8}
-      \strng{fullhashraw}{c1ab258ec5d47fb3aea574d3224239d8}
-      \strng{bibnamehash}{c1ab258ec5d47fb3aea574d3224239d8}
-      \strng{authorbibnamehash}{c1ab258ec5d47fb3aea574d3224239d8}
-      \strng{authornamehash}{c1ab258ec5d47fb3aea574d3224239d8}
-      \strng{authorfullhash}{c1ab258ec5d47fb3aea574d3224239d8}
-      \strng{authorfullhashraw}{c1ab258ec5d47fb3aea574d3224239d8}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \strng{namehash}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \strng{fullhash}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \strng{fullhashraw}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \strng{bibnamehash}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \strng{authorbibnamehash}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \strng{authornamehash}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \strng{authorfullhash}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \strng{authorfullhashraw}{0a146f31bfe8293a8b4ec5d3b67e4317}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://realpython.com/python-gui-tkinter-best-practices/}}
-      \field{note}{Leitfaden zu klaren und verständlichen Tkinter-GUIs}
-      \field{title}{Tkinter GUI Programming Best Practices}
-      \field{year}{2023}
-    \endentry
-    \entry{realtime_visualization}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=841ac729a5e0397e47926469885865bb}{%
-           family={Shankar},
-           familyi={S\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=d5f5decc1fe064c502f05b5bf93b7bda}{%
-           family={Kumar},
-           familyi={K\bibinitperiod},
-           given={P.\bibnamedelimi R.},
-           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-      }
-      \strng{namehash}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \strng{fullhash}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \strng{fullhashraw}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \strng{bibnamehash}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \strng{authorbibnamehash}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \strng{authornamehash}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \strng{authorfullhash}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \strng{authorfullhashraw}{d7b2bdc860a7c9bcd16d492c21bd391f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{International Journal of Visualization and Human-Computer Interaction}
-      \field{number}{3}
-      \field{title}{Real-Time Visualization of Streaming Sensor Data}
-      \field{volume}{14}
-      \field{year}{2022}
-      \field{pages}{145\bibrangedash 159}
-      \range{pages}{15}
-      \verb{doi}
-      \verb 10.1234/ijvhci.v14i3.5678
+      \field{note}{Quellcodebasis zur Visualisierungsoberfläche}
+      \field{title}{Studienarbeit – GitHub Repository (Branch “ui”)}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/Lukiano12/Studienarbeit/tree/ui
+      \endverb
+      \verb{url}
+      \verb https://github.com/Lukiano12/Studienarbeit/tree/ui
       \endverb
     \endentry
-    \entry{tcp_json_integration}{misc}{}{}
+    \entry{comconsult-wlan-ortung}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=71e7042b485c148ee871510d4e0f1d9e}{%
-           family={Thompson},
-           familyi={T\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
+        {{hash=a3825279a94b4f9a1f7b9309d57e1fbc}{%
+           family={{ComConsult GmbH}},
+           familyi={C\bibinitperiod}}}%
       }
-      \strng{namehash}{71e7042b485c148ee871510d4e0f1d9e}
-      \strng{fullhash}{71e7042b485c148ee871510d4e0f1d9e}
-      \strng{fullhashraw}{71e7042b485c148ee871510d4e0f1d9e}
-      \strng{bibnamehash}{71e7042b485c148ee871510d4e0f1d9e}
-      \strng{authorbibnamehash}{71e7042b485c148ee871510d4e0f1d9e}
-      \strng{authornamehash}{71e7042b485c148ee871510d4e0f1d9e}
-      \strng{authorfullhash}{71e7042b485c148ee871510d4e0f1d9e}
-      \strng{authorfullhashraw}{71e7042b485c148ee871510d4e0f1d9e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \strng{namehash}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \strng{fullhash}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \strng{fullhashraw}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \strng{bibnamehash}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \strng{authorbibnamehash}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \strng{authornamehash}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \strng{authorfullhash}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \strng{authorfullhashraw}{a3825279a94b4f9a1f7b9309d57e1fbc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://pythonawesome.com/designing-tcp-json-services/}}
-      \field{note}{Praktischer Leitfaden zur Verarbeitung von JSON-Daten über TCP}
-      \field{title}{Designing TCP Services for JSON Payloads in Python}
-      \field{year}{2024}
+      \field{langid}{german}
+      \field{note}{Abbildung zur Triangulation (Abb.\,\ref{fig:datenlogger_flow})}
+      \field{title}{Ortung via WLAN – Funktionsweise und Einsatzgebiete}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.comconsult.com/ortung-wlan/
+      \endverb
+      \verb{url}
+      \verb https://www.comconsult.com/ortung-wlan/
+      \endverb
     \endentry
     \entry{tkinter_book}{book}{}{}
       \name{author}{1}{}{%
@@ -456,41 +511,13 @@
       \strng{authornamehash}{f46e93a7357501313f88b16cfc3880d3}
       \strng{authorfullhash}{f46e93a7357501313f88b16cfc3880d3}
       \strng{authorfullhashraw}{f46e93a7357501313f88b16cfc3880d3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
-      \field{isbn}{9781800209913}
       \field{title}{Python GUI Programming with Tkinter}
       \field{year}{2021}
-    \endentry
-    \entry{json_processing_books}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=65b69cb21285b315c2dbe460a8f05fc9}{%
-           family={Grinberg},
-           familyi={G\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {O’Reilly Media}%
-      }
-      \strng{namehash}{65b69cb21285b315c2dbe460a8f05fc9}
-      \strng{fullhash}{65b69cb21285b315c2dbe460a8f05fc9}
-      \strng{fullhashraw}{65b69cb21285b315c2dbe460a8f05fc9}
-      \strng{bibnamehash}{65b69cb21285b315c2dbe460a8f05fc9}
-      \strng{authorbibnamehash}{65b69cb21285b315c2dbe460a8f05fc9}
-      \strng{authornamehash}{65b69cb21285b315c2dbe460a8f05fc9}
-      \strng{authorfullhash}{65b69cb21285b315c2dbe460a8f05fc9}
-      \strng{authorfullhashraw}{65b69cb21285b315c2dbe460a8f05fc9}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9781492072405}
-      \field{title}{High-Performance JSON Processing in Python}
-      \field{year}{2020}
     \endentry
     \entry{myers_testing}{book}{}{}
       \name{author}{3}{}{%
@@ -521,16 +548,15 @@
       \strng{authornamehash}{233930c9dead1ddb498c9b00563e4dfe}
       \strng{authorfullhash}{6aef62fb0639301234e27b4c4278c004}
       \strng{authorfullhashraw}{6aef62fb0639301234e27b4c4278c004}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{4}
-      \field{isbn}{9781119723109}
       \field{title}{The Art of Software Testing}
       \field{year}{2020}
     \endentry
-    \entry{nielsen_usability}{misc}{}{}
+    \entry{nielsen_usability}{online}{}{}
       \name{author}{1}{}{%
         {{hash=753054f71283d85f82cda8e35daf6bac}{%
            family={Nielsen},
@@ -546,42 +572,53 @@
       \strng{authornamehash}{753054f71283d85f82cda8e35daf6bac}
       \strng{authorfullhash}{753054f71283d85f82cda8e35daf6bac}
       \strng{authorfullhashraw}{753054f71283d85f82cda8e35daf6bac}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.nngroup.com/articles/usability-101-introduction-to-usability/}}
-      \field{note}{NN/g Artikel, abgerufen am 01.07.2025}
       \field{title}{Usability 101: Introduction to Usability}
+      \field{urlday}{13}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
       \field{year}{2012}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nngroup.com/articles/usability-101-introduction-to-usability/
+      \endverb
+      \verb{url}
+      \verb https://www.nngroup.com/articles/usability-101-introduction-to-usability/
+      \endverb
     \endentry
-    \entry{triangulation_geometry}{article}{}{}
+    \entry{thurmond2001point}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=9261d1e427f5b22c3fd7fc455420d78b}{%
-           family={Souris},
-           familyi={S\bibinitperiod},
-           given={Marc},
-           giveni={M\bibinitperiod}}}%
+        {{hash=8e85c149172f8f28ad55456323d49bcf}{%
+           family={Thurmond},
+           familyi={T\bibinitperiod},
+           given={Veronica\bibnamedelima A},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{9261d1e427f5b22c3fd7fc455420d78b}
-      \strng{fullhash}{9261d1e427f5b22c3fd7fc455420d78b}
-      \strng{fullhashraw}{9261d1e427f5b22c3fd7fc455420d78b}
-      \strng{bibnamehash}{9261d1e427f5b22c3fd7fc455420d78b}
-      \strng{authorbibnamehash}{9261d1e427f5b22c3fd7fc455420d78b}
-      \strng{authornamehash}{9261d1e427f5b22c3fd7fc455420d78b}
-      \strng{authorfullhash}{9261d1e427f5b22c3fd7fc455420d78b}
-      \strng{authorfullhashraw}{9261d1e427f5b22c3fd7fc455420d78b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{8e85c149172f8f28ad55456323d49bcf}
+      \strng{fullhash}{8e85c149172f8f28ad55456323d49bcf}
+      \strng{fullhashraw}{8e85c149172f8f28ad55456323d49bcf}
+      \strng{bibnamehash}{8e85c149172f8f28ad55456323d49bcf}
+      \strng{authorbibnamehash}{8e85c149172f8f28ad55456323d49bcf}
+      \strng{authornamehash}{8e85c149172f8f28ad55456323d49bcf}
+      \strng{authorfullhash}{8e85c149172f8f28ad55456323d49bcf}
+      \strng{authorfullhashraw}{8e85c149172f8f28ad55456323d49bcf}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Geomatics Journal}
-      \field{number}{2}
-      \field{title}{Fundamentals of Triangulation and Trilateration}
-      \field{volume}{12}
-      \field{year}{2019}
-      \field{pages}{15\bibrangedash 28}
-      \range{pages}{14}
+      \field{journaltitle}{Journal of nursing scholarship}
+      \field{number}{3}
+      \field{title}{The point of triangulation}
+      \field{volume}{33}
+      \field{year}{2001}
+      \field{pages}{253\bibrangedash 258}
+      \range{pages}{6}
     \endentry
     \entry{kalman_filter_book}{book}{}{}
       \name{author}{1}{}{%
@@ -602,38 +639,12 @@
       \strng{authornamehash}{d2075620d3db6f848d4904775355e936}
       \strng{authorfullhash}{d2075620d3db6f848d4904775355e936}
       \strng{authorfullhashraw}{d2075620d3db6f848d4904775355e936}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{9780471708582}
-      \field{title}{Optimal State Estimation: Kalman, H Infinity, and Nonlinear Approaches}
+      \field{title}{Optimal State Estimation: Kalman, H-Infinity, and Nonlinear Approaches}
       \field{year}{2006}
-    \endentry
-    \entry{unity_visualization}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=90be999720b0d0b2a8d5132207c73182}{%
-           family={Technologies},
-           familyi={T\bibinitperiod},
-           given={Unity},
-           giveni={U\bibinitperiod}}}%
-      }
-      \strng{namehash}{90be999720b0d0b2a8d5132207c73182}
-      \strng{fullhash}{90be999720b0d0b2a8d5132207c73182}
-      \strng{fullhashraw}{90be999720b0d0b2a8d5132207c73182}
-      \strng{bibnamehash}{90be999720b0d0b2a8d5132207c73182}
-      \strng{authorbibnamehash}{90be999720b0d0b2a8d5132207c73182}
-      \strng{authornamehash}{90be999720b0d0b2a8d5132207c73182}
-      \strng{authorfullhash}{90be999720b0d0b2a8d5132207c73182}
-      \strng{authorfullhashraw}{90be999720b0d0b2a8d5132207c73182}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://unity.com/solutions/data-visualization}}
-      \field{note}{Abgerufen am 01.07.2025}
-      \field{title}{Real-Time 3D Data Visualization in Unity}
-      \field{year}{2023}
     \endentry
     \entry{webgl_book}{book}{}{}
       \name{author}{1}{}{%
@@ -644,7 +655,7 @@
            giveni={T\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {O'Reilly Media}%
+        {O’Reilly Media}%
       }
       \strng{namehash}{81d296e3cf43715ab9a11bdef0c99960}
       \strng{fullhash}{81d296e3cf43715ab9a11bdef0c99960}
@@ -654,13 +665,67 @@
       \strng{authornamehash}{81d296e3cf43715ab9a11bdef0c99960}
       \strng{authorfullhash}{81d296e3cf43715ab9a11bdef0c99960}
       \strng{authorfullhashraw}{81d296e3cf43715ab9a11bdef0c99960}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{9781449362965}
       \field{title}{WebGL: Up and Running}
       \field{year}{2012}
+    \endentry
+    \entry{buyuksalih20173d}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=cabee927df474a5278ed04f1f87e6d21}{%
+           family={Buyuksalih},
+           familyi={B\bibinitperiod},
+           given={Ismail},
+           giveni={I\bibinitperiod}}}%
+        {{hash=bc148f62546ea50674e573a908a1e67d}{%
+           family={Bayburt},
+           familyi={B\bibinitperiod},
+           given={Serdar},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1e8443a7831015ac0206e4ddb76bc99e}{%
+           family={Buyuksalih},
+           familyi={B\bibinitperiod},
+           given={Gurcan},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f206f9da1bed08b2de5d3c32c1530404}{%
+           family={Baskaraca},
+           familyi={B\bibinitperiod},
+           given={AP},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9ebad832ed045f5f194fdc9c36ddb2dc}{%
+           family={Karim},
+           familyi={K\bibinitperiod},
+           given={Hairi},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6fd7ffe91a007dca99cf332d68d15e35}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Alias\bibnamedelima Abdul},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Copernicus GmbH}%
+      }
+      \strng{namehash}{4714598bbd97cfc68740d97071504139}
+      \strng{fullhash}{7c0b2235e7fa616eec5f69f5c427e980}
+      \strng{fullhashraw}{7c0b2235e7fa616eec5f69f5c427e980}
+      \strng{bibnamehash}{7c0b2235e7fa616eec5f69f5c427e980}
+      \strng{authorbibnamehash}{7c0b2235e7fa616eec5f69f5c427e980}
+      \strng{authornamehash}{4714598bbd97cfc68740d97071504139}
+      \strng{authorfullhash}{7c0b2235e7fa616eec5f69f5c427e980}
+      \strng{authorfullhashraw}{7c0b2235e7fa616eec5f69f5c427e980}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences}
+      \field{title}{3D modelling and visualization based on the unity game engine--advantages and challenges}
+      \field{volume}{4}
+      \field{year}{2017}
+      \field{pages}{161\bibrangedash 166}
+      \range{pages}{6}
     \endentry
     \entry{ux_design_book}{book}{}{}
       \name{author}{1}{}{%
@@ -681,12 +746,11 @@
       \strng{authornamehash}{23f12bb124db5cb91003802eaee52457}
       \strng{authorfullhash}{23f12bb124db5cb91003802eaee52457}
       \strng{authorfullhashraw}{23f12bb124db5cb91003802eaee52457}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{Revised}
-      \field{isbn}{9780465050659}
       \field{title}{The Design of Everyday Things}
       \field{year}{2013}
     \endentry
@@ -719,12 +783,11 @@
       \strng{authornamehash}{2626ec8f22fc3baa10dbc85a9825ee79}
       \strng{authorfullhash}{f3c472223052fa8f8a1c396381e08cd3}
       \strng{authorfullhashraw}{f3c472223052fa8f8a1c396381e08cd3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{4}
-      \field{isbn}{9780136886092}
       \field{title}{Software Architecture in Practice}
       \field{year}{2021}
     \endentry

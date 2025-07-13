@@ -206,14 +206,64 @@ Friedrichshafen, den \today \\[1ex]
 \clearpage
 
 \section*{Kurzfassung}
+
+Diese Studienarbeit verbessert ein Bluetooth-basierendes Warnsystem, das Abbiege­unfälle zwischen \ac{LKW} und ungeschützten Verkehrs­teilnehmenden 
+vermeiden soll.
+Zentrale Beiträge sind
+
+Datenlogger: Ein Python-Modul zeichnet alle \acs{AoA}-Messdaten im zeilenbasierten \ac{JSONL}-Format auf und erlaubt deren hardware­unabhängiges Replay. 
+So können Entwickler Algorithmen offline testen und parametrisieren.
+
+Visualisierung: Die bisher punktförmige Darstellung des Tags wurde durch eine dynamische Stickman-Figur ersetzt; ein \ac{LKW}-Bild, farbige 
+Warnstufen sowie ein optionales Koordinaten­system erhöhen die Anschaulichkeit. Sämtliche Daten werden per \acs{TCP} in quasi-Echtzeit in die Oberfläche 
+gestreamt.
+
+Evaluation: Funktional-, Integrations- und Systemtests auf Windows 11 bestätigten eine stabile Datenaufzeichnung, fehlerfreie \ac{TCP}-Kommunikation 
+und eine insgesamt benutzer­freundliche \acs{UI}. Schwächen zeigten sich bei ruckartiger Tag-Bewegung und reduzierter Ortungs­genauigkeit in Randlagen.
+
+Ausblick: Vorgeschlagen werden adaptive Glättungs­verfahren (z. B. Kalman-Filter), ein drittes Antennen-Board zur Genauigkeits­steigerung, 
+interaktive 3D-Darstellungen (Unity/WebGL) sowie eine stärkere Modularisierung der Software.
+
+Das Ergebnis ist ein robuster Prototyp, der Entwicklungs- und Testprozesse beschleunigt und eine fundierte Basis für weiterführende 
+Fahrer­assistenz­systeme bildet.
   
+\clearpage
 %---------------------------------------------------------
 % Abstract
 %---------------------------------------------------------
 \section*{Abstract}
+
+This study enhances a Bluetooth \acs{AoA} based warning system designed to prevent turning collisions between trucks and vulnerable 
+road users.
+Key contributions are
+
+Data Logger – A Python module records all \ac{AoA} measurements in a line-wise \ac{JSONL} format and provides hardware-independent replay, enabling offline 
+algorithm tuning and analysis.
+
+Visualization – The original single-point display was replaced by a dynamic “stickman”, complemented by a truck image, colour-coded risk levels
+ and a toggleable coordinate grid. Live or replayed data are streamed to the \acs{UI} via \acs{TCP} in near real time.
+
+Evaluation – Functional, integration and system tests on Windows 11 proved reliable data recording, loss-free \ac{TCP} communication and an overall 
+user-friendly interface. Limitations were observed in slightly jerky tag motion and decreased positioning accuracy at the edges of the coverage area.
+
+Future Work – Proposed improvements include adaptive smoothing (e.g., Kalman filtering), adding a third antenna board for higher accuracy, 
+interactive 3-D visualizations (Unity/WebGL) and deeper modularisation of the software stack.
+
+The resulting prototype shortens development cycles, supports thorough testing and lays a solid foundation for advanced collision-avoidance 
+driver-assistance systems.
 \clearpage
 
 \section*{Hilfsmittel}
+
+Für die Erstellung dieser Arbeit wurden folgende Werkzeuge genutzt:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{LLMs (ChatGPT):} Ideen- und Code-Gerüst, finale Algorithmen und Texte wurden manuell überprüft und angepasst.
+  \item \textbf{Entwicklungs­umgebung:} Visual Studio Code + Python 3.12 (tkinter, pandas, socket) sowie g++ für bestehende C++-Module.
+  \item \textbf{Versions­verwaltung:} Git (GitHub-Repository).
+  \item \textbf{Hardware uns Softwaretests:} u-blox XPLR-AOA-2-Kit und lokales TCP-Loopback unter Windows 11.
+\end{itemize}
+
 
 \clearpage
 % List of figures
@@ -271,448 +321,380 @@ Friedrichshafen, den \today \\[1ex]
 \section{Einleitung}
 
 \subsection{Motivation}
-In den letzten Jahren ist die Zahl der tödlichen Verkehrsunfälle bedauerlicherweise gestiegen, was auf eine Vielzahl von Faktoren wie die 
-steigende Verkehrsdichte sowie mangelnde Aufmerksamkeit und Sorgfalt im Straßenverkehr zurückzuführen sein kann. 
-Um dieser negativen Entwicklung entgegenzuwirken, wurden unterschiedliche Maßnahmen ergriffen. 
-Neben strengeren Sicherheitsgesetzen haben sich vor allem technologische Innovationen wie Fahrzeugkameras, 
-Sensorik und verschiedene Fahrerassistenzsysteme als wesentliche Instrumente zur Unfallprävention herauskristallisiert.
+Die Zahl der tödlichen Verkehrsunfälle ist in den vergangenen Jahren erneut gestiegen. Ursachen sind unter anderem eine wachsende Verkehrsdichte 
+sowie nachlassende Aufmerksamkeit und Sorgfalt vieler Verkehrsteilnehmender. Um dieser Entwicklung entgegenzuwirken, wurden sowohl gesetzliche 
+Vorgaben verschärft als auch technische Innovationen vorangetrieben. Zu Letzteren zählen Fahrzeugkameras, Sensorik und moderne Fahrerassistenzsysteme, 
+die sich als zentrale Instrumente der Unfallprävention erwiesen haben.
 
 \begin{figure}[H]
-    \includegraphics[width=1\linewidth]{images/abbiegeassistent-scaled-7b2478b8}\\[1ex]
-    \centering
-    \caption{Beispiel Rechtsabbiegen LKW}
-    \label{ABBILDUNG}
+  \centering
+  \includegraphics[width=\linewidth]{images/abbiegeassistent-scaled-7b2478b8}
+  \caption{Rechtsabbiegesituation mit Abbiegeassistent \cite{abbiegeassistent-foerderung}}
+  \label{fig:abbiegeassistent}
 \end{figure}
 
-
-Eine besonders bedeutende Neuerung im Bereich der \acf{LKW}-Sicherheit stellen Abbiegeassistenten dar. 
-Diese Systeme helfen, den toten Winkel zu reduzieren und somit Unfälle – insbesondere beim Rechtsabbiegen – zu vermeiden. 
-Trotz dieser technischen Fortschritte besteht weiterhin Potenzial für weitere Verbesserungen. Eine umfassende Forschung und Entwicklung 
-im Bereich von Fahrerassistenzsystemen könnte zukünftig dazu beitragen, das allgemeine Verkehrsrisiko weiter zu senken und die Verkehrssicherheit
-signifikant zu erhöhen. \cite{SlightIncreaseNumber}
+Eine besonders wichtige Neuerung im Bereich der \acf{LKW}-Sicherheit sind Abbiegeassistenten. Sie reduzieren den toten Winkel und tragen so
+ wesentlich dazu bei, Unfälle – insbesondere beim Rechtsabbiegen – zu vermeiden. Obwohl erste Systeme bereits im Einsatz sind, besteht weiterhin 
+ erhebliches Potenzial für Verbesserungen. Vertiefte Forschung und Entwicklung im Bereich der Fahrerassistenz kann das allgemeine Verkehrsrisiko 
+ weiter senken und die Verkehrssicherheit signifikant erhöhen \cite{SlightIncreaseNumber}.
 
 \clearpage
 
 \subsection{Zielsetzung}
-Zielsetzung dieser Studienarbeit ist es, einen 
-leistungsfähigen Datenlogger zu entwickeln und die Visualisierung 
-zu verbessern, um die Funktionalität des Fahrerassistenzsystems zu erhöhen 
-und dadurch dessen Entwicklung zu erleichtern. Durch die Implementierung eines 
-leistungsfähigen Datenloggers sollen Messwerte systematisch und zuverlässig 
-erfasst werden können, was eine effektivere Zusammenarbeit im Entwicklungsteam 
-ermöglicht und die Notwendigkeit einer dauerhaften Hardwareverbindung reduziert. Die Optimierung der Visualisierung 
-dient dazu, Messergebnisse klarer und übersichtlicher darzustellen, um künftige Analysen und Tests zu vereinfachen und somit
- die Qualität und Genauigkeit der Positionsbestimmung zu erhöhen. Diese Verbesserungen sollen letztlich zu einer höheren Effizienz
-  im Entwicklungsprozess führen und 
-somit einen wesentlichen Beitrag zur Erhöhung der Verkehrssicherheit leisten.
+Diese Studienarbeit verfolgt zwei Hauptziele: Erstens soll ein leistungsfähiger Datenlogger entwickelt werden, der Messwerte des 
+Fahrerassistenzsystems systematisch und zuverlässig erfasst. Dadurch können mehrere Teammitglieder parallel mit authentischen Messdaten arbeiten,
+ ohne dauerhaft auf die Hardware zugreifen zu müssen. Zweitens wird die bestehende Visualisierung überarbeitet, um Messergebnisse klarer und 
+ übersichtlicher darzustellen. Die Kombination aus verbesserter Datenerfassung und optimierter Darstellung erleichtert zukünftige Analysen und Tests, 
+ erhöht die Qualität der Positionsbestimmung und steigert die Effizienz des gesamten Entwicklungsprozesses – letztlich mit dem Ziel, 
+ die Verkehrssicherheit weiter zu verbessern.
 
-\clearpage
+ \clearpage
+
 
 \section{Rückblick auf das mobile Warnsystem}
-\subsection{Konzept und Zielsetzung}
-Die vorherige Studienarbeit verfolgte das Ziel, ein mobiles Warnsystem zur Minimierung von 
-Abbiegeunfällen zwischen \ac{LKW} und ungeschützten Verkehrsteilnehmenden wie Fußgängerinnen und Radfahrerinnen zu entwickeln.
-Zentrales Element dieses Systems war eine mobile Applikation, die als aktiver Bluetooth-Sender fungieren sollte. In Kombination 
-mit einem am \ac{LKW} montierten Empfängerboard (basierend auf dem u-blox XPLR-AOA-1 Kit) sollte mithilfe der \acf{AoA}-Technologie 
-die Position des Smartphones lokalisiert und bei drohender Gefahr eine Warnung ausgegeben werden. Das System versprach einen 
-kostengünstigen und einfach zugänglichen Ansatz zur Verbesserung der Verkehrssicherheit im städtischen Raum.
 
-\subsection{Bluetooth AoA und technische Grundlagen}
-Die \acf{AoA}-Technologie ist Teil des Bluetooth 5.1-Standards und ermöglicht die Positionsbestimmung
-eines Senders durch Messung des Einfallswinkels der Funksignale an mehreren Antennen eines Empfängers \cite{miller2021bluetooth,uBloxAoAWhitepaper}. 
-Voraussetzung hierfür ist jedoch ein exakter Zugang zu den Bluetooth-Sendeparametern sowie eine Antennenkonfiguration 
-mit bekannten geometrischen Abständen. Das u-blox XPLR-AOA-1 Explorer Kit stellt hierzu eine geeignete Hardwarelösung dar, 
-da es mit einem \ac{AoA}-fähigen Empfängerboard und einem sogenannten Tag (Sender) ausgestattet ist. Ziel der Arbeit war es, das Smartphone 
-funktional durch diesen Tag zu ersetzen.
+\subsection{Konzept und Zielsetzung}
+Die vorangegangene Studienarbeit hatte das Ziel, ein mobiles Warnsystem zu entwickeln, das Abbiegeunfälle zwischen \ac{LKW} und ungeschützten 
+Verkehrsteilnehmenden – insbesondere Fußgänger*innen und Radfahrer*innen – minimiert.  
+Kern des Ansatzes war eine Smartphone-Applikation, die als aktiver Bluetooth-Sender (Tag) fungiert. In Verbindung mit einem am \ac{LKW} montierten 
+Empfängerboard (u-blox XPLR-AOA-1) sollte mithilfe der \acf{AoA}-Technologie die Position des Smartphones bestimmt und bei kritischen Situationen eine 
+Warnung ausgegeben werden.  
+Durch den Verzicht auf spezielle Hardware für die Verkehrsteilnehmenden versprach das System einen kostengünstigen und leicht zugänglichen Beitrag zur 
+Verkehrssicherheit im urbanen Raum.
+
+\subsection{Bluetooth-AoA – technische Grundlagen}
+\ac{AoA} ist Bestandteil des Bluetooth-5.1-Standards. Mehrere Antennen auf dem Empfängerboard messen den Einfallswinkel des Funksignals; aus 
+mindestens zwei Winkeln lässt sich per Triangulation die Position des Senders bestimmen \cite{miller2021bluetooth,uBloxAoAWhitepaper}.  
+Voraussetzungen sind:
+
+\begin{itemize}[leftmargin=2em]
+  \item Zugriff auf die Sendeparameter des Bluetooth-Tags (z.\,B. Werbe­kanäle und Signalform),
+  \item eine Antennenkonfiguration mit bekannten geometrischen Abständen,
+  \item zeitlich hochaufgelöste Phasen- bzw. I/Q-Messungen im Empfänger.
+\end{itemize}
+
+Das u-blox XPLR-AOA-1 Explorer Kit erfüllt diese Bedingungen, da es sowohl ein \ac{AoA}-fähiges Empfängerboard als auch einen vorkonfigurierten 
+Tag mitbringt. In der vorangegangenen Arbeit sollte das Smartphone diese Tag-Funktion übernehmen.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{images/XPLR-AOA-with-C209-and-C211-02_0}
-    \caption{XPLR-AOA Explorer Kit}
-    \label{ABBILDUNG}
+  \centering
+  \includegraphics[width=\linewidth]{images/XPLR-AOA-with-C209-and-C211-02_0}
+  \caption{u-blox XPLR-AOA-2 Explorer Kit \cite{u-blox-xplr-aoa2}}
+  \label{fig:xplr-aoa}
 \end{figure}
 
 \subsection{Herausforderungen und Gründe für die Projektpause}
-Im praktischen Verlauf der Umsetzung traten mehrere schwerwiegende technische Limitierungen auf, die die Fortführung des Projekts verhinderten:
+Im praktischen Versuch zeigten sich mehrere technische Hürden, die eine Fortführung des Projekts verhinderten:
 
-\begin{itemize}
-    \item Aktuelle Smartphone-Firmware (insbesondere auf Android-Basis) verhindert in der Regel den vollständigen Zugriff auf die Bluetooth-Sendeparameter. Ein gezieltes Emittieren von \acf{BLE}-Signalen, wie es zur \ac{AoA}-Ortung erforderlich ist, ist mit dem Standard-\acf{SDK} nicht möglich \cite{androidBLElimitation}.
-    \item Nur wenige aktuelle Mobilgeräte unterstützen Bluetooth 5.1 vollständig, was die Reichweite und Genauigkeit der Ortung stark einschränkt \cite{ble51market2023}.
-    \item Die Emulation des u-blox Tags durch das Smartphone scheiterte daher an mangelnden Systemrechten, fehlendem Low-Level-\acf{API}-Zugriff und nicht ausreichender Hardwareunterstützung.
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Eingeschränkter Bluetooth-Stack auf Smartphones:} Aktuelle Android-Firmware erlaubt keinen vollständigen Zugriff auf Low-Level-Sendeparameter. Ein gezieltes Aussenden der für \ac{AoA} nötigen \ac{BLE}-Werbepakete ist mit dem Standard-\ac{SDK} nicht möglich \cite{androidBLElimitation}.
+  \item \textbf{Begrenzte Verfügbarkeit von Bluetooth 5.1:} Nur wenige Endgeräte unterstützen bislang den vollständigen 5.1-Funktionsumfang. Dies reduziert Reichweite und Genauigkeit der Ortung.
+  \item \textbf{Fehlende Systemrechte:} Die Emulation des u-blox-Tags scheiterte an fehlendem Root-Zugriff sowie an nicht freigegebenen Low-Level-\ac{API}s.
 \end{itemize}
 
-Diese Faktoren führten dazu, dass das Projekt in der geplanten Form nicht abgeschlossen werden konnte. 
-Die zugrundeliegende Idee bleibt jedoch vielversprechend und kann in Zukunft wieder aufgegriffen werden, sobald sich 
-die technischen Rahmenbedingungen verbessert haben.
+Aufgrund dieser Limitierungen konnte das Projekt nicht wie geplant abgeschlossen werden. Die zugrunde liegende Idee bleibt jedoch 
+vielversprechend und kann erneut aufgegriffen werden, sobald die Geräteunterstützung für Bluetooth 5.1 breiter verfügbar ist und Betriebssysteme 
+einen tieferen Zugriff auf den Bluetooth-Stack erlauben.
 
 \clearpage
 
 \section{Grundlagen Datenlogger}
+
 \subsection{Zweck und Funktionalität eines Datenloggers}
-Ein Datenlogger ist ein autonom arbeitendes Gerät oder Softwaremodul, das physikalische oder digitale Messwerte über einen definierten Zeitraum hinweg aufzeichnet. Ziel ist es, Veränderungen systematisch und zuverlässig zu erfassen, um sie später analysieren, auswerten oder dokumentieren zu können \cite{poole2020data, smith2018sensors}. Typische erfasste Daten umfassen beispielsweise Temperatur, Spannung, Zeitstempel, Lage- oder Positionsdaten.
+Ein Datenlogger ist ein autonom arbeitendes Gerät bzw. Software-Modul, das physikalische oder digitale Messwerte über einen definierten Zeitraum 
+aufzeichnet.  
+Ziel ist es, Veränderungen systematisch und zuverlässig zu erfassen, um sie später analysieren, auswerten oder dokumentieren zu 
+können \cite{poole2020data,smith2018sensors}.  
+Typische Messgrößen sind beispielsweise Temperatur, Spannung, Zeitstempel sowie Lage- oder Positionsdaten.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/Datalogger}
+  \caption{Datenlogger Cube (Avisaro 2.0) zur Speicherung von Sensor- und Prozessdaten \cite{wikipedia-datalogger}}
+  \label{fig:datenlogger_cube}
+\end{figure}
+
+Im Unterschied zu interaktiven Messsystemen arbeitet ein Datenlogger in der Regel ohne permanente Verbindung zu einem Steuergerät.  
+Damit eignet er sich besonders für mobile oder schwer zugängliche Anwendungen. Die kontinuierliche Aufzeichnung ermöglicht eine lückenlose 
+Nachverfolgbarkeit und ist vor allem während Entwicklung, Fehlersuche und Validierung technischer Systeme von großer Bedeutung \cite{dewesoft2024guide}.
+
+Wesentliche Eigenschaften eines Datenloggers sind eine ausreichende Speicherkapazität, hohe Energieeffizienz sowie die Kompatibilität zu 
+standardisierten Datenformaten wie \ac{CSV} oder \ac{JSON}. Moderne Geräte bieten darüber hinaus Schnittstellen für drahtlose Datenübertragung 
+oder eine automatisierte Synchronisation mit Analysetools \cite{rs2022guide}.
+
+\subsection{Anwendungsbereiche im Kontext dieser Studienarbeit}
+In dieser Arbeit wird der Datenlogger eingesetzt, um die Entwicklung des Bluetooth-\ac{AoA}-Lokalisierungssystems effizienter und flexibler zu gestalten.  
+Während Test- und Optimierungsphasen soll die Abhängigkeit von einer Live-Verbindung zur Hardware minimiert werden \cite{poole2020data}.  
+Entwickelnde können somit reale Messdaten analysieren, ohne direkt auf die u-blox-Hardware zugreifen zu müssen.
+
+Der Logger speichert originalgetreue Messwerte, die anschließend in externe Werkzeuge importiert werden können, um Berechnungen, Analysen oder 
+grafische Darstellungen vorzunehmen.  
+Parameter- oder Algorithmus­änderungen lassen sich so anhand aufgezeichneter Daten überprüfen, ohne dass dafür eine erneute Datenerfassung 
+erforderlich ist \cite{smith2018sensors}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Datalogger}
-    \caption{Datenlogger Cube (Avisaro 2.0) zur Speicherung von Sensor- und Prozessdaten}
-    \label{fig:datenlogger_cube}
+    \includegraphics[width=\linewidth]{images/Flussdiagramm Datenlogger.png}
+    \caption{Einbindung des Datenloggers in den Entwicklungsprozess\\
+             Quelle: Eigene Darstellung}
+    \label{fig:datenlogger_flow}
 \end{figure}
 
-Im Gegensatz zu interaktiven Messsystemen arbeitet ein Datenlogger in der Regel unabhängig und ohne dauerhafte Verbindung zu einem Steuergerät. Dadurch eignet er sich besonders für mobile oder schwer zugängliche Anwendungen. Die kontinuierliche Aufzeichnung ermöglicht eine lückenlose Nachverfolgbarkeit, was insbesondere bei der Entwicklung, Fehlersuche und Validierung technischer Systeme von großer Bedeutung ist \cite{dewesoft2024guide}.
 
-Wichtige Eigenschaften eines Datenloggers umfassen unter anderem eine ausreichende Speicherkapazität, eine hohe Energieeffizienz sowie die Kompatibilität zu standardisierten Datenformaten wie \ac{CSV} oder \ac{JSON}. Moderne Logger bieten darüber hinaus Schnittstellen für drahtlose Datenübertragung oder eine automatisierte Synchronisation mit Analysetools \cite{rs2022guide}.
-
-\subsection{Anwendungsbereiche im Kontext der Studienarbeit}
-Im Rahmen dieser Studienarbeit wird der Datenlogger gezielt eingesetzt, um die Entwicklungsarbeit am Bluetooth-\ac{AoA}-basierten Lokalisierungssystem effizienter und flexibler zu gestalten. Ziel ist es, die Abhängigkeit von einer aktiven Verbindung zur Hardware während der Test- und Anpassungsphasen zu minimieren \cite{poole2020data}. Personen, die an der Parametrierung oder Feinjustierung des Systems arbeiten, sollen in die Lage versetzt werden, auch ohne direkte Verbindung zur u-blox-Hardware auf reale Messdaten zuzugreifen.
-
-Der Datenlogger dient dabei nicht nur der reinen Aufzeichnung, sondern ermöglicht die Speicherung von tatsächlich erfassten, originalgetreuen Messwerten. Diese Werte können anschließend in separate Programme oder Auswertungswerkzeuge importiert werden, um dort Berechnungen, Analysen und grafische Darstellungen durchzuführen. Änderungen an Parametern oder Auswertealgorithmen können somit auf Basis gespeicherter Daten vorgenommen und getestet werden, ohne dass dafür eine erneute Datenerfassung mit der realen Sensorik notwendig ist \cite{smith2018sensors}.
-
-\begin{figure}[H]
-    \includegraphics[width=1\linewidth]{images/Flussdiagramm Datenlogger.png}\\[1ex]
-    \centering
-    \caption{Integration Datenlogger}
-    \label{ABBILDUNG}
-\end{figure}
-
-Darüber hinaus erlaubt der Datenlogger eine „Offline-Simulation“ oder ein Daten-Replay mit echten Werten. Diese Vorgehensweise bietet den Vorteil, dass Optimierungen zunächst im Testsystem geprüft werden können. Erst wenn ein Ergebnis zufriedenstellend ist, wird es auf das reale System übertragen. Damit leistet der Datenlogger einen wesentlichen Beitrag zur Entkopplung von Entwicklung und Hardwareverfügbarkeit \cite{dwyer2015what}.
-
-\subsection{Vorhandene Herausforderungen und Lösungsansätze}
-Bei der Entwicklung eines zuverlässigen Datenloggers im Kontext des Bluetooth-\ac{AoA}-Systems treten verschiedene Herausforderungen auf. Eine der zentralen Schwierigkeiten liegt in der exakten zeitlichen Zuordnung der erfassten Daten. Für eine sinnvolle Auswertung müssen Zeitstempel, Empfangswinkel und weitere Messgrößen synchronisiert und konsistent gespeichert werden \cite{rs2022guide}.
-
-Ein weiteres Problem stellt die effiziente und verlustfreie Speicherung großer Datenmengen dar. Hierbei müssen sowohl die Speicherkapazität als auch die Lesbarkeit und Weiterverwendbarkeit berücksichtigt werden. Gerade im Hinblick auf die spätere Analyse mit gängigen Tools wie Python oder MATLAB ist ein gut strukturiertes Datenformat – etwa \ac{CSV} oder \ac{JSON} – von hoher Bedeutung \cite{dewesoft2024guide}.
-
-Auch die Integration in bestehende Entwicklungsprozesse erfordert eine durchdachte Schnittstellengestaltung. Der Datenlogger muss flexibel und modular aufgebaut sein, damit er problemlos in verschiedene Testumgebungen eingebunden werden kann. Gleichzeitig soll der Energieverbrauch möglichst gering gehalten werden, um auch den mobilen Einsatz über längere Zeiträume hinweg zu ermöglichen \cite{smith2018sensors}.
-
-Lösungsansätze bestehen in der Verwendung eines einfachen, standardisierten Speicherformats, einem modularen Softwaredesign mit klar dokumentierten Schnittstellen sowie in der Implementierung grundlegender Fehlererkennungs- und Synchronisationsmechanismen. Diese Maßnahmen sollen sicherstellen, dass der Datenlogger zuverlässig, energieeffizient und nutzerfreundlich eingesetzt werden kann \cite{poole2020data}.
+Darüber hinaus ermöglicht der Datenlogger eine \emph{Offline-Simulation} beziehungsweise ein Daten-Replay mit realen Werten.  
+Optimierungen können zunächst im Testsystem bewertet und erst bei zufriedenstellendem Ergebnis auf das reale System übertragen werden.  
+Der Logger trägt somit wesentlich zur Entkopplung von Entwicklung und Hardwareverfügbarkeit bei.
 
 \clearpage
 
+\subsection{Herausforderungen und Lösungsansätze}
+Bei der Entwicklung eines zuverlässigen Datenloggers für das Bluetooth-\ac{AoA}-System treten mehrere Herausforderungen auf:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Zeitliche Synchronisation:} Für eine konsistente Auswertung müssen Zeitstempel, Empfangswinkel und weitere Messgrößen exakt zueinander passen \cite{rs2022guide}.
+  \item \textbf{Speichereffizienz:} Große Datenmengen sollen verlustfrei, aber kompakt abgelegt werden. Ein strukturiertes Format wie \ac{CSV} oder \ac{JSON} erleichtert die spätere Analyse in Python oder MATLAB \cite{dewesoft2024guide}.
+  \item \textbf{Integration in bestehende Prozesse:} Der Logger muss modular sein und sich ohne großen Aufwand in unterschiedliche Testumgebungen einfügen lassen. Ein niedriger Energieverbrauch ist dabei essenziell, um auch längere mobile Einsätze zu unterstützen \cite{smith2018sensors}.
+\end{itemize}
+
+Als Lösungsansätze dienen
+
+\begin{itemize}[leftmargin=2em]
+  \item die Verwendung eines einfachen, standardisierten Speicherformats,
+  \item ein modular aufgebautes Software-Design mit klar dokumentierten Schnittstellen,
+  \item sowie grundlegende Mechanismen zur Fehlererkennung und Datensynchronisation.
+\end{itemize}
+
+Diese Maßnahmen gewährleisten, dass der Datenlogger zuverlässig, energieeffizient und benutzerfreundlich eingesetzt werden kann \cite{poole2020data}.
+
+\clearpage
+
+
+%--------------------------------------------------------------------
 \section{Entwicklung des Datenloggers}
+%--------------------------------------------------------------------
+
 \subsection{Anforderungen an die Software}
-Die zu entwickelnde Datenlogger-Software muss sich nahtlos in die bestehende Systemarchitektur integrieren lassen und gleichzeitig zentrale 
-Anforderungen erfüllen: Dazu zählen eine robuste Speicherung relevanter Messdaten, flexible Möglichkeiten zur Wiederverwendung der Daten für 
-Tests und Visualisierungen sowie eine einfache Wartbarkeit und Erweiterbarkeit des Codes.
+Die zu entwickelnde Datenlogger-Software muss sich nahtlos in die bestehende Systemarchitektur integrieren lassen und dabei drei Kernanforderungen 
+erfüllen:
 
-Ein zentrales Ziel war die Entkopplung der Datenerfassung von der physischen Hardware. Durch die Offline-Nutzung gespeicherter Messdaten 
-sollen Entwickler in die Lage versetzt werden, auch ohne Zugang zur u-blox-Hardware Analysen durchzuführen und Visualisierungen zu testen.
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Robuste Datenspeicherung} aller relevanten Messwerte,
+  \item \textbf{flexible Wiederverwendung} der gespeicherten Daten für Tests und Visualisierungen,
+  \item \textbf{einfache Wart- und Erweiterbarkeit} des Quellcodes.
+\end{itemize}
 
-Darüber hinaus wurde eine klar strukturierte, leicht lesbare Datenhaltung gefordert, die eine spätere Auswertung und Visualisierung mit
-gängigen Tools ermöglicht. Auch Mehrbenutzerfähigkeit und Plattformunabhängigkeit wurden als wünschenswerte Eigenschaften identifiziert.
+Ein zentrales Ziel ist die \emph{Entkopplung} der Datenerfassung von der physischen Hardware.  
+Durch die Offline-Nutzung gespeicherter Messreihen können Entwicklerinnen und Entwickler auch ohne Zugang zur u-blox-Hardware Analysen durchführen 
+und Visualisierungen testen.  
 
+Darüber hinaus wurde eine klar strukturierte, maschinenlesbare Datenhaltung gefordert, damit die aufgezeichneten Werte in gängigen Werkzeugen 
+(z.\,B. Python, MATLAB) unmittelbar weiterverarbeitet werden können.  
+Mehrbenutzerfähigkeit und Plattformunabhängigkeit gelten als wünschenswerte Eigenschaften.
+
+%--------------------------------------------------------------------
 \subsection{Auswahl geeigneter Technologien und Tools}
-Die Softwarearchitektur wurde so gewählt, dass vorhandene Strukturen optimal weiterverwendet werden können. Die bestehende Kommunikation mit der 
-u-blox-Hardware basiert auf einer performanten C++-Schicht, die beibehalten wurde. Neue Komponenten – insbesondere der Datenlogger und die Replay-Funktionalität – wurden hingegen in Python implementiert. Diese Kombination ermöglicht flexible Anpassungen bei geringem Änderungsaufwand, ohne die Stabilität des bestehenden Kerncodes in C++ zu beeinträchtigen. Diese Vorgehensweise bietet eine effiziente Balance zwischen Leistungsfähigkeit (via C++) und Entwicklungsproduktivität (via Python) \cite{cpp_python_integration}.
+%--------------------------------------------------------------------
+Die vorhandene Kommunikation mit der u-blox-Hardware basiert auf einer performanten \mbox{C++-Schicht}.  
+Um diese beizubehalten und dennoch agile Erweiterungen zu ermöglichen, wurde eine zweistufige Architektur gewählt:
 
-Zur Speicherung der Messdaten wurde das \ac{JSON}-Format ausgewählt. Dieses Format erlaubt eine strukturierte Ablage komplexer Datensätze, bestehend aus Zeitstempeln, \ac{AoA}-Winkeln, Signalstärken sowie weiteren Metadaten. Dies erlaubt eine maschinenlesbare und standardisierte Datenhaltung, die ideal für spätere Analysen geeignet ist \cite{json_logging_bestpractices}.
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{C++}: bestehende, zeitkritische Kommunikation mit den Empfängerboards,  
+  \item \textbf{Python}: neuer Datenlogger, Replay-Funktion und Visualisierung.
+\end{itemize}
 
-Durch diese Technologieentscheidung konnten die in Abschnitt 4.1 genannten Anforderungen erfüllt werden: Die Lösung ist plattformunabhängig,
- modular, nachvollziehbar und unterstützt eine effiziente Weiterentwicklung sowie Zusammenarbeit im Team.
+Diese Kombination vereint die Rechenleistung von C++ mit der Entwicklungsproduktivität von Python \cite{cpp_python_integration}.
 
-\subsection{Implementierung und Integration in bestehende Systeme}
+Als Speicherformat kommt \ac{JSON} zum Einsatz, genauer das \acf{JSONL}-Format.  
+Es gestattet, komplexe Datensätze – Zeitstempel, \ac{AoA}-Winkel, Signalstärken und Metadaten – zeilenweise abzulegen, maschinenlesbar zu 
+versionieren und später sequentiell einzulesen \cite{json_logging_bestpractices}.  
 
-Die Implementierung des Datenloggers erfolgte im Rahmen eines bestehenden Lokalisierungssystems, das auf der Bluetooth-\ac{AoA}-Technologie 
-basiert. Ziel war es, die Erfassung, Speicherung und spätere Analyse von Messwerten so zu gestalten, dass diese unabhängig
-von einer Live-Hardwareverbindung möglich ist und flexibel in den Entwicklungsprozess integriert werden kann.
+Die in Abschnitt 4.1 genannten Anforderungen werden damit erfüllt: Die Lösung ist plattformunabhängig, modular 
+und teamfreundlich.
+
+%--------------------------------------------------------------------
+\subsection{Implementierung und Integration in das bestehende System}
+%--------------------------------------------------------------------
+Das Lokalisierungssystem basiert auf der Bluetooth-\ac{AoA}-Technologie.  
+Der Datenfluss wurde so gestaltet, dass Messung, Speicherung und Analyse wahlweise live oder offline erfolgen können.
 
 \paragraph{Messung – Entstehung der Rohdaten}
-
-Im Zentrum der Messung stehen zwei Hauptkomponenten: das sogenannte Tag, das als zu verfolgendes Objekt fungiert 
-und kontinuierlich Signale sendet, sowie mindestens zwei Anker (Anchors), die als fest installierte Empfangseinheiten dienen. 
-Die Anker, ausgestattet mit mehreren Antennen, empfangen das Signal des Tags und bestimmen den Einfallswinkel (\ac{AoA}), unter dem 
-das Signal ankommt. 
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Tag}: sendet kontinuierlich Bluetooth-Signale.  
+  \item \textbf{Anker} (mind.\ zwei): empfangen die Signale mit Mehrantennen-Arrays und bestimmen die Einfallswinkel~(\ac{AoA}).
+\end{itemize}
 
 \paragraph{Datenerfassung und -aufbereitung}
+Ein Python-Skript (\texttt{getAnchorData.py} \cite{tadic-studienarbeit-ui}) liest die Rohdaten über eine serielle Schnittstelle bzw. \ac{BLE} aus.  
+Pro Messzyklus werden unter anderem
 
-Die Kommunikation zwischen Ankern und Rechner erfolgt typischerweise über eine serielle Schnittstelle oder \ac{BLE}. 
-Ein Python-Skript (z.\,B. \texttt{getAnchorData.py}) liest die Rohdaten kontinuierlich aus. Für jede einzelne Messung werden strukturierte Informationen
-erfasst, darunter:
-
-\begin{itemize}
-    \item \texttt{anchors}: Positionen der Anker, z.\,B. \texttt{[[3, 0], [0, 0]]}
-    \item \texttt{angles}: Die gemessenen Winkel, z.\,B. \texttt{[-31, 24]}
-    \item \texttt{sensor\_values}: Eine Liste weiterer Sensordaten:
-\begin{lstlisting}[language=]
-[
-  {"theta": 90, "val": -31, "pos": [3, 0], "speed_along_line": 0, "risk_level": 1},
-  {"theta": 90, "val": 24, "pos": [0, 0], "speed_along_line": 0, "risk_level": 1}
-]
-\end{lstlisting}
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{anchors} (Koordinaten der Anker), 
+  \item \texttt{angles} (gemessene Winkel) sowie
+  \item \texttt{sensor\_values} (weitere Metadaten)
 \end{itemize}
 
-Die Daten werden zeilenweise im \ac{JSON} Lines-Format (\texttt{.jsonl}) gespeichert. Jede Zeile enthält einen Zeitstempel und die zugehörigen Sensordaten. 
-Ein Beispiel für eine gespeicherte Messung ist:
-
-\begin{verbatim}
-{"timestamp": "2025-06-03T06:32:50.140342", 
- "raw_sensor_data": {
-   "anchors": [[3, 0], [0, 0]], 
-   "angles": [-31, 24], 
-   "sensor_values": [...]
- }}
-\end{verbatim}
+in eine \texttt{.jsonl}-Datei geschrieben. Jede Zeile enthält einen ISO-Zeitstempel und das zugehörige Messobjekt.
 
 \paragraph{Berechnung der Tag-Position – Triangulation}
-
-Aus den gemessenen Winkeln und bekannten Positionen der Anker wird die Position des Tags durch Triangulation berechnet. Jeder Anker 
-definiert eine Gerade, auf der sich der Tag befinden könnte. Die Schnittpunktberechnung dieser Geraden liefert eine Positionsschätzung. Die Richtung 
-jeder Linie ergibt sich aus dem gemessenen Winkel mittels:
-
+Aus zwei Winkelmessungen und den bekannten Ankerpositionen lässt sich die Tag-Position über Triangulation bestimmen.  
+Für jeden Anker $i$ gilt mit Winkel~$\theta_i$ der Richtungsvektor
 \[
-dx = \sin(\theta), \quad dy = \cos(\theta)
+  \vec d_i = \bigl(\sin\theta_i,\; \cos\theta_i\bigr).
 \]
-
-Der Schnittpunkt wird mithilfe der folgenden Gleichung bestimmt:
-
+Schneidet man die durch $(x_i,y_i)$ mit Richtung $\vec d_i$ definierten Geraden, erhält man
 \[
-t_1 = \frac{(x_2 - x_1) \cdot dy_2 - (y_2 - y_1) \cdot dx_2}{dx_1 \cdot dy_2 - dy_1 \cdot dx_2}
+  t_1 = \frac{(x_2-x_1) \, d_{y,2} - (y_2-y_1) \, d_{x,2}}{d_{x,1} \, d_{y,2} - d_{y,1} \, d_{x,2}},\qquad
+  \vec p = (x_1,y_1) + t_1 \, \vec d_1 .
 \]
-
-und
-
-\[
-x = x_1 + t_1 \cdot dx_1, \quad y = y_1 + t_1 \cdot dy_1
-\]
-
-Diese Berechnung kann sowohl live während der Datenerfassung als auch im Nachgang im sogenannten Replay-Modus erfolgen.
-
-\vspace{1em}
-\textbf{Legende zur Formel:}
-\begin{itemize}
-    \item $x_1, y_1$: Koordinaten des ersten Ankers
-    \item $x_2, y_2$: Koordinaten des zweiten Ankers
-    \item $\theta_1, \theta_2$: Empfangene Winkelinformationen (\ac{AoA}) an Anker 1 bzw. Anker 2
-    \item $dx_1, dy_1$: Richtungsvektor vom ersten Anker, berechnet mit $\sin(\theta_1), \cos(\theta_1)$
-    \item $dx_2, dy_2$: Richtungsvektor vom zweiten Anker analog dazu
-    \item $t_1$: Skalierungsfaktor entlang der Linie des ersten Ankers zur Schnittpunktberechnung
-    \item $x, y$: Berechnete Position des Tags im zweidimensionalen Raum
-\end{itemize}
+Die Berechnung erfolgt wahlweise \emph{live} oder später im Replay-Modus.
 
 \begin{figure}[H]
-    \includegraphics[width=1\linewidth]{images/1906_abbildung1 (1)}\\[1ex]
-    \centering
-    \caption{Beispiel Triangulation}
-    \label{ABBILDUNG}
+  \centering
+  \includegraphics[width=\linewidth]{images/1906_abbildung1.png}
+  \caption{Beispielhafte Triangulation \cite{comconsult-wlan-ortung}}
+  \label{fig:triangulation_example}
 \end{figure}
 
-\paragraph{Speicherung und Weiterverarbeitung}
 
-Sämtliche berechneten Werte – Winkel, Position, Sensordaten – werden chronologisch gespeichert. Das Python-Skript \texttt{replayLogger.py} 
-ermöglicht das Einlesen dieser Datei und berechnet bei Bedarf die Position erneut. Dies erlaubt eine erneute Analyse oder die Anwendung überarbeiteter 
-Algorithmen.
+\paragraph{Speicherung und Wiederverwendung}
+Alle berechneten Werte werden chronologisch gespeichert.  
+Das Skript \texttt{replayLogger.py \cite{tadic-studienarbeit-ui}} liest die Logdatei ein, berechnet bei Bedarf die Position neu und stellt die Daten über 
+eine \acf{TCP}-Schnittstelle der Visualisierung (\texttt{ui.py} \cite{tadic-studienarbeit-ui}) bereit.
 
-\paragraph{Nachträgliche Optimierung der Rechenlogik}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/Ablauf Funktion Datenlogger.png}
+    \caption{Gesamter Datenfluss vom Messvorgang bis zur Visualisierung\\
+            Quelle: Eigene Darstellung}
+    \label{fig:datenlogger_flow_impl}
+\end{figure}
 
-Während der frühen Entwicklungsphase bestand ein grundlegendes Problem darin, dass beim Replay die gespeicherten Daten lediglich wiedergegeben wurden, wie sie während der ursprünglichen Messung aufgezeichnet worden waren. Das bedeutete, dass keine Neuberechnung der Tag-Position erfolgte – Anpassungen an Parametern oder Algorithmen blieben somit wirkungslos. 
+\paragraph{Nachträgliche Optimierung}
+Frühe Versionen spielten im Replay nur die gespeicherten Koordinaten ab.  
+Das Modul wurde daher erweitert, sodass beim Einlesen stets aus den Rohwinkeln \textit{neu} trianguliert wird.  
+Somit lassen sich Algorithmen offline verifizieren, bevor sie in das Echtzeitsystem übernommen werden.
 
-Im weiteren Verlauf wurde dieser Fehler behoben. Das Replay-Modul (\texttt{replayLogger.py}) wurde so erweitert, dass beim Einlesen der Logdaten die gespeicherten Rohwerte wie Winkel und Ankerpositionen erneut verarbeitet werden. Auf diese Weise erfolgt bei jedem Replay eine aktuelle Berechnung der Position mittels Triangulation. Dadurch können Änderungen in der Positionsberechnung zunächst rein softwareseitig überprüft und validiert werden – ganz ohne Hardwareeinsatz. Nach erfolgreicher Evaluierung lassen sich die neuen Parameter und Berechnungsverfahren schließlich in das Echtzeit-Tracking-System übernehmen.
+\paragraph{Visualisierung}
+Die \ac{TCP}-Schnittstelle sendet jede Messung als \ac{JSON}-Objekt an die \acf{UI}.  
+Dort werden Tag-Position, Anker, Bewegungsrichtung und Risikostufe live angezeigt.
 
-\paragraph{Visualisierung der Messdaten}
-
-Der Datenlogger stellt über eine \acf{TCP}-Verbindung eine Schnittstelle zur grafischen Visualisierung her (durch das Skript \texttt{ui.py}). 
-Jede Messung wird als \ac{JSON}-Objekt an die Benutzeroberfläche übertragen und enthält neben der berechneten Position auch zugehörige Sensordaten. 
-Die Benutzeroberfläche stellt folgende Informationen dar:
-
-\begin{itemize}
-    \item Die aktuelle Position des Tags
-    \item Visualisierte Anker (Empfängerboards) 
-    \item Zusatzinformationen wie Bewegung oder Risikobewertung
-\end{itemize}
+\clearpage
 
 \paragraph{Zusammenfassung des Datenflusses}
-
-Der vollständige Ablauf lässt sich wie folgt beschreiben:
-
-\begin{enumerate}
-    \item \textbf{Messung:} Anker empfangen Signale und bestimmen Winkel sowie Sensordaten.
-    \item \textbf{Datenerfassung:} Python-Skripte lesen die Daten aus und speichern sie als \ac{JSONL}.
-    \item \textbf{Speicherung:} Die Daten werden zeilenweise mit Zeitstempel archiviert.
-    \item \textbf{Replay:} Ein weiteres Skript liest die Daten, berechnet ggf. die Position und sendet sie weiter.
-    \item \textbf{Visualisierung:} Eine Benutzeroberfläche stellt Position und Sensordaten visuell dar.
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Messung} – Anker erfassen Winkel und Sensordaten.  
+  \item \textbf{Logging} – Python-Skript speichert Messwerte Zeile für Zeile in \texttt{.jsonl}.  
+  \item \textbf{Replay} – \texttt{replayLogger.py \cite{tadic-studienarbeit-ui}} liest Daten, trianguliert erneut und streamt sie.  
+  \item \textbf{Visualisierung} – \texttt{ui.py \cite{tadic-studienarbeit-ui}} stellt Position und Zusatzinfos dar.
 \end{enumerate}
 
-\begin{figure}[H]
-    \includegraphics[width=1\linewidth]{images/Ablauf Funktion Datenlogger.png}\\[1ex]
-    \centering
-    \caption{Ablauf Funktion Datenlogger}
-    \label{ABBILDUNG}
-\end{figure}
+%--------------------------------------------------------------------
+\subsection{Ergebnisse und Evaluation}
+%--------------------------------------------------------------------
+Der Datenlogger ließ sich mit wenigen Code-Ergänzungen in die bestehende Software integrieren.  
+Die Lösung
 
-\paragraph{Beispiel einer vollständigen Messung}
-
-\begin{itemize}
-    \item Anker 1: Winkel = \(-31^\circ\), Position = [3, 0]
-    \item Anker 2: Winkel = \(24^\circ\), Position = [0, 0]
+\begin{itemize}[leftmargin=2em]
+  \item erfasst Messdaten zuverlässig,
+  \item speichert sie zeilenweise im \texttt{.jsonl}-Format,
+  \item ermöglicht ein hardwareunabhängiges Replay,
+  \item und überträgt die Daten stabil per \ac{TCP} an die \ac{UI}.
 \end{itemize}
 
-\textbf{Speicherung:}
-\begin{verbatim}
-{"timestamp": "...", 
- "raw_sensor_data": {
-   "anchors": [[3, 0], [0, 0]], 
-   "angles": [-31, 24], 
-   "sensor_values": [...]
- }}
-\end{verbatim}
+Zur komfortablen Bedienung wurde eine \texttt{.bat}-Datei bereitgestellt, die den Logger startet und aufgezeichnete Datensätze zur Auswahl stellt.  
+Mehrere Teammitglieder können so parallel mit denselben Messdaten arbeiten – unabhängig von der Hardwareverfügbarkeit.
 
-\textbf{Replay:}  
-Der Datenlogger berechnet erneut die Position und sendet z.\,B.:
-
-\begin{verbatim}
-{"point": {"position": [x, y], "Uncertainty": 0}, 
- "sensor_values": [...]}
-\end{verbatim}
-
-\textbf{Visualisierung:}  
-Die Benutzeroberfläche zeigt Position, Bewegung und Risikobewertung an.
-
-\paragraph{Fazit}
-
-Durch die Trennung von Messung, Speicherung, Wiederverwendung und Visualisierung wurde ein System geschaffen, 
-das sowohl im Live-Betrieb als auch für Offline-Analysen geeignet ist. Die Nutzung des \ac{JSONL}-Formats gewährleistet einfache 
-Nachverarbeitung und hohe Transparenz im Entwicklungsprozess.
-
-\subsection{Ergebnisse und Evaluation}
-
-Die Implementierung des Datenloggers konnte erfolgreich in die bestehende Systemumgebung integriert werden. Die Erweiterung 
-erfolgte durch ein einzelnes, in Python geschriebenes Modul, das mit nur wenigen Anpassungen in den vorhandenen Code eingebunden wurde. 
-Diese modulare Herangehensweise ermöglichte eine einfache Integration, ohne die Stabilität der bestehenden C++- und Python-Strukturen zu beeinträchtigen.
-
-Der Datenlogger ist in der Lage, strukturierte Messdaten zuverlässig zu erfassen, im \ac{JSONL}-Format zu speichern und diese in der 
-\texttt{replayLogger.py} zur erneuten Verarbeitung und Visualisierung bereitzustellen. Durch die gezielte Nachberechnung der gespeicherten 
-Parameter kann die Parametrisierung und Optimierung der Tag-Ortung nun auch ohne aktiven Hardwarezugang erfolgen. Dies stellt einen wesentlichen
- Fortschritt gegenüber früheren Ansätzen dar, bei denen für jede Änderung eine Live-Verbindung zur u-blox-Hardware erforderlich war.
-
-Zur weiteren Erleichterung der Nutzung wurde eine \acf{BAT}-Datei erstellt, die den Datenlogger automatisch 
-startet und eine benutzerfreundliche Auswahl der abzuspielenden Daten ermöglicht. Dadurch können mehrere aufgezeichnete Datensätze
- parallel gespeichert, umbenannt und bei Bedarf erneut abgespielt werden. Dies erleichtert sowohl die Organisation als auch die Wiederverwendbarkeit
-  der Messdaten erheblich.
-
-Die Kommunikation zwischen Logger und Visualisierung über \ac{TCP} funktioniert stabil, sodass eine Echtzeit- oder zeitnahe Darstellung 
-der Messdaten in der grafischen Oberfläche möglich ist. Die Darstellung der Ergebnisse im \acf{UI} (Visualisierung) ist erfolgreich umgesetzt worden; die gespeicherten
- Positions- und Sensordaten lassen sich korrekt laden und werden visuell ansprechend aufbereitet.
+Erste Tests mit kurzen bis mittellangen Aufzeichnungen (mehrere Minuten) verliefen problemlos.  
+Für den Produktiveinsatz sind Langzeittests vorgesehen, um Speicherstabilität und Performance bei großen Datenmengen zu validieren.
 
 \begin{figure}[H]
-    \includegraphics[width=1\linewidth]{images/Vergleich Parametrisierung.png}\\[1ex]
     \centering
-    \caption{Vergleich Parametrisierung früher und heute}
-    \label{ABBILDUNG}
+    \includegraphics[width=\linewidth]{images/Vergleich Parametrisierung.png}
+    \caption{Parametrierung ohne (links) und mit (rechts) Datenlogger-Workflow\\
+            Quelle: Eigene Darstellung}
+    \label{fig:parameter_comparison}
 \end{figure}
 
-Ein weiterer Vorteil liegt in der verbesserten Teamfähigkeit des Systems. Da echte Messwerte gespeichert und wiederverwendet werden können, 
-ist eine parallele Bearbeitung durch mehrere Teammitglieder möglich – unabhängig von der Verfügbarkeit der physischen Hardware.
+\noindent
+Der entwickelte Logger bildet somit eine stabile Grundlage für künftige Entwicklungs- und Testarbeiten und trägt wesentlich zu effizienteren, 
+hardware­unabhängigen Validierungsprozessen bei.
 
-Aktuell wurden nur kurze bis mittellange Messreihen (mehrere Minuten) getestet, die zuverlässig aufgezeichnet und verarbeitet werden konnten. 
-Für den produktiven Einsatz müssen jedoch noch weiterführende Tests mit längeren Aufzeichnungen durchgeführt werden, um Speicherstabilität und 
-Verarbeitungsgeschwindigkeit auch bei größeren Datenmengen zu validieren.
+\clearpage
 
-Insgesamt bildet der Datenlogger eine stabile Grundlage für künftige Entwicklungs- und Testarbeiten und ermöglicht sowohl effizientere als auch 
-hardwareunabhängige Validierungsprozesse.
 
+%--------------------------------------------------------------------
 \section{Grundlagen der Visualisierung}
+%--------------------------------------------------------------------
+
 \subsection{Anforderungen an eine effektive Visualisierung}
 
-Die visuelle Darstellung von Mess- und Sensordaten spielt eine zentrale Rolle bei der Entwicklung technischer Systeme. 
-Im Kontext dieser Studienarbeit soll die Visualisierung nicht nur als Ausgabeinstrument dienen, sondern als aktives Analysewerkzeug die 
-Entwicklung des Fahrerassistenzsystems unterstützen. Daraus ergeben sich spezifische Anforderungen an Struktur, Funktionalität und Performance der 
-Visualisierung.
+Die visuelle Aufbereitung von Mess- und Sensordaten ist ein zentrales Element der Systementwicklung.  
+In dieser Studienarbeit dient die Visualisierung nicht allein als Ausgabe­instrument, sondern als aktives \emph{Analysewerkzeug}. Daraus ergeben sich spezifische Anforderungen an Struktur, Funktionalität und Performance:
 
-Ein wesentliches Kriterium ist die \textbf{Klarheit und Verständlichkeit} der Darstellung. Die Position des zu 
-verfolgenden Objekts (Tag), die Winkelmessungen sowie weitere Sensordaten wie Geschwindigkeit oder Risikoindikatoren müssen 
-für die Benutzer klar erkennbar und intuitiv interpretierbar sein. Die gewählte Darstellungsform darf keine zusätzliche Komplexität 
-einführen, sondern soll das Verständnis der Systemdynamik fördern \cite{tkinter_guidelines}.
+\begin{description}[style=nextline,leftmargin=2em]
+  \item[Klarheit und Verständlichkeit]  
+        Tag-Position, Winkelmessungen sowie Zusatz­informationen (z.\,B. Risikostufe) müssen intuitiv erfassbar sein und dürfen keine unnötige Komplexität erzeugen.
+  \item[Reaktionsfähigkeit]  
+        Insbesondere beim Replay ist eine quasi­echtzeit­fähige Darstellung erforderlich, damit zeitkritische Situationen nachvollziehbar bleiben.
+  \item[Strukturierte, modulare Ebenen]  
+        Anker­positionen, Trajektorien, Messwinkel und Risikoindikatoren werden auf separaten Layern visualisiert; eine Farb- oder Symbol­codierung erleichtert das Erkennen von Korrelationen.
+  \item[Konfigurierbarkeit]  
+        Parameter und Daten­sätze müssen sich flexibel umschalten lassen, um unterschiedliche Szenarien vergleichen und analysieren zu können.
+  \item[Stabilität \& Performance]  
+        Auch bei großen Datenmengen darf die Oberfläche weder verzögert reagieren noch hohe Systemressourcen beanspruchen.
+  \item[Schnittstellen­kompatibilität]  
+        Die \ac{UI} empfängt Daten kontinuierlich per \ac{TCP} in \ac{JSON}-Struktur; eingehende Pakete sind verlustfrei zu dekodieren und anzuzeigen.
+  \item[Benutzerfreundliche Interaktion]  
+        Eine klare Bedienlogik ermöglicht auch neuen Teammitgliedern oder externen Testern einen schnellen Einstieg.
+\end{description}
 
-Zudem ist \textbf{Reaktionsfähigkeit} von hoher Bedeutung. Insbesondere bei der Wiedergabe von Logdaten im Replay-Modus ist sicherzustellen, 
-dass Positionsdaten und Zustandsänderungen nahezu in Echtzeit visualisiert werden, ohne spürbare Verzögerung oder Datenverluste. Dies ist entscheidend
-für die genaue Nachverfolgung zeitkritischer Situationen und zur Validierung der Algorithmen \cite{realtime_visualization}.
+%--------------------------------------------------------------------
+\subsection{Darstellungsformen und Technologien}
+%--------------------------------------------------------------------
 
-Eine \textbf{strukturierte und modulare Darstellung} ermöglicht es, verschiedene Datenebenen simultan darzustellen. 
-Dazu gehören beispielsweise die grafische Repräsentation von Ankerpositionen, Trajektorien, Messwinkeln sowie Risikoabschätzungen in Form von 
-Farbcodierungen, Symbolen oder Vektorpfeilen. Die visuelle Trennung dieser Elemente soll die Lesbarkeit erhöhen und gleichzeitig Korrelationen zwischen 
-den Daten sichtbar machen.
+\paragraph{2D-Darstellung}
 
-Weiterhin ist \textbf{Flexibilität} in der Konfiguration erforderlich. Die Visualisierung soll es ermöglichen, verschiedene Parameter 
-anzupassen oder unterschiedliche Datensätze zu vergleichen. Auf diese Weise können gezielte Analysen durchgeführt und das Verhalten 
-des Systems unter unterschiedlichen Bedingungen besser nachvollzogen werden.
+Ein kartesisches Koordinatensystem bildet die Basis:  
+Anker werden als feste Punkte eingezeichnet, die aktuelle Tag-Position als Marker (ggf. farblich kodiert: Grün\,=\,sicher, Gelb\,=\,Warnung, Rot\,=\,Kollisionsgefahr).
+Sensorlinien oder Vektorpfeile verdeutlichen gemessene Winkel und Gefahrenzonen.  
+Ein Replay-Modus zeigt frühere Positionen sequenziell an und gestattet so die Analyse von Bewegungs­mustern.
 
-Die Software muss zudem eine \textbf{hohe Stabilität und Performance} aufweisen. Auch bei großen Datenmengen oder längeren Wiedergaben dürfen keine 
-Speicherprobleme oder Verzögerungen auftreten. Gleichzeitig soll der Ressourcenverbrauch moderat bleiben, um eine Nutzung auf Standardhardware zu 
-gewährleisten.
+\paragraph{Technische Umsetzung}
 
-Darüber hinaus ist die \textbf{Schnittstellenkompatibilität} entscheidend. Die Visualisierung kommuniziert über eine \ac{TCP}-Verbindung mit dem Datenlogger 
-und verarbeitet strukturierte \ac{JSON}-Daten. Sie muss in der Lage sein, kontinuierlich neue Informationen entgegenzunehmen, korrekt zu interpretieren und 
-grafisch darzustellen \cite{tcp_json_integration}.
-
-Schließlich sollte die Visualisierung eine \textbf{benutzerfreundliche Interaktion} bieten. Die Bedienoberfläche muss auch für neue Projektmitglieder 
-oder externe Tester leicht verständlich sein. Eine klare Struktur und einfache Bedienlogik erhöhen die Zugänglichkeit und 
-erleichtern die Nutzung im Entwicklungsteam.
-
-\subsection{Darstellungsmöglichkeiten und -technologien}
-
-Die grafische Darstellung von Messergebnissen ist ein zentrales Element zur Analyse, Entwicklung und Validierung des Fahrerassistenzsystems.
-Ziel der Visualisierung ist es, komplexe Daten wie Winkelmessungen, berechnete Positionen und Sensordaten so aufzubereiten, dass sie schnell
-erfasst und zielgerichtet interpretiert werden können.
-
-\paragraph{Darstellungsformen}
-
-Für die Anforderungen dieses Projekts wurde eine zweidimensionale Darstellung gewählt. In einem kartesischen Koordinatensystem werden sowohl 
-die festen Positionen der Anker als auch die berechnete Position des Tags eingezeichnet. Zur Darstellung zusätzlicher Informationen, 
-wie beispielsweise der Risikobewertung, kommt eine Farbcodierung zum Einsatz: Grün signalisiert eine sichere Entfernung, Gelb eine 
-Warnsituation und Rot eine mögliche Kollisionsgefahr.
-
-Auch die Darstellung der Sensordaten erfolgt visuell, etwa durch Richtungslinien oder Symbole, die Informationen wie potenzielle 
-Gefahrenzonen oder die Antennenausrichtung übermitteln.
-
-Zur besseren Nachvollziehbarkeit der Messabläufe wurden Replays implementiert, mit denen frühere Positionen nacheinander dargestellt 
-werden können. Diese Funktion unterstützt nicht nur die Analyse von Bewegungsmustern, sondern ermöglicht auch eine gezielte Anpassung 
-der Systemparameter sowie eine anschauliche Präsentation auf Messen oder in Testumgebungen.
-
-\paragraph{Technologische Umsetzung}
-
-Für die technische Realisierung wurde Python als Basissprache verwendet, da es bereits im bestehenden Projektumfeld (z.\,B. Datenlogger, \ac{TCP}-Client)
-genutzt wird und eine einfache Integration von Visualisierungs- und Netzwerkmodulen ermöglicht. Die grafische Benutzeroberfläche basiert auf \texttt{Tkinter}
-und nutzt ein Zeichenfenster (\texttt{Canvas}), das dynamisch aktualisiert wird, um Positionen, Sensorrichtungen und Kontextinformationen darzustellen \cite{tkinter_book}.
-
-Zur Anzeige der Daten kommen vor allem folgende Technologien zum Einsatz:
-
-\begin{itemize}
-    \item \textbf{Tkinter:} Zur Umsetzung der grafischen Oberfläche, inklusive dynamischer Zeichnung von Positionen, Sensoren und Symbolen \cite{tkinter_book}.
-    \item \textbf{TCP-Kommunikation:} Die Visualisierung empfängt die Daten über eine \ac{TCP}-Verbindung, die vom Datenlogger bereitgestellt wird (Skript \texttt{ui.py}) \cite{tcp_json_integration}.
-    \item \textbf{JSON-Verarbeitung:} Die Logdateien und Echtzeitdaten liegen im \ac{JSON}-Format vor und werden zur Laufzeit dekodiert \cite{json_processing_books}.
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Python / Tkinter} – leichtgewichtige \ac{UI}, Canvas-Zeichenfläche für dynamische Objekte \cite{tkinter_book}. 
+  \item \textbf{\ac{TCP}} – kontinuierlicher Datenstrom vom Logger zur \ac{UI} (Modul \texttt{ui.py}).
+  \item \textbf{\ac{JSON}-Parsing} – Dekodierung der Log- und Live-Pakete.
 \end{itemize}
 
-Der Aufbau der Visualisierung ist modular gehalten, sodass zukünftige Änderungen – etwa am Format der Sensordaten oder an der
-Positionsberechnung – ohne tiefgreifende Eingriffe umgesetzt werden können.
+Die modulare Struktur erlaubt spätere Migration zu \texttt{PyQt}, \texttt{Plotly Dash} oder 3D-Frameworks (OpenGL, Unity), ohne die Backend-Logik anzutasten.
 
-\paragraph{Schnittstellen und Erweiterbarkeit}
+\paragraph{Schnittstellen \& Erweiterbarkeit}
 
-Die Benutzeroberfläche ist so gestaltet, dass verschiedene Datenquellen unterstützt werden: Neben Live-Daten aus dem Logger ist auch ein 
-Replay-Modus möglich, in dem ältere Messungen abgespielt werden. Dies wird durch einen einfachen Startbefehl (über eine Batch-Datei oder
-Kommandozeilenparameter) gesteuert.
+Neben Live-Daten unterstützt die Oberfläche einen reinen Replay-Betrieb. Ein Startskript (Batch oder CLI-Parameter) wählt die gewünschte Logdatei.  
+Backend (Logger\,/\,Replay) und Frontend (\ac{UI}) sind klar getrennt; neue Sensorquellen lassen sich per standardisiertem \ac{JSON}-Schema einbinden.
 
-Die Datenstruktur aus der \ac{JSONL}-Datei ermöglicht eine verlustfreie Weiterverarbeitung der gespeicherten Informationen. Durch die Trennung von 
-Backend (Logger/Replay) und Frontend (Visualisierung) ist das System erweiterbar. Eine spätere Portierung auf fortgeschrittenere GUI-Frameworks 
-(z.\,B. \texttt{PyQt} oder webbasierte Tools wie \texttt{Plotly Dash}) ist ebenso denkbar wie eine Erweiterung auf 3D-Darstellungen 
-mithilfe von OpenGL oder Unity.
+\paragraph{Empfohlene Übersichtsgrafik (optional)}
 
-\paragraph{Optionale Abbildungsempfehlung}
+Eine schematische Abbildung kann den vollständigen Visualisierungs­pfad veranschaulichen:
 
-Eine illustrative Abbildung könnte den schematischen Ablauf der Datenvisualisierung zeigen – von der Messung über die Speicherung bis zur Anzeige. 
-Beispielhaft könnte sie folgende Elemente enthalten:
-
-\begin{itemize}
-    \item Position der Anker (als fixe Punkte)
-    \item Messwinkel (als Linien vom Anker ausgehend)
-    \item Position des Tags (als Punkt mit Zeitstempel)
-    \item Risikobewertung als Farbring oder Symbol
-    \item Spurverlauf der Tag-Position (z.\,B. gestrichelte Linie)
+\begin{itemize}[leftmargin=2em]
+  \item Anker-Positionen als fixe Punkte  
+  \item Messwinkel als Richtungslinien  
+  \item Tag-Marker mit Zeitstempel  
+  \item Farbring für Risikostufe  
+  \item Bewegungspfad (gestrichelte Linie)
 \end{itemize}
 
-Eine solche schematische Darstellung erleichtert das Verständnis des Visualisierungskonzepts auch für fachfremde Leserinnen und Leser.
+Solch eine Grafik erleichtert auch fachfremden Stakeholdern das Verständnis des Systems.
 
 \paragraph{Fazit}
 
-Die gewählten Technologien und Darstellungsformen ermöglichen eine performante, verständliche und flexible Visualisierung der Messergebnisse. Sie 
-bilden damit eine wichtige Grundlage für die weiterführende Analyse, Parametrisierung und Validierung des Fahrerassistenzsystems.
+Die gewählten Technologien liefern eine performante, verständliche und erweiterbare Visualisierung.  
+Sie bilden damit eine solide Grundlage für die weiterführende Analyse, Parametrierung und Validierung des Fahrerassistenzsystems.
+
+\clearpage
+
 
 \section{Entwicklung der neuen Visualisierung}
 \subsection{Analyse der bestehenden Visualisierung}
@@ -726,7 +708,7 @@ implementiert \cite{tkinter_book}.
 \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/Alte Visualisierung.png}\\[1ex]
     \centering
-    \caption{Alte Visualisierung}
+    \caption{Alte Visualisierung \cite{tadic-studienarbeit-ui}}
     \label{ABBILDUNG}
 \end{figure}
 
@@ -745,14 +727,14 @@ Datenlogger zum damaligen Zeitpunkt noch nicht existierte, beschränkte sich die
 eingespeiste Simulationsdaten.
 
 Zusammenfassend war die ursprüngliche Visualisierung funktional auf das Wesentliche reduziert, ermöglichte aber weder eine tiefere Analyse noch eine 
-Nachbearbeitung historischer Messdaten. Die Einführung des Datenloggers \cite{json_processing_books} und eine verbesserte Visualisierung sollen diese Defizite beheben und eine 
+Nachbearbeitung historischer Messdaten. Die Einführung des Datenloggers und eine verbesserte Visualisierung sollen diese Defizite beheben und eine 
 fundierte, nachvollziehbare sowie interaktive Darstellung aller relevanten Systemparameter ermöglichen.
 
 \subsection{Konzept einer verbesserten Visualisierung}
 
 Basierend auf der Analyse der bisherigen Darstellung ergeben sich mehrere Ansatzpunkte für eine funktional und ästhetisch verbesserte Visualisierung
 der Tag-Ortung. Ziel ist es, die Ausgabe so zu gestalten, dass auch technisch weniger versierte Personen – beispielsweise Besucher auf Messen oder 
-Mitglieder in interdisziplinären Projektteams – intuitiv die Funktionsweise und Aussagekraft des Fahrerassistenzsystems nachvollziehen können \cite{human_factors_vis}.
+Mitglieder in interdisziplinären Projektteams – intuitiv die Funktionsweise und Aussagekraft des Fahrerassistenzsystems nachvollziehen können.
 
 Ein zentrales Element der neuen Visualisierung ist die verbesserte Darstellung des Tags. Bisher wurde dieser lediglich als bewegender Punkt im 
 Koordinatensystem dargestellt, was der realen Anwendung – z.\,B. einem Fußgänger oder Fahrradfahrer im Straßenverkehr – kaum gerecht wurde. Zukünftig 
@@ -764,7 +746,7 @@ Bewegung teils sprunghaft oder verzögert, was eine genaue Nachverfolgung erschw
 den übermittelten Messwerten soll die visuelle Bewegung stärker der tatsächlichen Bewegung des realen Objekts entsprechen.
 
 Darüber hinaus ist geplant, ein interaktives Interface mit zusätzlichen Informationen bereitzustellen. So sollen Parameter wie Winkel, 
-Positionskoordinaten oder Risikoindikatoren dynamisch eingeblendet und aktualisiert werden können – ein wesentliches Werkzeug für Entwickler bei der Fehleranalyse und Parametrierung \cite{usercentered_visualization}.
+Positionskoordinaten oder Risikoindikatoren dynamisch eingeblendet und aktualisiert werden können – ein wesentliches Werkzeug für Entwickler bei der Fehleranalyse und Parametrierung.
 
 Ein weiterer Aspekt der verbesserten Darstellung betrifft das bisher fest eingeblendete Koordinatensystem. Dieses war zwar funktional nützlich,
 beeinträchtigte jedoch stellenweise die Lesbarkeit und ästhetische Wirkung der grafischen Oberfläche – insbesondere bei öffentlichkeitswirksamen 
@@ -772,9 +754,9 @@ Präsentationen oder auf begrenzten Anzeigeflächen. Künftig soll daher eine Op
 oder gezielt ein- und auszublenden (Toggle-Funktion). Dies erlaubt eine flexiblere Darstellung und steigert die Übersichtlichkeit – insbesondere wenn 
 die rein visuelle Wahrnehmung im Vordergrund stehen soll.
 
-Insgesamt verfolgt das neue Visualisierungskonzept das Ziel, eine Brücke zwischen technischer Präzision und intuitiver Darstellbarkeit zu schlagen \cite{usercentered_visualization}. 
+Insgesamt verfolgt das neue Visualisierungskonzept das Ziel, eine Brücke zwischen technischer Präzision und intuitiver Darstellbarkeit zu schlagen. 
 Es soll nicht nur die Qualität der Entwicklung verbessern, sondern auch die Kommunikation der Systemfunktionalität nach außen erleichtern – etwa in 
-Präsentationen, bei Tests oder in zukünftigen Anwenderstudien.
+Präsentationen, bei Tests oder in zukünftigen Messen.
 
 \subsection{Implementierung der verbesserten Visualisierung}
 
@@ -802,30 +784,30 @@ Informationen zur geschätzten Position des Tags, Sensordaten sowie Metainformat
 extrahiert relevante Parameter und aktualisiert die grafische Darstellung entsprechend.
 
 Zur Verbesserung der Darstellung wurde ein Glättungsverfahren mit exponentiellem Filter implementiert, um Positionssprünge durch Rauschen oder Ausreißer 
-zu reduzieren \cite{signal_filtering}. Gleichzeitig werden unrealistische Sprünge oder abrupte Änderungen durch Grenzwerte abgefangen.
+zu reduzieren. Gleichzeitig werden unrealistische Sprünge oder abrupte Änderungen durch Grenzwerte abgefangen.
 
 \paragraph{Darstellungskonzept des Tags}
 
 Anstelle eines einfachen Punkts wird das Tag nun als abstrahierte Figur (Stickman) dargestellt. Diese passt sich dynamisch in Größe und Farbe an
-den Abstand zu den Antennen an, um Nähe, Risiko oder Interaktionszonen visuell hervorzuheben \cite{visual_risk_encoding}. Alternativ kann ein repräsentatives Fahrzeugmodell 
+den Abstand zu den Antennen an, um Nähe, Risiko oder Interaktionszonen visuell hervorzuheben. Alternativ kann ein repräsentatives Fahrzeugmodell 
 (ein \ac{LKW}-Bild) eingebunden werden, um reale Szenarien wie Fahrassistenzsysteme intuitiver zu vermitteln.
 
 \begin{figure}[H]
     \includegraphics[width=0.8\linewidth]{images/Stickman Grün.png}\\[1ex]
     \centering
-    \caption{Grün - keine Gefahr noch}
+    \caption{Grün - keine Gefahr noch \cite{tadic-studienarbeit-ui}}
     \label{ABBILDUNG}
 \end{figure}
 \begin{figure}[H]
     \includegraphics[width=0.8\linewidth]{images/Stickman Gelb.png}\\[1ex]
     \centering
-    \caption{Gelb - Warnung, Gefahr möglich}
+    \caption{Gelb - Warnung, Gefahr möglich \cite{tadic-studienarbeit-ui}}
     \label{ABBILDUNG}
 \end{figure}
 \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/Stickman Rot.png}\\[1ex]
     \centering
-    \caption{Rot - Achtung, Kollisionsgefahr}
+    \caption{Rot - Achtung, Kollisionsgefahr \cite{tadic-studienarbeit-ui}}
     \label{ABBILDUNG}
 \end{figure}
 
@@ -837,7 +819,7 @@ zeigen die theoretische Messrichtung, was ein besseres Verständnis der Triangul
 \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/Visualisierung Antennen.png}\\[1ex]
     \centering
-    \caption{Visualisierung der Antennen und Sensorlinien}
+    \caption{Visualisierung der Antennen und Sensorlinien \cite{tadic-studienarbeit-ui}}
     \label{ABBILDUNG}
 \end{figure}
 
@@ -854,13 +836,13 @@ Hardwarebezug zu analysieren.
 \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/Volle Darstellung.png}\\[1ex]
     \centering
-    \caption{Volle Darstellung Benutzeroberfläche}
+    \caption{Volle Darstellung Benutzeroberfläche \cite{tadic-studienarbeit-ui}}
     \label{ABBILDUNG}
 \end{figure}
 \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/Minimale Darstellung.png}\\[1ex]
     \centering
-    \caption{Minimale Darstellung Benutzeroberfläche}
+    \caption{Minimale Darstellung Benutzeroberfläche \cite{tadic-studienarbeit-ui}}
     \label{ABBILDUNG}
 \end{figure}
 
@@ -896,6 +878,8 @@ Zusammenfassend lässt sich festhalten, dass die entwickelte Benutzeroberfläche
 können mit überschaubarem Aufwand ergänzt werden, und die vorhandene Architektur erlaubt eine Trennung von Datenaufnahme und Visualisierung. Damit stellt
 das System ein praktikables Werkzeug für die Weiterentwicklung, Testung und Demonstration von Assistenzsystemen dar.
 
+\clearpage
+
 \section{Test und Validierung}
 \subsection{Testmethodik und -umgebung}
 
@@ -908,9 +892,9 @@ Im Mittelpunkt stand die Überprüfung folgender Aspekte:
 \begin{itemize}
     \item Funktion der Datenerfassung, Speicherung und Wiedergabe im Replay-Modus
     \item Konsistenz der \ac{TCP}-Kommunikation zwischen Logger und \ac{UI}
-    \item korrekte Verarbeitung gespeicherter \ac{JSONL}-Daten \cite{json_processing_books}
+    \item korrekte Verarbeitung gespeicherter \ac{JSONL}-Daten
     \item visuelle Rückmeldung in der Benutzeroberfläche (z.\,B. Darstellung des Tags, Antennen und Warnfarben)
-    \item allgemeine Bedienbarkeit und Reaktion der UI-Komponenten \cite{nielsen_usability}
+    \item allgemeine Bedienbarkeit und Reaktion der \ac{UI}-Komponenten \cite{nielsen_usability}
 \end{itemize}
 
 \paragraph{Testarten}
@@ -929,7 +913,7 @@ Vollbildmodus auf einem 17-Zoll-Bildschirm (Laptop) betrieben.
 
 \paragraph{Ablauf}
 Die Tests erfolgten manuell. Zunächst wurde die Verbindung zwischen Logger und UI geprüft. Anschließend wurden verschiedene Datensätze -- sowohl reale
-Messungen als auch synthetische Beispiele -- über die \texttt{replayLogger.py} wiedergegeben. Dabei wurde beobachtet, wie die \ac{UI} auf Positionsdaten, 
+Messungen als auch synthetische Beispiele -- über die \texttt{replayLogger.py \cite{tadic-studienarbeit-ui}} wiedergegeben. Dabei wurde beobachtet, wie die \ac{UI} auf Positionsdaten, 
 Sensordaten und Änderungen in der Darstellung reagiert. Auch die neue Funktion zur Darstellung eines Stickmans und des \ac{LKW}-Bildes wurde systematisch 
 getestet. Der Wechsel des Darstellungsmodus (z.\,B. Ein-/Ausblenden der Achsen) wurde ebenfalls geprüft.
 
@@ -949,7 +933,7 @@ Die durchgeführten Tests hatten zum Ziel, die grundsätzliche Funktionalität d
 
 \paragraph{Funktionalität und Kommunikation}
 Die Tests zeigten, dass die Speicherung der erfassten Sensordaten im \ac{JSONL}-Format zuverlässig funktioniert. Auch die Wiedergabe der gespeicherten Daten 
-im Replay-Modus über \texttt{replayLogger.py} erwies sich als stabil. Die \ac{TCP}-Kommunikation zwischen Datenlogger und grafischer Benutzeroberfläche konnte 
+im Replay-Modus über \texttt{replayLogger.py \cite{tadic-studienarbeit-ui}} erwies sich als stabil. Die \ac{TCP}-Kommunikation zwischen Datenlogger und grafischer Benutzeroberfläche konnte 
 ohne Verbindungsabbrüche oder Datenverluste durchgeführt werden. Es war möglich, sowohl reale Messdaten als auch gespeicherte Daten aus dem Logger 
 erfolgreich in die Benutzeroberfläche zu laden.
 
@@ -958,18 +942,23 @@ Die Bewegung des Tags innerhalb der grafischen Oberfläche erwies sich noch als 
 implementiert wurde, wirkt die Bewegung weiterhin leicht verzögert und ruckartig. Besonders bei Extrempositionen – also wenn sich der Tag weit 
 rechts oder links außerhalb des zentralen Bereichs bewegt – konnte beobachtet werden, dass die Ortung deutlich an Genauigkeit verliert. Dies liegt
 am zugrunde liegenden Triangulationsverfahren: Wenn sich beide gemessenen Winkel stark überlagern, ist eine exakte Positionsbestimmung kaum noch 
-möglich \cite{triangulation_geometry}.
+möglich \cite{thurmond2001point}.
 
 \begin{figure}[H]
     \includegraphics[width=0.5\linewidth]{images/Gute Triangulation.png}\\[1ex]
     \centering
-    \caption{Gute Triangulation}
+    \caption{Gute Triangulation \\
+                Quelle:Eigene Darstellung}
     \label{ABBILDUNG}
 \end{figure}
+
+\clearpage
+
 \begin{figure}[H]
     \includegraphics[width=1\linewidth]{images/Schlechte Triangulation.png}\\[1ex]
     \centering
-    \caption{Schlechte Triangulation}
+    \caption{Schlechte Triangulation \\
+            Quelle:Eigene Darstellung}
     \label{ABBILDUNG}
 \end{figure}
 
@@ -984,7 +973,7 @@ dargestellten Objekte könnten künftig integriert werden.
 \paragraph{Benutzerfreundlichkeit}
 Die Benutzeroberfläche erwies sich in der Praxis als einfach zu bedienen. Beim Starten des Programms werden klar beschriftete Schaltflächen angezeigt, 
 die ohne Vorkenntnisse verständlich sind. Funktionen wie das Starten und Stoppen der Simulation oder das Umschalten von Koordinaten- und Antennenanzeige 
-sind intuitiv zugänglich. Die Implementierung der \ac{BAT}-Datei zum Start des Datenloggers erleichtert zusätzlich die Bedienung, insbesondere für unerfahrene
+sind intuitiv zugänglich. Die Implementierung der \acf{BAT}-Datei zum Start des Datenloggers erleichtert zusätzlich die Bedienung, insbesondere für unerfahrene
 Nutzer \cite{nielsen_usability}. Zudem kann zwischen verschiedenen gespeicherten Messreihen gewählt, diese umbenannt und erneut abgespielt werden.
 
 \paragraph{Zusammenfassende Bewertung}
@@ -1004,12 +993,12 @@ Verbesserungsbedarf, die im Folgenden diskutiert werden.
 
 Trotz implementierter Glättungsmechanismen bleibt die Bewegung des Tags auf der Benutzeroberfläche merklich ruckartig. Insbesondere bei 
 schnellen Richtungswechseln oder Bewegungen am Rand des Koordinatensystems treten Verzögerungen auf. Dies kann auf die gewählten Smoothing-Parameter 
-oder das einfache Exponentialfilter-Verfahren zurückgeführt werden \cite{signal_filtering}, das bei dynamischen Bewegungen an seine Grenzen stößt. Eine adaptive Glättung, die 
+oder das einfache Exponentialfilter-Verfahren zurückgeführt werden, das bei dynamischen Bewegungen an seine Grenzen stößt. Eine adaptive Glättung, die 
 sich an der Bewegungsgeschwindigkeit orientiert, könnte hier künftig Abhilfe schaffen.
 
 Ein weiterer kritischer Punkt ist die eingeschränkte Genauigkeit der Positionsbestimmung bei extremen Positionen. Wenn sich der Tag sehr weit 
 links oder rechts außerhalb der Hauptmessachse befindet, versagt die Triangulation teilweise. Der Grund liegt in der Geometrie der \ac{AoA}-Messung: 
-Bei annähernd parallelen Winkelmessungen zweier Anker wird der Schnittpunkt der Geraden numerisch instabil, was eine präzise Lokalisierung erschwert \cite{triangulation_geometry}.
+Bei annähernd parallelen Winkelmessungen zweier Anker wird der Schnittpunkt der Geraden numerisch instabil, was eine präzise Lokalisierung erschwert \cite{thurmond2001point}.
 
 \paragraph{Darstellung und Interpretation der Ergebnisse}
 
@@ -1039,7 +1028,7 @@ Optimierung beitragen:
     \item Erweiterung der Darstellung um Geschwindigkeit, Bewegungsrichtung und Unsicherheitsbereiche
     \item Modularisierung der Visualisierung zur einfacheren Einbindung weiterer Objekte oder Assistenzsysteme
     \item Verbesserung der Glättungslogik mit adaptiven oder maschinellen Verfahren
-    \item Vorbereitung auf künftige Erweiterungen wie eine 3D-Ansicht oder AR-Darstellung
+    \item Vorbereitung auf künftige Erweiterungen wie eine 3D-Ansicht
 \end{itemize}
 
 \paragraph{Fazit}
@@ -1047,6 +1036,8 @@ Optimierung beitragen:
 Die bisherigen Testergebnisse zeigen eine solide Basis, auf der sich weiter aufbauen lässt. Sowohl die technische Funktionalität als auch die visuelle
 Vermittlung der Daten sind grundsätzlich gegeben, müssen jedoch für eine belastbare Systembewertung und breitere Nutzbarkeit noch weiterentwickelt und 
 verfeinert werden.
+
+\clearpage
 
 \section{Kritische Bewertung und Ausblick}
 \subsection{Reflexion der erreichten Ergebnisse}
@@ -1064,14 +1055,14 @@ Replay-Modus.
 Auf Seiten der Visualisierung wurde die bisher sehr reduzierte Darstellung um mehrere Elemente erweitert. Die Verwendung eines stilisierten 
 Stickman-Modells zur Repräsentation des Tags, die Einbindung eines realitätsnahen \ac{LKW}-Bildes sowie die farbliche Warnstufendarstellung 
 führten zu einer deutlich verständlicheren und praxistauglicheren Repräsentation. Dies ist insbesondere im Hinblick auf externe Präsentationen, 
-z.\,B. auf Messen oder in interdisziplinären Gremien, ein entscheidender Vorteil.
+z.\,B. auf Messen oder Präsentationen, ein entscheidender Vorteil.
 
 Trotz dieser Fortschritte zeigen sich auch einige Grenzen. Die Bewegung des Tags ist nach wie vor leicht verzögert und nicht vollständig flüssig, 
 obwohl bereits erste Maßnahmen zur Glättung implementiert wurden. In Randbereichen des Messfeldes stößt die Triangulation durch sich überlappende 
 Winkelpaare an ihre mathematischen Grenzen, was zu ungenauen oder nicht vorhandenen Positionsschätzungen führt. Auch die visuelle Darstellung – etwa in 
 Bezug auf Maßstäblichkeit oder ergänzende Informationen wie Geschwindigkeit – bietet weiteres Verbesserungspotenzial.
 
-Nichtsdestotrotz konnte durch die modulare Struktur, den Einsatz etablierter Technologien (Python, JSON, \ac{TCP}) sowie den pragmatischen Ansatz ein 
+Nichtsdestotrotz konnte durch die modulare Struktur, den Einsatz etablierter Technologien (Python, \ac{JSON}, \ac{TCP}) sowie den pragmatischen Ansatz ein 
 funktionierendes System geschaffen werden, das die Grundlage für weiterführende Entwicklungen bietet. Die Arbeit zeigt damit deutlich, dass durch 
 gezielte Ergänzungen und strukturiertes Vorgehen auch in einer begrenzten Projektlaufzeit signifikante Fortschritte in Funktionalität und 
 Benutzerfreundlichkeit erzielt werden können.
@@ -1140,10 +1131,10 @@ Testphase erheblich vereinfachen.
 \paragraph{Erweiterung der Visualisierungsmöglichkeiten}
 Die Visualisierung des Tags wurde bereits durch einen stilisierten Stickman sowie ein \ac{LKW}-Modell ergänzt. Um jedoch noch realitätsnähere und
 professionellere Darstellungen zu ermöglichen – insbesondere bei öffentlichen Vorführungen oder Messen – könnten 3D-Modelle eingesetzt werden. 
-Auch zusätzliche visuelle Indikatoren wie Bewegungstrails, Heatmaps oder Geschwindigkeitssymbole wären denkbar \cite{unity_visualization}.
+Auch zusätzliche visuelle Indikatoren wie Bewegungstrails, Heatmaps oder Geschwindigkeitssymbole wären denkbar \cite{webgl_book}.
 
 Zudem könnte das Koordinatensystem um interaktive Funktionen wie Zoom, Skalierung oder Ein-/Ausblendung erweitert werden. Mittelfristig wäre auch 
-der Umstieg auf eine leistungsfähigere Visualisierungsplattform, etwa auf Basis von Unity3D oder WebGL, zu evaluieren \cite{webgl_book}.
+der Umstieg auf eine leistungsfähigere Visualisierungsplattform, etwa auf Basis von Unity3D oder WebGL, zu evaluieren \cite{buyuksalih20173d}.
 
 \paragraph{Verbesserung der Benutzeroberfläche}
 Die aktuelle \ac{UI} bietet bereits eine grundlegend benutzerfreundliche Bedienung. Zukünftig wäre jedoch eine webbasierte Variante wünschenswert, 
@@ -1164,6 +1155,8 @@ weitergehenden Analyse könnte über standardisierte Schnittstellen ermöglicht 
 Insgesamt existieren vielfältige Ansatzpunkte für die Weiterentwicklung der Lösung. Diese reichen von technischen Verbesserungen der 
 Positionsbestimmung und Visualisierung über benutzerfreundliche \ac{UI}-Konzepte bis hin zur Erweiterung des Hardware-Setups durch zusätzliche Anker. 
 Gerade die Kombination dieser Maßnahmen verspricht eine deutliche Steigerung der Systemqualität und Anwendbarkeit in praxisnahen Einsatzszenarien.
+
+\clearpage
 
 %---------------------------------------------------------
 % Bibliografie
