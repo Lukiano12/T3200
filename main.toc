@@ -75,7 +75,7 @@
 \contentsline {paragraph}{Technische Optimierung der Bewegungsglättung}{36}{section*.76}%
 \contentsline {paragraph}{Verbesserung der Triangulation bei Randlagen}{36}{section*.77}%
 \contentsline {paragraph}{Erweiterung der Replay-Funktionalität}{36}{section*.78}%
-\contentsline {paragraph}{Erweiterung der Visualisierungsmöglichkeiten}{36}{section*.79}%
+\contentsline {paragraph}{Erweiterung der Visualisierungsmöglichkeiten}{37}{section*.79}%
 \contentsline {paragraph}{Verbesserung der Benutzeroberfläche}{37}{section*.80}%
 \contentsline {paragraph}{Tests und Validierung}{37}{section*.81}%
 \contentsline {paragraph}{Systemintegration und Modularisierung}{37}{section*.82}%
