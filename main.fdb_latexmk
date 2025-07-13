@@ -1,17 +1,18 @@
 # Fdb version 4
-["biber main"] 1751443904.20487 "main.bcf" "main.bbl" "main" 1752152048.75592 0
-  "literatur.bib" 1751278974 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "main.bcf" 1752152048 107807 ace29b9707913e6fa31620754d6b8d75 "pdflatex"
+["biber main"] 1752393369.05635 "main.bcf" "main.bbl" "main" 1752393378.50322 0
+  "literatur.bib" 1752393368 6811 044f76f90e6f01d7af80066848bb95e8 ""
+  "main.bcf" 1752393378 111106 47252e876f9f36cc1753693496b89434 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1752152045.46635 "c:/Users/lnztadil/Desktop/T3200/main.tex" "main.pdf" "main" 1752152048.75652 0
+["pdflatex"] 1752393374.77516 "c:/Users/lnztadil/Desktop/T3200/main.tex" "main.pdf" "main" 1752393378.50382 0
   "C:/Users/lnztadil/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1742397497 124121 7f2db78cdab76bac82b39be5e58389da ""
   "C:/Users/lnztadil/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1741616856 14064 df4676c093c4e71a0ed09badf2e7261b ""
   "C:/Users/lnztadil/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1736421697 11995304 639aba1e8c212e3b0ab6a8aed7b309d5 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmcsc10.tfm" 1136768653 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
@@ -30,6 +31,7 @@
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
@@ -161,7 +163,7 @@
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/lnztadil/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/lnztadil/Desktop/T3200/main.tex" 1752151709 76020 cf5ef6d5f7af37340a34f18965f1979c ""
+  "c:/Users/lnztadil/Desktop/T3200/main.tex" 1752393368 75721 8a90934d68120d3ff9db692ced4faedb ""
   "images/1906_abbildung1 (1).png" 1751532008 41658 d32dc76bb8fbfcb939044ed508040229 ""
   "images/Ablauf Funktion Datenlogger.png" 1752137136 21219 37ef4c72f639e9799b804406f4a2bef1 ""
   "images/Alte Visualisierung.png" 1752147228 155843 5cdee291880fbb81bd2faa0389ca5f1f ""
@@ -179,13 +181,13 @@
   "images/Volle Darstellung.png" 1752149703 223270 2fd319cb8b5807ba13db8d3bbc7e3db9 ""
   "images/XPLR-AOA-with-C209-and-C211-02_0.png" 1751274416 234459 c232287b511ce2bbb6ac0b629b48e895 ""
   "images/abbiegeassistent-scaled-7b2478b8.jpeg" 1751274416 219018 7c4658d95bdde44246d89d853cd487b6 ""
-  "main.aux" 1752152048 17435 dae3c638495ec36463fdd88dd581ce7a "pdflatex"
-  "main.bbl" 1751443909 486 76d65a242ec496c9b4361af646ff12cb "biber main"
-  "main.lof" 1752152048 1819 1f50ac6390d1dd815a311ee6ecc465ca "pdflatex"
-  "main.out" 1752152048 7496 746a2a89bda9640ee417aa30fe6760c3 "pdflatex"
-  "main.run.xml" 1752152048 2431 2e2b54b1e44d26cb3a0d5b94e09175f2 "pdflatex"
-  "main.tex" 1752151709 76020 cf5ef6d5f7af37340a34f18965f1979c ""
-  "main.toc" 1752152048 6872 63aa9931f8a30972181a5a664f26ecc0 "pdflatex"
+  "main.aux" 1752393378 23392 d7c3e7e38dc557ec7914e6181889da47 "pdflatex"
+  "main.bbl" 1752393371 32027 aa9bc9293ad7a9bd34ac0f7a954de749 "biber main"
+  "main.lof" 1752393378 1819 f2f1c15af3d83dd8a0c0dec49d481e4e "pdflatex"
+  "main.out" 1752393378 7496 746a2a89bda9640ee417aa30fe6760c3 "pdflatex"
+  "main.run.xml" 1752393378 2431 2e2b54b1e44d26cb3a0d5b94e09175f2 "pdflatex"
+  "main.tex" 1752393368 75721 8a90934d68120d3ff9db692ced4faedb ""
+  "main.toc" 1752393378 6872 3e745b87a7ba2979ce9a4dae884ab37f "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
